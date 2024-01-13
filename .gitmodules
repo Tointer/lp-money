@@ -7,3 +7,6 @@
 [submodule "contracts/lib/v3-periphery"]
 	path = contracts/lib/v3-periphery
 	url = https://github.com/uniswap/v3-periphery
+[submodule "contracts/lib/bunni-oracle"]
+	path = contracts/lib/bunni-oracle
+	url = https://github.com/timeless-fi/bunni-oracle
