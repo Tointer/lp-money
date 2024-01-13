@@ -1,0 +1,652 @@
+{
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "ghoTreasury",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "asset",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "amount",
+          "type": "uint256"
+        }
+      ],
+      "name": "FeesDistributedToTreasury",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "oldGhoTreasury",
+          "type": "address"
+        },
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "newGhoTreasury",
+          "type": "address"
+        }
+      ],
+      "name": "GhoTreasuryUpdated",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "distributeFeesToTreasury",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "getGhoTreasury",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "newGhoTreasury",
+          "type": "address"
+        }
+      ],
+      "name": "updateGhoTreasury",
+      "outputs": [],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "distributeFeesToTreasury()": "dc49a07b",
+    "getGhoTreasury()": "e28178cc",
+    "updateGhoTreasury(address)": "1fde40bb"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"ghoTreasury\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"asset\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"FeesDistributedToTreasury\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"oldGhoTreasury\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"newGhoTreasury\",\"type\":\"address\"}],\"name\":\"GhoTreasuryUpdated\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"distributeFeesToTreasury\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getGhoTreasury\",\"outputs\":[{\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"newGhoTreasury\",\"type\":\"address\"}],\"name\":\"updateGhoTreasury\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Aave\",\"events\":{\"FeesDistributedToTreasury(address,address,uint256)\":{\"details\":\"Emitted when fees are distributed to the GhoTreasury\",\"params\":{\"amount\":\"The amount of the asset transferred to the ghoTreasury\",\"asset\":\"The address of the asset transferred to the ghoTreasury\",\"ghoTreasury\":\"The address of the ghoTreasury\"}},\"GhoTreasuryUpdated(address,address)\":{\"details\":\"Emitted when Gho Treasury address is updated\",\"params\":{\"newGhoTreasury\":\"The address of the new GhoTreasury contract\",\"oldGhoTreasury\":\"The address of the old GhoTreasury contract\"}}},\"kind\":\"dev\",\"methods\":{\"getGhoTreasury()\":{\"returns\":{\"_0\":\"The address of the GhoTreasury contract\"}},\"updateGhoTreasury(address)\":{\"details\":\"WARNING: The GhoTreasury is where revenue fees are sent to. Update carefully\",\"params\":{\"newGhoTreasury\":\"The address of the GhoTreasury\"}}},\"title\":\"IGhoFacilitator\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"distributeFeesToTreasury()\":{\"notice\":\"Distribute fees to the GhoTreasury\"},\"getGhoTreasury()\":{\"notice\":\"Returns the address of the Gho Treasury\"},\"updateGhoTreasury(address)\":{\"notice\":\"Updates the address of the Gho Treasury\"}},\"notice\":\"Defines the behavior of a Gho Facilitator\",\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/IGhoFacilitator.sol\":\"IGhoFacilitator\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"src/interfaces/IGhoFacilitator.sol\":{\"keccak256\":\"0x4fee8dd27870528b04cedfc169402a6e6b424ddd329d8179ed16255676eb853a\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d44f8ad15fdaeaa69e0b4665310eb53bb53e705bc3c48a5ce8c4ca9e64472dbe\",\"dweb:/ipfs/QmQDwewj7BFLaZ4bGefMfvkkLdRNyzNhcZJm6auCTfimRN\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "ghoTreasury",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "asset",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "uint256",
+              "name": "amount",
+              "type": "uint256",
+              "indexed": false
+            }
+          ],
+          "type": "event",
+          "name": "FeesDistributedToTreasury",
+          "anonymous": false
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "oldGhoTreasury",
+              "type": "address",
+              "indexed": true
+            },
+            {
+              "internalType": "address",
+              "name": "newGhoTreasury",
+              "type": "address",
+              "indexed": true
+            }
+          ],
+          "type": "event",
+          "name": "GhoTreasuryUpdated",
+          "anonymous": false
+        },
+        {
+          "inputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "distributeFeesToTreasury"
+        },
+        {
+          "inputs": [],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getGhoTreasury",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ]
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "newGhoTreasury",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "function",
+          "name": "updateGhoTreasury"
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {
+          "getGhoTreasury()": {
+            "returns": {
+              "_0": "The address of the GhoTreasury contract"
+            }
+          },
+          "updateGhoTreasury(address)": {
+            "details": "WARNING: The GhoTreasury is where revenue fees are sent to. Update carefully",
+            "params": {
+              "newGhoTreasury": "The address of the GhoTreasury"
+            }
+          }
+        },
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {
+          "distributeFeesToTreasury()": {
+            "notice": "Distribute fees to the GhoTreasury"
+          },
+          "getGhoTreasury()": {
+            "notice": "Returns the address of the Gho Treasury"
+          },
+          "updateGhoTreasury(address)": {
+            "notice": "Updates the address of the Gho Treasury"
+          }
+        },
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/interfaces/IGhoFacilitator.sol": "IGhoFacilitator"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/interfaces/IGhoFacilitator.sol": {
+        "keccak256": "0x4fee8dd27870528b04cedfc169402a6e6b424ddd329d8179ed16255676eb853a",
+        "urls": [
+          "bzz-raw://d44f8ad15fdaeaa69e0b4665310eb53bb53e705bc3c48a5ce8c4ca9e64472dbe",
+          "dweb:/ipfs/QmQDwewj7BFLaZ4bGefMfvkkLdRNyzNhcZJm6auCTfimRN"
+        ],
+        "license": "MIT"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/interfaces/IGhoFacilitator.sol",
+    "id": 45129,
+    "exportedSymbols": {
+      "IGhoFacilitator": [
+        45128
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "33:1463:25",
+    "nodes": [
+      {
+        "id": 45094,
+        "nodeType": "PragmaDirective",
+        "src": "33:23:25",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".0"
+        ]
+      },
+      {
+        "id": 45128,
+        "nodeType": "ContractDefinition",
+        "src": "168:1328:25",
+        "nodes": [
+          {
+            "id": 45104,
+            "nodeType": "EventDefinition",
+            "src": "483:120:25",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 45096,
+              "nodeType": "StructuredDocumentation",
+              "src": "199:280:25",
+              "text": " @dev Emitted when fees are distributed to the GhoTreasury\n @param ghoTreasury The address of the ghoTreasury\n @param asset The address of the asset transferred to the ghoTreasury\n @param amount The amount of the asset transferred to the ghoTreasury"
+            },
+            "eventSelector": "b29fcda740927812f5a71075b62e132bead3769a455319c29b9a1cc461a65475",
+            "name": "FeesDistributedToTreasury",
+            "nameLocation": "489:25:25",
+            "parameters": {
+              "id": 45103,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45098,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "ghoTreasury",
+                  "nameLocation": "537:11:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45104,
+                  "src": "521:27:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45097,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "521:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45100,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "asset",
+                  "nameLocation": "571:5:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45104,
+                  "src": "555:21:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45099,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "555:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45102,
+                  "indexed": false,
+                  "mutability": "mutable",
+                  "name": "amount",
+                  "nameLocation": "591:6:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45104,
+                  "src": "583:14:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45101,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "583:7:25",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "514:88:25"
+            }
+          },
+          {
+            "id": 45111,
+            "nodeType": "EventDefinition",
+            "src": "823:89:25",
+            "nodes": [],
+            "anonymous": false,
+            "documentation": {
+              "id": 45105,
+              "nodeType": "StructuredDocumentation",
+              "src": "609:210:25",
+              "text": " @dev Emitted when Gho Treasury address is updated\n @param oldGhoTreasury The address of the old GhoTreasury contract\n @param newGhoTreasury The address of the new GhoTreasury contract"
+            },
+            "eventSelector": "13f4413d8d93a259bd6c10f35095371f30ed50f81a73407e52e9f02000d5d16b",
+            "name": "GhoTreasuryUpdated",
+            "nameLocation": "829:18:25",
+            "parameters": {
+              "id": 45110,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45107,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "oldGhoTreasury",
+                  "nameLocation": "864:14:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45111,
+                  "src": "848:30:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45106,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "848:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45109,
+                  "indexed": true,
+                  "mutability": "mutable",
+                  "name": "newGhoTreasury",
+                  "nameLocation": "896:14:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45111,
+                  "src": "880:30:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45108,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "880:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "847:64:25"
+            }
+          },
+          {
+            "id": 45115,
+            "nodeType": "FunctionDefinition",
+            "src": "981:45:25",
+            "nodes": [],
+            "documentation": {
+              "id": 45112,
+              "nodeType": "StructuredDocumentation",
+              "src": "918:59:25",
+              "text": " @notice Distribute fees to the GhoTreasury"
+            },
+            "functionSelector": "dc49a07b",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "distributeFeesToTreasury",
+            "nameLocation": "990:24:25",
+            "parameters": {
+              "id": 45113,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1014:2:25"
+            },
+            "returnParameters": {
+              "id": 45114,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1025:0:25"
+            },
+            "scope": 45128,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45121,
+            "nodeType": "FunctionDefinition",
+            "src": "1247:60:25",
+            "nodes": [],
+            "documentation": {
+              "id": 45116,
+              "nodeType": "StructuredDocumentation",
+              "src": "1032:211:25",
+              "text": " @notice Updates the address of the Gho Treasury\n @dev WARNING: The GhoTreasury is where revenue fees are sent to. Update carefully\n @param newGhoTreasury The address of the GhoTreasury"
+            },
+            "functionSelector": "1fde40bb",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "updateGhoTreasury",
+            "nameLocation": "1256:17:25",
+            "parameters": {
+              "id": 45119,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45118,
+                  "mutability": "mutable",
+                  "name": "newGhoTreasury",
+                  "nameLocation": "1282:14:25",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45121,
+                  "src": "1274:22:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45117,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1274:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1273:24:25"
+            },
+            "returnParameters": {
+              "id": 45120,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1306:0:25"
+            },
+            "scope": 45128,
+            "stateMutability": "nonpayable",
+            "virtual": false,
+            "visibility": "external"
+          },
+          {
+            "id": 45127,
+            "nodeType": "FunctionDefinition",
+            "src": "1435:58:25",
+            "nodes": [],
+            "documentation": {
+              "id": 45122,
+              "nodeType": "StructuredDocumentation",
+              "src": "1313:118:25",
+              "text": " @notice Returns the address of the Gho Treasury\n @return The address of the GhoTreasury contract"
+            },
+            "functionSelector": "e28178cc",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getGhoTreasury",
+            "nameLocation": "1444:14:25",
+            "parameters": {
+              "id": 45123,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1458:2:25"
+            },
+            "returnParameters": {
+              "id": 45126,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45125,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45127,
+                  "src": "1484:7:25",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45124,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "1484:7:25",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1483:9:25"
+            },
+            "scope": 45128,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "IGhoFacilitator",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "documentation": {
+          "id": 45095,
+          "nodeType": "StructuredDocumentation",
+          "src": "60:106:25",
+          "text": " @title IGhoFacilitator\n @author Aave\n @notice Defines the behavior of a Gho Facilitator"
+        },
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          45128
+        ],
+        "name": "IGhoFacilitator",
+        "nameLocation": "178:15:25",
+        "scope": 45129,
+        "usedErrors": [],
+        "usedEvents": [
+          45104,
+          45111
+        ]
+      }
+    ],
+    "license": "MIT"
+  },
+  "id": 25
+}

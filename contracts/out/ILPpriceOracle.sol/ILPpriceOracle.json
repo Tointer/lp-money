@@ -1,0 +1,278 @@
+{
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "address",
+          "name": "firstToken",
+          "type": "address"
+        },
+        {
+          "internalType": "address",
+          "name": "secondToken",
+          "type": "address"
+        }
+      ],
+      "name": "getLatestPrice",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "deployedBytecode": {
+    "object": "0x",
+    "sourceMap": "",
+    "linkReferences": {}
+  },
+  "methodIdentifiers": {
+    "getLatestPrice(address,address)": "10603c11"
+  },
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"address\",\"name\":\"firstToken\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"secondToken\",\"type\":\"address\"}],\"name\":\"getLatestPrice\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/ILPpriceOracle.sol\":\"ILPpriceOracle\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"src/interfaces/ILPpriceOracle.sol\":{\"keccak256\":\"0xb280c77cb602f2b87e37a5d1235073198b39c0aea18d3b63f64619e5b3b05e7f\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://157caa0399838cc08c4164c8247352e2c2115f54009c5e7784a9a81d2773d6a0\",\"dweb:/ipfs/QmYewoEGrKRKPNT6zeC7P9FHXhaoL4cXj6Q9dzW8Z3WxZe\"]}},\"version\":1}",
+  "metadata": {
+    "compiler": {
+      "version": "0.8.21+commit.d9974bed"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "address",
+              "name": "firstToken",
+              "type": "address"
+            },
+            {
+              "internalType": "address",
+              "name": "secondToken",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function",
+          "name": "getLatestPrice",
+          "outputs": [
+            {
+              "internalType": "uint256",
+              "name": "",
+              "type": "uint256"
+            }
+          ]
+        }
+      ],
+      "devdoc": {
+        "kind": "dev",
+        "methods": {},
+        "version": 1
+      },
+      "userdoc": {
+        "kind": "user",
+        "methods": {},
+        "version": 1
+      }
+    },
+    "settings": {
+      "remappings": [
+        "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "ds-test/=lib/forge-std/lib/ds-test/src/",
+        "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
+        "forge-std/=lib/forge-std/src/",
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+      ],
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "metadata": {
+        "bytecodeHash": "ipfs"
+      },
+      "compilationTarget": {
+        "src/interfaces/ILPpriceOracle.sol": "ILPpriceOracle"
+      },
+      "libraries": {}
+    },
+    "sources": {
+      "src/interfaces/ILPpriceOracle.sol": {
+        "keccak256": "0xb280c77cb602f2b87e37a5d1235073198b39c0aea18d3b63f64619e5b3b05e7f",
+        "urls": [
+          "bzz-raw://157caa0399838cc08c4164c8247352e2c2115f54009c5e7784a9a81d2773d6a0",
+          "dweb:/ipfs/QmYewoEGrKRKPNT6zeC7P9FHXhaoL4cXj6Q9dzW8Z3WxZe"
+        ],
+        "license": "UNLICENSED"
+      }
+    },
+    "version": 1
+  },
+  "ast": {
+    "absolutePath": "src/interfaces/ILPpriceOracle.sol",
+    "id": 45268,
+    "exportedSymbols": {
+      "ILPpriceOracle": [
+        45267
+      ]
+    },
+    "nodeType": "SourceUnit",
+    "src": "40:162:27",
+    "nodes": [
+      {
+        "id": 45257,
+        "nodeType": "PragmaDirective",
+        "src": "40:24:27",
+        "nodes": [],
+        "literals": [
+          "solidity",
+          "^",
+          "0.8",
+          ".13"
+        ]
+      },
+      {
+        "id": 45267,
+        "nodeType": "ContractDefinition",
+        "src": "68:132:27",
+        "nodes": [
+          {
+            "id": 45266,
+            "nodeType": "FunctionDefinition",
+            "src": "100:97:27",
+            "nodes": [],
+            "functionSelector": "10603c11",
+            "implemented": false,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getLatestPrice",
+            "nameLocation": "109:14:27",
+            "parameters": {
+              "id": 45262,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45259,
+                  "mutability": "mutable",
+                  "name": "firstToken",
+                  "nameLocation": "132:10:27",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45266,
+                  "src": "124:18:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45258,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "124:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                },
+                {
+                  "constant": false,
+                  "id": 45261,
+                  "mutability": "mutable",
+                  "name": "secondToken",
+                  "nameLocation": "152:11:27",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45266,
+                  "src": "144:19:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 45260,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "144:7:27",
+                    "stateMutability": "nonpayable",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "123:41:27"
+            },
+            "returnParameters": {
+              "id": 45265,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 45264,
+                  "mutability": "mutable",
+                  "name": "",
+                  "nameLocation": "-1:-1:-1",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 45266,
+                  "src": "188:7:27",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_uint256",
+                    "typeString": "uint256"
+                  },
+                  "typeName": {
+                    "id": 45263,
+                    "name": "uint256",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "188:7:27",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "visibility": "internal"
+                }
+              ],
+              "src": "187:9:27"
+            },
+            "scope": 45267,
+            "stateMutability": "view",
+            "virtual": false,
+            "visibility": "external"
+          }
+        ],
+        "abstract": false,
+        "baseContracts": [],
+        "canonicalName": "ILPpriceOracle",
+        "contractDependencies": [],
+        "contractKind": "interface",
+        "fullyImplemented": false,
+        "linearizedBaseContracts": [
+          45267
+        ],
+        "name": "ILPpriceOracle",
+        "nameLocation": "78:14:27",
+        "scope": 45268,
+        "usedErrors": [],
+        "usedEvents": []
+      }
+    ],
+    "license": "UNLICENSED"
+  },
+  "id": 27
+}
