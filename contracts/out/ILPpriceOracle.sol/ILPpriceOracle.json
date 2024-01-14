@@ -58,10 +58,10 @@
   "methodIdentifiers": {
     "quoteUSD(address,int24,int24,uint128,uint32,uint256)": "9d025db6"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IUniswapV3Pool\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"int24\",\"name\":\"tickLower\",\"type\":\"int24\"},{\"internalType\":\"int24\",\"name\":\"tickUpper\",\"type\":\"int24\"},{\"internalType\":\"uint128\",\"name\":\"liquidity\",\"type\":\"uint128\"},{\"internalType\":\"uint32\",\"name\":\"uniV3OracleSecondsAgo\",\"type\":\"uint32\"},{\"internalType\":\"uint256\",\"name\":\"chainlinkPriceMaxAgeSecs\",\"type\":\"uint256\"}],\"name\":\"quoteUSD\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"valueUSD\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/ILPpriceOracle.sol\":\"ILPpriceOracle\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/=lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@uniswap/v2-core/=lib/bunni-oracle/lib/bunni/lib/v2-core/\",\":@uniswap/v2-periphery/=lib/bunni-oracle/lib/bunni/lib/v2-periphery/\",\":@uniswap/v3-core/=lib/bunni-oracle/lib/v3-core/\",\":@uniswap/v3-periphery/=lib/bunni-oracle/lib/v3-periphery/\",\":bunni-oracle/=lib/bunni-oracle/\",\":bunni/=lib/bunni-oracle/lib/bunni/\",\":create3-factory/=lib/bunni-oracle/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":solmate/=lib/bunni-oracle/lib/solmate/src/\",\":v2-core/=lib/bunni-oracle/lib/bunni/lib/v2-core/contracts/\",\":v2-periphery/=lib/bunni-oracle/lib/bunni/lib/v2-periphery/contracts/\",\":v3-core/=lib/v3-core/\",\":v3-periphery/=lib/v3-periphery/contracts/\"]},\"sources\":{\"lib/bunni-oracle/lib/v3-core/contracts/interfaces/IUniswapV3Pool.sol\":{\"keccak256\":\"0x8a28591528e8aea0f548120fdce2c3642678f22824c2f02ac10cd2a4b3064654\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://0d7af6f8a76bd001c2ebc54ff92605a28ba14345f367ef1d8ebbe671a83ccdd9\",\"dweb:/ipfs/QmPty49eoVWqE1V2nVbDjzipURW252W19BvScMZL5buNTP\"]},\"lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol\":{\"keccak256\":\"0xc0bbb3ed984dff71351269a84eb6e8e05b80fa82f8db633d3c79cce902b10062\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://1203ca3fd412d00b180941863d57ac4fb7d87612af5cd130f5f7fad4a9434be5\",\"dweb:/ipfs/QmZxjkYTmDqmyJvTBdAkens6MpoXJ4CHuvhKe5UtYawKBV\"]},\"lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol\":{\"keccak256\":\"0x388533862fc3bc4a7040ec401ec473019a7907bf397b406defee94286c1d6c7e\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://e6ab09700c39f53d429f430ad3b4b7cd2a3b2d61baa53004dd1f4fd92db39e36\",\"dweb:/ipfs/QmSUnTzyZtZ4K6ASxwxdzCCMwj7utj8xzDYnjopGPCV4z5\"]},\"lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolErrors.sol\":{\"keccak256\":\"0xf9f4d931707305240a72263e35a1d3171ce80a7d928ab848eac5390d3b6e80fb\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://39b6cd2d199251ca6777a7bc0fc797e1de2a8e5b9c1cbd2be8fadce1837fe1eb\",\"dweb:/ipfs/QmS3wzTWmGXfkpZCKZpoWdavMkRQBpjZ87NVFNVW7uyLsq\"]},\"lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol\":{\"keccak256\":\"0xb8e8f6f7326fc86450a2e8daba3194709c9c92f552fe8aea44cb7c77dbff4ad2\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://a8ef383b9b4142ea5774816a87d48b64a29e922edc83af6fb15b3098cef9819f\",\"dweb:/ipfs/QmdZXMdDWgMEFMS8rQtR5QN5KdLSZUuSmd6dQsjAKN8DFA\"]},\"lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol\":{\"keccak256\":\"0x4c110f8100d8bdd61abfa008dc37dc5f98c12b5b25222ac8ac8bf99ced935300\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://ef3fd138626582293a67630e3aeb17065bcc04fb018255ff89c459a81e3bd8da\",\"dweb:/ipfs/QmV7q5EoCzNJsZGkozzb55b1iM6F1kinSKrYdARf2ZkCGb\"]},\"lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol\":{\"keccak256\":\"0x9e84507ff95f4247bfc737381f628ae84b78b3c9d6717fd2abec778690a18504\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://19f0d36a524a4d551865a2598ae2a7620e5b916fd781c8e08bbc880606c0abe4\",\"dweb:/ipfs/QmNqaGVukhKWDJLoBT8HyFtoJLUYuhh4LAvCTYxcXs1r34\"]},\"lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol\":{\"keccak256\":\"0xdf1d77bb67bc0b369eacc839c94970f3309589c08afec74b95dfc04a720bf9a7\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://b7deefb54a4ad365e4b35dd2d260a186a8d36174a75766a578f48637101c07d3\",\"dweb:/ipfs/QmVj8tnVDBTkBtxGsHYEmYB462M2zMGWP4S7eYGBJGjF18\"]},\"src/interfaces/ILPpriceOracle.sol\":{\"keccak256\":\"0x1c1ee7a541bbe671eea46e048be8b245b1af7300a5f788852467a3a2a61d5234\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://8725fda5cf6754aaa9619b3c4bc33218585a87a3822518fd977d8e4694ca24db\",\"dweb:/ipfs/QmdF998ega2GzciGLksH6sqNbLMLdKE9X9NurBbkc5MYsm\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.20+commit.a1b79de6\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[{\"internalType\":\"contract IUniswapV3Pool\",\"name\":\"pool\",\"type\":\"address\"},{\"internalType\":\"int24\",\"name\":\"tickLower\",\"type\":\"int24\"},{\"internalType\":\"int24\",\"name\":\"tickUpper\",\"type\":\"int24\"},{\"internalType\":\"uint128\",\"name\":\"liquidity\",\"type\":\"uint128\"},{\"internalType\":\"uint32\",\"name\":\"uniV3OracleSecondsAgo\",\"type\":\"uint32\"},{\"internalType\":\"uint256\",\"name\":\"chainlinkPriceMaxAgeSecs\",\"type\":\"uint256\"}],\"name\":\"quoteUSD\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"valueUSD\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/ILPpriceOracle.sol\":\"ILPpriceOracle\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":1000000},\"remappings\":[\":@openzeppelin-latest/=lib/openzeppelin-contracts/\",\":@openzeppelin/=lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@uniswap/v2-core/=lib/v2-core/\",\":@uniswap/v2-periphery/=lib/v2-periphery/\",\":@uniswap/v3-core/=lib/v3-core/\",\":@uniswap/v3-periphery/=lib/bunni-oracle/lib/v3-periphery/\",\":bunni-oracle/=lib/bunni-oracle/\",\":bunni/=lib/bunni-oracle/lib/bunni/\",\":create3-factory/=lib/bunni-oracle/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":solmate/=lib/solmate/src/\",\":v2-core/=lib/bunni-oracle/lib/bunni/lib/v2-core/contracts/\",\":v2-periphery/=lib/bunni-oracle/lib/bunni/lib/v2-periphery/contracts/\",\":v3-core/=lib/v3-core/\",\":v3-periphery/=lib/v3-periphery/contracts/\"],\"viaIR\":true},\"sources\":{\"lib/v3-core/contracts/interfaces/IUniswapV3Pool.sol\":{\"keccak256\":\"0xe725c163dd1ee87f64e050ac85dadf0def413086e442c455c8f4080d53a1dd65\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://c598dc23f6de668a9a65ff7f08bad0fb38775c1030e5500d1c6aa8d2eb557ce8\",\"dweb:/ipfs/QmNiCa8tYRytknrM2T3sntUyfxapkuJYZAYvyaTfhRMS3D\"]},\"lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol\":{\"keccak256\":\"0xc0bbb3ed984dff71351269a84eb6e8e05b80fa82f8db633d3c79cce902b10062\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://1203ca3fd412d00b180941863d57ac4fb7d87612af5cd130f5f7fad4a9434be5\",\"dweb:/ipfs/QmZxjkYTmDqmyJvTBdAkens6MpoXJ4CHuvhKe5UtYawKBV\"]},\"lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol\":{\"keccak256\":\"0x388533862fc3bc4a7040ec401ec473019a7907bf397b406defee94286c1d6c7e\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://e6ab09700c39f53d429f430ad3b4b7cd2a3b2d61baa53004dd1f4fd92db39e36\",\"dweb:/ipfs/QmSUnTzyZtZ4K6ASxwxdzCCMwj7utj8xzDYnjopGPCV4z5\"]},\"lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol\":{\"keccak256\":\"0xb8e8f6f7326fc86450a2e8daba3194709c9c92f552fe8aea44cb7c77dbff4ad2\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://a8ef383b9b4142ea5774816a87d48b64a29e922edc83af6fb15b3098cef9819f\",\"dweb:/ipfs/QmdZXMdDWgMEFMS8rQtR5QN5KdLSZUuSmd6dQsjAKN8DFA\"]},\"lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol\":{\"keccak256\":\"0x4c110f8100d8bdd61abfa008dc37dc5f98c12b5b25222ac8ac8bf99ced935300\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://ef3fd138626582293a67630e3aeb17065bcc04fb018255ff89c459a81e3bd8da\",\"dweb:/ipfs/QmV7q5EoCzNJsZGkozzb55b1iM6F1kinSKrYdARf2ZkCGb\"]},\"lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol\":{\"keccak256\":\"0x9e84507ff95f4247bfc737381f628ae84b78b3c9d6717fd2abec778690a18504\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://19f0d36a524a4d551865a2598ae2a7620e5b916fd781c8e08bbc880606c0abe4\",\"dweb:/ipfs/QmNqaGVukhKWDJLoBT8HyFtoJLUYuhh4LAvCTYxcXs1r34\"]},\"lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol\":{\"keccak256\":\"0x03475f5abd020eeb153c2144c7dfe53f33a32e8bc1371b865d44da1009b2b468\",\"license\":\"GPL-2.0-or-later\",\"urls\":[\"bzz-raw://e462f711f5b07fcfa68ca4207b0f7bd9065cd8d981a84114092e24feaf6310ba\",\"dweb:/ipfs/QmacKxzKjndag6RNXuHdDvbXCLzfRu27stPnBqFHDDbYqB\"]},\"src/interfaces/ILPpriceOracle.sol\":{\"keccak256\":\"0x1c1ee7a541bbe671eea46e048be8b245b1af7300a5f788852467a3a2a61d5234\",\"license\":\"UNLICENSED\",\"urls\":[\"bzz-raw://8725fda5cf6754aaa9619b3c4bc33218585a87a3822518fd977d8e4694ca24db\",\"dweb:/ipfs/QmdF998ega2GzciGLksH6sqNbLMLdKE9X9NurBbkc5MYsm\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
-      "version": "0.8.21+commit.d9974bed"
+      "version": "0.8.20+commit.a1b79de6"
     },
     "language": "Solidity",
     "output": {
@@ -124,11 +124,12 @@
     },
     "settings": {
       "remappings": [
+        "@openzeppelin-latest/=lib/openzeppelin-contracts/",
         "@openzeppelin/=lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/",
         "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
-        "@uniswap/v2-core/=lib/bunni-oracle/lib/bunni/lib/v2-core/",
-        "@uniswap/v2-periphery/=lib/bunni-oracle/lib/bunni/lib/v2-periphery/",
-        "@uniswap/v3-core/=lib/bunni-oracle/lib/v3-core/",
+        "@uniswap/v2-core/=lib/v2-core/",
+        "@uniswap/v2-periphery/=lib/v2-periphery/",
+        "@uniswap/v3-core/=lib/v3-core/",
         "@uniswap/v3-periphery/=lib/bunni-oracle/lib/v3-periphery/",
         "bunni-oracle/=lib/bunni-oracle/",
         "bunni/=lib/bunni-oracle/lib/bunni/",
@@ -137,7 +138,7 @@
         "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
         "forge-std/=lib/forge-std/src/",
         "openzeppelin-contracts/=lib/openzeppelin-contracts/",
-        "solmate/=lib/bunni-oracle/lib/solmate/src/",
+        "solmate/=lib/solmate/src/",
         "v2-core/=lib/bunni-oracle/lib/bunni/lib/v2-core/contracts/",
         "v2-periphery/=lib/bunni-oracle/lib/bunni/lib/v2-periphery/contracts/",
         "v3-core/=lib/v3-core/",
@@ -145,7 +146,7 @@
       ],
       "optimizer": {
         "enabled": true,
-        "runs": 200
+        "runs": 1000000
       },
       "metadata": {
         "bytecodeHash": "ipfs"
@@ -153,18 +154,19 @@
       "compilationTarget": {
         "src/interfaces/ILPpriceOracle.sol": "ILPpriceOracle"
       },
-      "libraries": {}
+      "libraries": {},
+      "viaIR": true
     },
     "sources": {
-      "lib/bunni-oracle/lib/v3-core/contracts/interfaces/IUniswapV3Pool.sol": {
-        "keccak256": "0x8a28591528e8aea0f548120fdce2c3642678f22824c2f02ac10cd2a4b3064654",
+      "lib/v3-core/contracts/interfaces/IUniswapV3Pool.sol": {
+        "keccak256": "0xe725c163dd1ee87f64e050ac85dadf0def413086e442c455c8f4080d53a1dd65",
         "urls": [
-          "bzz-raw://0d7af6f8a76bd001c2ebc54ff92605a28ba14345f367ef1d8ebbe671a83ccdd9",
-          "dweb:/ipfs/QmPty49eoVWqE1V2nVbDjzipURW252W19BvScMZL5buNTP"
+          "bzz-raw://c598dc23f6de668a9a65ff7f08bad0fb38775c1030e5500d1c6aa8d2eb557ce8",
+          "dweb:/ipfs/QmNiCa8tYRytknrM2T3sntUyfxapkuJYZAYvyaTfhRMS3D"
         ],
         "license": "GPL-2.0-or-later"
       },
-      "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol": {
+      "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol": {
         "keccak256": "0xc0bbb3ed984dff71351269a84eb6e8e05b80fa82f8db633d3c79cce902b10062",
         "urls": [
           "bzz-raw://1203ca3fd412d00b180941863d57ac4fb7d87612af5cd130f5f7fad4a9434be5",
@@ -172,7 +174,7 @@
         ],
         "license": "GPL-2.0-or-later"
       },
-      "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol": {
+      "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol": {
         "keccak256": "0x388533862fc3bc4a7040ec401ec473019a7907bf397b406defee94286c1d6c7e",
         "urls": [
           "bzz-raw://e6ab09700c39f53d429f430ad3b4b7cd2a3b2d61baa53004dd1f4fd92db39e36",
@@ -180,15 +182,7 @@
         ],
         "license": "GPL-2.0-or-later"
       },
-      "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolErrors.sol": {
-        "keccak256": "0xf9f4d931707305240a72263e35a1d3171ce80a7d928ab848eac5390d3b6e80fb",
-        "urls": [
-          "bzz-raw://39b6cd2d199251ca6777a7bc0fc797e1de2a8e5b9c1cbd2be8fadce1837fe1eb",
-          "dweb:/ipfs/QmS3wzTWmGXfkpZCKZpoWdavMkRQBpjZ87NVFNVW7uyLsq"
-        ],
-        "license": "GPL-2.0-or-later"
-      },
-      "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol": {
+      "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol": {
         "keccak256": "0xb8e8f6f7326fc86450a2e8daba3194709c9c92f552fe8aea44cb7c77dbff4ad2",
         "urls": [
           "bzz-raw://a8ef383b9b4142ea5774816a87d48b64a29e922edc83af6fb15b3098cef9819f",
@@ -196,7 +190,7 @@
         ],
         "license": "GPL-2.0-or-later"
       },
-      "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol": {
+      "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol": {
         "keccak256": "0x4c110f8100d8bdd61abfa008dc37dc5f98c12b5b25222ac8ac8bf99ced935300",
         "urls": [
           "bzz-raw://ef3fd138626582293a67630e3aeb17065bcc04fb018255ff89c459a81e3bd8da",
@@ -204,7 +198,7 @@
         ],
         "license": "GPL-2.0-or-later"
       },
-      "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol": {
+      "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol": {
         "keccak256": "0x9e84507ff95f4247bfc737381f628ae84b78b3c9d6717fd2abec778690a18504",
         "urls": [
           "bzz-raw://19f0d36a524a4d551865a2598ae2a7620e5b916fd781c8e08bbc880606c0abe4",
@@ -212,11 +206,11 @@
         ],
         "license": "GPL-2.0-or-later"
       },
-      "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol": {
-        "keccak256": "0xdf1d77bb67bc0b369eacc839c94970f3309589c08afec74b95dfc04a720bf9a7",
+      "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol": {
+        "keccak256": "0x03475f5abd020eeb153c2144c7dfe53f33a32e8bc1371b865d44da1009b2b468",
         "urls": [
-          "bzz-raw://b7deefb54a4ad365e4b35dd2d260a186a8d36174a75766a578f48637101c07d3",
-          "dweb:/ipfs/QmVj8tnVDBTkBtxGsHYEmYB462M2zMGWP4S7eYGBJGjF18"
+          "bzz-raw://e462f711f5b07fcfa68ca4207b0f7bd9065cd8d981a84114092e24feaf6310ba",
+          "dweb:/ipfs/QmacKxzKjndag6RNXuHdDvbXCLzfRu27stPnBqFHDDbYqB"
         ],
         "license": "GPL-2.0-or-later"
       },
@@ -233,22 +227,22 @@
   },
   "ast": {
     "absolutePath": "src/interfaces/ILPpriceOracle.sol",
-    "id": 1581,
+    "id": 49971,
     "exportedSymbols": {
       "ILPpriceOracle": [
-        1580
+        49970
       ],
       "IUniswapV3Pool": [
-        368
+        49002
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "40:413:28",
+    "src": "40:413:72",
     "nodes": [
       {
-        "id": 1559,
+        "id": 49949,
         "nodeType": "PragmaDirective",
-        "src": "40:24:28",
+        "src": "40:24:72",
         "nodes": [],
         "literals": [
           "solidity",
@@ -258,24 +252,24 @@
         ]
       },
       {
-        "id": 1561,
+        "id": 49951,
         "nodeType": "ImportDirective",
-        "src": "66:88:28",
+        "src": "66:88:72",
         "nodes": [],
-        "absolutePath": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/IUniswapV3Pool.sol",
+        "absolutePath": "lib/v3-core/contracts/interfaces/IUniswapV3Pool.sol",
         "file": "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 1581,
-        "sourceUnit": 369,
+        "scope": 49971,
+        "sourceUnit": 49003,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 1560,
+              "id": 49950,
               "name": "IUniswapV3Pool",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 368,
-              "src": "74:14:28",
+              "referencedDeclaration": 49002,
+              "src": "74:14:72",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -284,57 +278,57 @@
         "unitAlias": ""
       },
       {
-        "id": 1580,
+        "id": 49970,
         "nodeType": "ContractDefinition",
-        "src": "158:293:28",
+        "src": "158:293:72",
         "nodes": [
           {
-            "id": 1579,
+            "id": 49969,
             "nodeType": "FunctionDefinition",
-            "src": "190:258:28",
+            "src": "190:258:72",
             "nodes": [],
             "functionSelector": "9d025db6",
             "implemented": false,
             "kind": "function",
             "modifiers": [],
             "name": "quoteUSD",
-            "nameLocation": "199:8:28",
+            "nameLocation": "199:8:72",
             "parameters": {
-              "id": 1575,
+              "id": 49965,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1564,
+                  "id": 49954,
                   "mutability": "mutable",
                   "name": "pool",
-                  "nameLocation": "233:4:28",
+                  "nameLocation": "233:4:72",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1579,
-                  "src": "218:19:28",
+                  "scope": 49969,
+                  "src": "218:19:72",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_contract$_IUniswapV3Pool_$368",
+                    "typeIdentifier": "t_contract$_IUniswapV3Pool_$49002",
                     "typeString": "contract IUniswapV3Pool"
                   },
                   "typeName": {
-                    "id": 1563,
+                    "id": 49953,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 1562,
+                      "id": 49952,
                       "name": "IUniswapV3Pool",
                       "nameLocations": [
-                        "218:14:28"
+                        "218:14:72"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 368,
-                      "src": "218:14:28"
+                      "referencedDeclaration": 49002,
+                      "src": "218:14:72"
                     },
-                    "referencedDeclaration": 368,
-                    "src": "218:14:28",
+                    "referencedDeclaration": 49002,
+                    "src": "218:14:72",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_contract$_IUniswapV3Pool_$368",
+                      "typeIdentifier": "t_contract$_IUniswapV3Pool_$49002",
                       "typeString": "contract IUniswapV3Pool"
                     }
                   },
@@ -342,13 +336,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1566,
+                  "id": 49956,
                   "mutability": "mutable",
                   "name": "tickLower",
-                  "nameLocation": "254:9:28",
+                  "nameLocation": "254:9:72",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1579,
-                  "src": "248:15:28",
+                  "scope": 49969,
+                  "src": "248:15:72",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -356,10 +350,10 @@
                     "typeString": "int24"
                   },
                   "typeName": {
-                    "id": 1565,
+                    "id": 49955,
                     "name": "int24",
                     "nodeType": "ElementaryTypeName",
-                    "src": "248:5:28",
+                    "src": "248:5:72",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int24",
                       "typeString": "int24"
@@ -369,13 +363,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1568,
+                  "id": 49958,
                   "mutability": "mutable",
                   "name": "tickUpper",
-                  "nameLocation": "280:9:28",
+                  "nameLocation": "280:9:72",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1579,
-                  "src": "274:15:28",
+                  "scope": 49969,
+                  "src": "274:15:72",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -383,10 +377,10 @@
                     "typeString": "int24"
                   },
                   "typeName": {
-                    "id": 1567,
+                    "id": 49957,
                     "name": "int24",
                     "nodeType": "ElementaryTypeName",
-                    "src": "274:5:28",
+                    "src": "274:5:72",
                     "typeDescriptions": {
                       "typeIdentifier": "t_int24",
                       "typeString": "int24"
@@ -396,13 +390,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1570,
+                  "id": 49960,
                   "mutability": "mutable",
                   "name": "liquidity",
-                  "nameLocation": "308:9:28",
+                  "nameLocation": "308:9:72",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1579,
-                  "src": "300:17:28",
+                  "scope": 49969,
+                  "src": "300:17:72",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -410,10 +404,10 @@
                     "typeString": "uint128"
                   },
                   "typeName": {
-                    "id": 1569,
+                    "id": 49959,
                     "name": "uint128",
                     "nodeType": "ElementaryTypeName",
-                    "src": "300:7:28",
+                    "src": "300:7:72",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
@@ -423,13 +417,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1572,
+                  "id": 49962,
                   "mutability": "mutable",
                   "name": "uniV3OracleSecondsAgo",
-                  "nameLocation": "335:21:28",
+                  "nameLocation": "335:21:72",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1579,
-                  "src": "328:28:28",
+                  "scope": 49969,
+                  "src": "328:28:72",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -437,10 +431,10 @@
                     "typeString": "uint32"
                   },
                   "typeName": {
-                    "id": 1571,
+                    "id": 49961,
                     "name": "uint32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "328:6:28",
+                    "src": "328:6:72",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint32",
                       "typeString": "uint32"
@@ -450,13 +444,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 1574,
+                  "id": 49964,
                   "mutability": "mutable",
                   "name": "chainlinkPriceMaxAgeSecs",
-                  "nameLocation": "375:24:28",
+                  "nameLocation": "375:24:72",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1579,
-                  "src": "367:32:28",
+                  "scope": 49969,
+                  "src": "367:32:72",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -464,10 +458,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1573,
+                    "id": 49963,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "367:7:28",
+                    "src": "367:7:72",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -476,21 +470,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "207:199:28"
+              "src": "207:199:72"
             },
             "returnParameters": {
-              "id": 1578,
+              "id": 49968,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 1577,
+                  "id": 49967,
                   "mutability": "mutable",
                   "name": "valueUSD",
-                  "nameLocation": "438:8:28",
+                  "nameLocation": "438:8:72",
                   "nodeType": "VariableDeclaration",
-                  "scope": 1579,
-                  "src": "430:16:28",
+                  "scope": 49969,
+                  "src": "430:16:72",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -498,10 +492,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 1576,
+                    "id": 49966,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "430:7:28",
+                    "src": "430:7:72",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -510,9 +504,9 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "429:18:28"
+              "src": "429:18:72"
             },
-            "scope": 1580,
+            "scope": 49970,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -525,16 +519,16 @@
         "contractKind": "interface",
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          1580
+          49970
         ],
         "name": "ILPpriceOracle",
-        "nameLocation": "168:14:28",
-        "scope": 1581,
+        "nameLocation": "168:14:72",
+        "scope": 49971,
         "usedErrors": [],
         "usedEvents": []
       }
     ],
     "license": "UNLICENSED"
   },
-  "id": 28
+  "id": 72
 }

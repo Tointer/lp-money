@@ -19,7 +19,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -41,6 +41,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -48,7 +49,7 @@
       "versionRequirement": "^0.8.0",
       "artifacts": {
         "IAccessControl": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IAccessControl.sol\\IAccessControl.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "access\\IAccessControl.sol\\IAccessControl.json"
         }
       }
     },
@@ -60,7 +61,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -82,6 +83,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -89,7 +91,7 @@
       "versionRequirement": "^0.8.0",
       "artifacts": {
         "IERC20": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IERC20.sol\\IERC20.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "ERC20\\IERC20.sol\\IERC20.json"
         }
       }
     },
@@ -101,7 +103,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -123,6 +125,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -132,7 +135,7 @@
       "versionRequirement": "^0.8.0",
       "artifacts": {
         "IERC721": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "ERC721\\IERC721.sol\\IERC721.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "ERC721\\IERC721.sol\\IERC721.json"
         }
       }
     },
@@ -144,7 +147,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -166,6 +169,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -176,7 +180,7 @@
       "versionRequirement": "^0.8.0",
       "artifacts": {
         "IERC721Enumerable": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "extensions\\IERC721Enumerable.sol\\IERC721Enumerable.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "extensions\\IERC721Enumerable.sol\\IERC721Enumerable.json"
         }
       }
     },
@@ -188,7 +192,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -210,6 +214,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -220,7 +225,7 @@
       "versionRequirement": "^0.8.0",
       "artifacts": {
         "IERC721Metadata": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "extensions\\IERC721Metadata.sol\\IERC721Metadata.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "extensions\\IERC721Metadata.sol\\IERC721Metadata.json"
         }
       }
     },
@@ -232,7 +237,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -254,6 +259,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -261,343 +267,7 @@
       "versionRequirement": "^0.8.0",
       "artifacts": {
         "IERC165": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "introspection\\IERC165.sol\\IERC165.json"
-        }
-      }
-    },
-    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/IUniswapV3Pool.sol": {
-      "lastModificationDate": 1705164437758,
-      "contentHash": "29f0f469d01c11767fdd67a270ec4226",
-      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/IUniswapV3Pool.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "useLiteralContent": false,
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolErrors.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol"
-      ],
-      "versionRequirement": ">=0.5.0",
-      "artifacts": {
-        "IUniswapV3Pool": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3Pool.sol\\IUniswapV3Pool.json"
-        }
-      }
-    },
-    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol": {
-      "lastModificationDate": 1705164437759,
-      "contentHash": "dede1acb09c9ac66ac08e513ca1432d0",
-      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "useLiteralContent": false,
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": ">=0.5.0",
-      "artifacts": {
-        "IUniswapV3PoolActions": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3PoolActions.sol\\IUniswapV3PoolActions.json"
-        }
-      }
-    },
-    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol": {
-      "lastModificationDate": 1705164437761,
-      "contentHash": "b69b49c1b2c28866166e09baae3db4ed",
-      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "useLiteralContent": false,
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": ">=0.5.0",
-      "artifacts": {
-        "IUniswapV3PoolDerivedState": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3PoolDerivedState.sol\\IUniswapV3PoolDerivedState.json"
-        }
-      }
-    },
-    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolErrors.sol": {
-      "lastModificationDate": 1705164437761,
-      "contentHash": "a092436338ef1ea1a64a172be37701fb",
-      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolErrors.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "useLiteralContent": false,
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": ">=0.5.0",
-      "artifacts": {
-        "IUniswapV3PoolErrors": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3PoolErrors.sol\\IUniswapV3PoolErrors.json"
-        }
-      }
-    },
-    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol": {
-      "lastModificationDate": 1705164437762,
-      "contentHash": "7964b4a0c7ba595248460f74f8683252",
-      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "useLiteralContent": false,
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": ">=0.5.0",
-      "artifacts": {
-        "IUniswapV3PoolEvents": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3PoolEvents.sol\\IUniswapV3PoolEvents.json"
-        }
-      }
-    },
-    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol": {
-      "lastModificationDate": 1705164437762,
-      "contentHash": "6a1b3673618d33cd9897b2fab44b5421",
-      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "useLiteralContent": false,
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": ">=0.5.0",
-      "artifacts": {
-        "IUniswapV3PoolImmutables": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3PoolImmutables.sol\\IUniswapV3PoolImmutables.json"
-        }
-      }
-    },
-    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol": {
-      "lastModificationDate": 1705164437762,
-      "contentHash": "34da6322914eb22e1e5ed5d49f69e636",
-      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "useLiteralContent": false,
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": ">=0.5.0",
-      "artifacts": {
-        "IUniswapV3PoolOwnerActions": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3PoolOwnerActions.sol\\IUniswapV3PoolOwnerActions.json"
-        }
-      }
-    },
-    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol": {
-      "lastModificationDate": 1705164437762,
-      "contentHash": "52b9fa526adcb432c49b585642d25b8e",
-      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "useLiteralContent": false,
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": ">=0.5.0",
-      "artifacts": {
-        "IUniswapV3PoolState": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3PoolState.sol\\IUniswapV3PoolState.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "introspection\\IERC165.sol\\IERC165.json"
         }
       }
     },
@@ -609,7 +279,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -631,6 +301,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -641,7 +312,7 @@
       "versionRequirement": ">=0.7.5",
       "artifacts": {
         "IERC721Permit": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IERC721Permit.sol\\IERC721Permit.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IERC721Permit.sol\\IERC721Permit.json"
         }
       }
     },
@@ -653,7 +324,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -675,6 +346,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -692,7 +364,7 @@
       "versionRequirement": ">=0.7.5",
       "artifacts": {
         "INonfungiblePositionManager": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "INonfungiblePositionManager.sol\\INonfungiblePositionManager.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "INonfungiblePositionManager.sol\\INonfungiblePositionManager.json"
         }
       }
     },
@@ -704,7 +376,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -726,6 +398,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -733,7 +406,7 @@
       "versionRequirement": ">=0.5.0",
       "artifacts": {
         "IPeripheryImmutableState": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IPeripheryImmutableState.sol\\IPeripheryImmutableState.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IPeripheryImmutableState.sol\\IPeripheryImmutableState.json"
         }
       }
     },
@@ -745,7 +418,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -767,6 +440,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -774,7 +448,7 @@
       "versionRequirement": ">=0.7.5",
       "artifacts": {
         "IPeripheryPayments": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IPeripheryPayments.sol\\IPeripheryPayments.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IPeripheryPayments.sol\\IPeripheryPayments.json"
         }
       }
     },
@@ -786,7 +460,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -808,6 +482,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -815,7 +490,7 @@
       "versionRequirement": ">=0.7.5",
       "artifacts": {
         "IPoolInitializer": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IPoolInitializer.sol\\IPoolInitializer.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IPoolInitializer.sol\\IPoolInitializer.json"
         }
       }
     },
@@ -827,7 +502,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -849,6 +524,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -856,7 +532,7 @@
       "versionRequirement": ">=0.5.0",
       "artifacts": {
         "PoolAddress": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "PoolAddress.sol\\PoolAddress.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "PoolAddress.sol\\PoolAddress.json"
         }
       }
     },
@@ -868,7 +544,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -890,6 +566,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -897,7 +574,7 @@
       "versionRequirement": ">=0.5.0",
       "artifacts": {
         "DSTest": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "test.sol\\DSTest.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "test.sol\\DSTest.json"
         }
       }
     },
@@ -909,7 +586,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -931,6 +608,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -941,13 +619,13 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "CommonBase": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "Base.sol\\CommonBase.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "Base.sol\\CommonBase.json"
         },
         "ScriptBase": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "Base.sol\\ScriptBase.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "Base.sol\\ScriptBase.json"
         },
         "TestBase": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "Base.sol\\TestBase.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "Base.sol\\TestBase.json"
         }
       }
     },
@@ -959,7 +637,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -981,6 +659,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1004,7 +683,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "Script": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "Script.sol\\Script.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "Script.sol\\Script.json"
         }
       }
     },
@@ -1016,7 +695,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1038,6 +717,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1048,7 +728,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "StdAssertions": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdAssertions.sol\\StdAssertions.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "StdAssertions.sol\\StdAssertions.json"
         }
       }
     },
@@ -1060,7 +740,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1082,6 +762,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1091,7 +772,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "StdChains": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdChains.sol\\StdChains.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "StdChains.sol\\StdChains.json"
         }
       }
     },
@@ -1103,7 +784,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1125,6 +806,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1136,10 +818,10 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "StdCheats": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdCheats.sol\\StdCheats.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "StdCheats.sol\\StdCheats.json"
         },
         "StdCheatsSafe": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdCheats.sol\\StdCheatsSafe.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "StdCheats.sol\\StdCheatsSafe.json"
         }
       }
     },
@@ -1151,7 +833,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1173,6 +855,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1180,7 +863,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "stdError": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdError.sol\\stdError.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "StdError.sol\\stdError.json"
         }
       }
     },
@@ -1192,7 +875,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1214,6 +897,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1221,7 +905,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "StdInvariant": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdInvariant.sol\\StdInvariant.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "StdInvariant.sol\\StdInvariant.json"
         }
       }
     },
@@ -1233,7 +917,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1255,6 +939,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1264,7 +949,7 @@
       "versionRequirement": ">=0.6.0, <0.9.0",
       "artifacts": {
         "stdJson": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdJson.sol\\stdJson.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "StdJson.sol\\stdJson.json"
         }
       }
     },
@@ -1276,7 +961,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1298,6 +983,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1305,7 +991,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "stdMath": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdMath.sol\\stdMath.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "StdMath.sol\\stdMath.json"
         }
       }
     },
@@ -1317,7 +1003,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1339,6 +1025,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1348,10 +1035,10 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "stdStorage": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdStorage.sol\\stdStorage.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "StdStorage.sol\\stdStorage.json"
         },
         "stdStorageSafe": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdStorage.sol\\stdStorageSafe.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "StdStorage.sol\\stdStorageSafe.json"
         }
       }
     },
@@ -1363,7 +1050,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1385,6 +1072,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1394,7 +1082,7 @@
       "versionRequirement": ">=0.4.22, <0.9.0",
       "artifacts": {
         "StdStyle": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdStyle.sol\\StdStyle.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "StdStyle.sol\\StdStyle.json"
         }
       }
     },
@@ -1406,7 +1094,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1428,6 +1116,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1440,7 +1129,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "StdUtils": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "StdUtils.sol\\StdUtils.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "StdUtils.sol\\StdUtils.json"
         }
       }
     },
@@ -1452,7 +1141,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1474,6 +1163,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1501,7 +1191,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "Test": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "Test.sol\\Test.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "Test.sol\\Test.json"
         }
       }
     },
@@ -1513,7 +1203,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1535,6 +1225,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1542,10 +1233,10 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "Vm": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "Vm.sol\\Vm.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "Vm.sol\\Vm.json"
         },
         "VmSafe": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "Vm.sol\\VmSafe.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "Vm.sol\\VmSafe.json"
         }
       }
     },
@@ -1557,7 +1248,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1579,6 +1270,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1586,7 +1278,7 @@
       "versionRequirement": ">=0.4.22, <0.9.0",
       "artifacts": {
         "console": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "console.sol\\console.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "console.sol\\console.json"
         }
       }
     },
@@ -1598,7 +1290,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1620,6 +1312,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1627,7 +1320,7 @@
       "versionRequirement": ">=0.4.22, <0.9.0",
       "artifacts": {
         "console2": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "console2.sol\\console2.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "console2.sol\\console2.json"
         }
       }
     },
@@ -1639,7 +1332,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1661,6 +1354,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1668,7 +1362,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "IMulticall3": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IMulticall3.sol\\IMulticall3.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IMulticall3.sol\\IMulticall3.json"
         }
       }
     },
@@ -1680,7 +1374,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1702,6 +1396,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1709,7 +1404,7 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "MockERC20": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "MockERC20.sol\\MockERC20.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "MockERC20.sol\\MockERC20.json"
         }
       }
     },
@@ -1721,7 +1416,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1743,6 +1438,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1750,10 +1446,10 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "IERC721TokenReceiver": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "MockERC721.sol\\IERC721TokenReceiver.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "MockERC721.sol\\IERC721TokenReceiver.json"
         },
         "MockERC721": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "MockERC721.sol\\MockERC721.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "MockERC721.sol\\MockERC721.json"
         }
       }
     },
@@ -1765,7 +1461,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1787,6 +1483,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1794,7 +1491,1066 @@
       "versionRequirement": ">=0.6.2, <0.9.0",
       "artifacts": {
         "safeconsole": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "safeconsole.sol\\safeconsole.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "safeconsole.sol\\safeconsole.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1705155378077,
+      "contentHash": "f665fc4a91af3170f86727fc49cc091f",
+      "sourceName": "lib/openzeppelin-contracts/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Ownable": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "Ownable.sol\\Ownable.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol": {
+      "lastModificationDate": 1705155384387,
+      "contentHash": "42752f4c198029b7c09ae398a316fc59",
+      "sourceName": "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "IERC1155Errors": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "draft-IERC6093.sol\\IERC1155Errors.json"
+        },
+        "IERC20Errors": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "draft-IERC6093.sol\\IERC20Errors.json"
+        },
+        "IERC721Errors": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "draft-IERC6093.sol\\IERC721Errors.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1705155384397,
+      "contentHash": "c7c4b0042caa92b10171a186c669e43a",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "ERC20": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "ERC20.sol\\ERC20.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1705155384398,
+      "contentHash": "a9abad21a16aa28b1b14280743bce75c",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "IERC20": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IERC20.sol\\IERC20.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/ERC20Burnable.sol": {
+      "lastModificationDate": 1705155378142,
+      "contentHash": "d85f9dfd2aecd1d93e70f50e1d46aaab",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/ERC20Burnable.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+        "lib/openzeppelin-contracts\\contracts/token/ERC20/ERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "ERC20Burnable": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "ERC20Burnable.sol\\ERC20Burnable.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1705155384400,
+      "contentHash": "390b05f16136eda58b5b267e68818e48",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "IERC20Metadata": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IERC20Metadata.sol\\IERC20Metadata.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol": {
+      "lastModificationDate": 1705155384401,
+      "contentHash": "9aa49457e52db3acc0a319d1af131139",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC721/ERC721.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "ERC721": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "ERC721.sol\\ERC721.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1705155384401,
+      "contentHash": "e2de2406ac62088b6cb17bcd80d2050c",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "IERC721": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IERC721.sol\\IERC721.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol": {
+      "lastModificationDate": 1705155384402,
+      "contentHash": "4f2639905f6ace2cf6793d9e08b18ecd",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "IERC721Receiver": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IERC721Receiver.sol\\IERC721Receiver.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+      "lastModificationDate": 1705155378151,
+      "contentHash": "706cadca3af593679b544dbc4a9aedcc",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "IERC721Metadata": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IERC721Metadata.sol\\IERC721Metadata.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/token/ERC721/utils/ERC721Holder.sol": {
+      "lastModificationDate": 1705155378151,
+      "contentHash": "9163e06382c42e4b1c6bc301d82c3d78",
+      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC721/utils/ERC721Holder.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "ERC721Holder": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "ERC721Holder.sol\\ERC721Holder.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/Context.sol": {
+      "lastModificationDate": 1705155378153,
+      "contentHash": "2783b901218e982baedae531a748ed8d",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Context": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "Context.sol\\Context.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/Strings.sol": {
+      "lastModificationDate": 1705155378155,
+      "contentHash": "232a9f6be33f192fc1bf3871516f57fc",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Strings": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "Strings.sol\\Strings.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1705155384408,
+      "contentHash": "2eda65da6379d6cae75a10a53a332de6",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "ERC165": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "ERC165.sol\\ERC165.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1705155384409,
+      "contentHash": "e5ab9d1880e29adb92916789d4d033a6",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "IERC165": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IERC165.sol\\IERC165.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1705155384409,
+      "contentHash": "41bde2c74f0958f83169599b133a1f59",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "Math": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "Math.sol\\Math.json"
+        }
+      }
+    },
+    "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol": {
+      "lastModificationDate": 1705155378159,
+      "contentHash": "ae4e96244b968d38eb7a4902b7f86b2b",
+      "sourceName": "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "SignedMath": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "SignedMath.sol\\SignedMath.json"
+        }
+      }
+    },
+    "lib/v3-core/contracts/interfaces/IUniswapV3Pool.sol": {
+      "lastModificationDate": 1705163989709,
+      "contentHash": "448be68fe8d48001cb92e4c241b78629",
+      "sourceName": "lib/v3-core/contracts/interfaces/IUniswapV3Pool.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol"
+      ],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3Pool": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IUniswapV3Pool.sol\\IUniswapV3Pool.json"
+        }
+      }
+    },
+    "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol": {
+      "lastModificationDate": 1705163989712,
+      "contentHash": "dede1acb09c9ac66ac08e513ca1432d0",
+      "sourceName": "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3PoolActions": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IUniswapV3PoolActions.sol\\IUniswapV3PoolActions.json"
+        }
+      }
+    },
+    "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol": {
+      "lastModificationDate": 1705163989713,
+      "contentHash": "b69b49c1b2c28866166e09baae3db4ed",
+      "sourceName": "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3PoolDerivedState": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IUniswapV3PoolDerivedState.sol\\IUniswapV3PoolDerivedState.json"
+        }
+      }
+    },
+    "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol": {
+      "lastModificationDate": 1705163989714,
+      "contentHash": "7964b4a0c7ba595248460f74f8683252",
+      "sourceName": "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3PoolEvents": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IUniswapV3PoolEvents.sol\\IUniswapV3PoolEvents.json"
+        }
+      }
+    },
+    "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol": {
+      "lastModificationDate": 1705163989714,
+      "contentHash": "6a1b3673618d33cd9897b2fab44b5421",
+      "sourceName": "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3PoolImmutables": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IUniswapV3PoolImmutables.sol\\IUniswapV3PoolImmutables.json"
+        }
+      }
+    },
+    "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol": {
+      "lastModificationDate": 1705163989715,
+      "contentHash": "34da6322914eb22e1e5ed5d49f69e636",
+      "sourceName": "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3PoolOwnerActions": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IUniswapV3PoolOwnerActions.sol\\IUniswapV3PoolOwnerActions.json"
+        }
+      }
+    },
+    "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol": {
+      "lastModificationDate": 1705163989715,
+      "contentHash": "4eeaf6949c38e9890febadd5f9f38d05",
+      "sourceName": "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3PoolState": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IUniswapV3PoolState.sol\\IUniswapV3PoolState.json"
         }
       }
     },
@@ -1806,7 +2562,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1828,6 +2584,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1852,60 +2609,19 @@
       "versionRequirement": "^0.8.13",
       "artifacts": {
         "CounterScript": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "Counter.s.sol\\CounterScript.json"
-        }
-      }
-    },
-    "src/Counter.sol": {
-      "lastModificationDate": 1705152553001,
-      "contentHash": "ae6c800a2b4c57768024d6e9423d39e8",
-      "sourceName": "src/Counter.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "useLiteralContent": false,
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": "^0.8.13",
-      "artifacts": {
-        "Counter": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "Counter.sol\\Counter.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "Counter.s.sol\\CounterScript.json"
         }
       }
     },
     "src/LPMoney.sol": {
-      "lastModificationDate": 1705221802269,
-      "contentHash": "725ed602c063f57a5a51c47bd2471dcb",
+      "lastModificationDate": 1705245371477,
+      "contentHash": "8e22c0369b830471fb0c4e600c685fbe",
       "sourceName": "src/LPMoney.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1927,6 +2643,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1937,27 +2654,28 @@
         "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/token/ERC721/extensions/IERC721Enumerable.sol",
         "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/token/ERC721/extensions/IERC721Metadata.sol",
         "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
-        "lib/bunni-oracle/lib/v3-core\\contracts/interfaces/IUniswapV3Pool.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolErrors.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol",
         "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IERC721Permit.sol",
         "lib/bunni-oracle/lib/v3-periphery\\contracts/interfaces/INonfungiblePositionManager.sol",
         "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPeripheryImmutableState.sol",
         "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPeripheryPayments.sol",
         "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPoolInitializer.sol",
         "lib/bunni-oracle/lib/v3-periphery\\contracts/libraries/PoolAddress.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+        "lib/openzeppelin-contracts\\contracts/token/ERC721/utils/ERC721Holder.sol",
+        "lib/v3-core\\contracts/interfaces/IUniswapV3Pool.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol",
         "src\\interfaces\\IGhoToken.sol",
         "src\\interfaces\\ILPpriceOracle.sol"
       ],
       "versionRequirement": "^0.8.13",
       "artifacts": {
         "LPMoney": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "LPMoney.sol\\LPMoney.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "LPMoney.sol\\LPMoney.json"
         }
       }
     },
@@ -1969,7 +2687,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -1991,6 +2709,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -1998,7 +2717,7 @@
       "versionRequirement": "^0.8.0",
       "artifacts": {
         "IGhoFacilitator": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IGhoFacilitator.sol\\IGhoFacilitator.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IGhoFacilitator.sol\\IGhoFacilitator.json"
         }
       }
     },
@@ -2010,7 +2729,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -2032,6 +2751,7 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
@@ -2042,7 +2762,7 @@
       "versionRequirement": "^0.8.0",
       "artifacts": {
         "IGhoToken": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IGhoToken.sol\\IGhoToken.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "IGhoToken.sol\\IGhoToken.json"
         }
       }
     },
@@ -2054,7 +2774,7 @@
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -2076,35 +2796,35 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
       "imports": [
-        "lib/bunni-oracle/lib/v3-core\\contracts/interfaces/IUniswapV3Pool.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolErrors.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol",
-        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol"
+        "lib/v3-core\\contracts/interfaces/IUniswapV3Pool.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol"
       ],
       "versionRequirement": "^0.8.13",
       "artifacts": {
         "ILPpriceOracle": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "ILPpriceOracle.sol\\ILPpriceOracle.json"
+          "0.8.20+commit.a1b79de6.Windows.msvc": "ILPpriceOracle.sol\\ILPpriceOracle.json"
         }
       }
     },
-    "test/Counter.t.sol": {
-      "lastModificationDate": 1705154354611,
-      "contentHash": "cb58204d005faa2a5dfcf152c560595f",
-      "sourceName": "test/Counter.t.sol",
+    "test/LPMoney.t.sol": {
+      "lastModificationDate": 1705244610844,
+      "contentHash": "12a78f872da18e3615d0de7654de05b5",
+      "sourceName": "test/LPMoney.t.sol",
       "solcConfig": {
         "settings": {
           "optimizer": {
             "enabled": true,
-            "runs": 200
+            "runs": 1000000
           },
           "metadata": {
             "useLiteralContent": false,
@@ -2126,10 +2846,23 @@
             }
           },
           "evmVersion": "paris",
+          "viaIR": true,
           "libraries": {}
         }
       },
       "imports": [
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/access/IAccessControl.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/token/ERC20/IERC20.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/token/ERC721/extensions/IERC721Enumerable.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IERC721Permit.sol",
+        "lib/bunni-oracle/lib/v3-periphery\\contracts/interfaces/INonfungiblePositionManager.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPeripheryImmutableState.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPeripheryPayments.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPoolInitializer.sol",
+        "lib/bunni-oracle/lib/v3-periphery\\contracts/libraries/PoolAddress.sol",
         "lib/forge-std/lib/ds-test/src\\test.sol",
         "lib/forge-std/src/Base.sol",
         "lib/forge-std/src/StdAssertions.sol",
@@ -2150,12 +2883,209 @@
         "lib/forge-std/src/mocks/MockERC20.sol",
         "lib/forge-std/src/mocks/MockERC721.sol",
         "lib/forge-std/src/safeconsole.sol",
-        "src\\Counter.sol"
+        "lib/openzeppelin-contracts\\contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+        "lib/openzeppelin-contracts\\contracts/token/ERC20/ERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts\\contracts/token/ERC20/extensions/ERC20Burnable.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts\\contracts/token/ERC721/ERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/openzeppelin-contracts\\contracts/token/ERC721/utils/ERC721Holder.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol",
+        "lib/v3-core\\contracts/interfaces/IUniswapV3Pool.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol",
+        "src\\LPMoney.sol",
+        "src\\interfaces\\IGhoToken.sol",
+        "src\\interfaces\\ILPpriceOracle.sol",
+        "test\\mocks\\GhoMock.sol",
+        "test\\mocks\\LpCollectionMock.sol",
+        "test\\mocks\\PriceOracleMock.sol"
       ],
       "versionRequirement": "^0.8.13",
       "artifacts": {
-        "CounterTest": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "Counter.t.sol\\CounterTest.json"
+        "LPMoneyTest": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "LPMoney.t.sol\\LPMoneyTest.json"
+        }
+      }
+    },
+    "test/mocks/GhoMock.sol": {
+      "lastModificationDate": 1705238927116,
+      "contentHash": "e5a805df7aa40512c1d6b9f291b2dc75",
+      "sourceName": "test/mocks/GhoMock.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/access/IAccessControl.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+        "lib/openzeppelin-contracts\\contracts/token/ERC20/ERC20.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+        "lib/openzeppelin-contracts\\contracts/token/ERC20/extensions/ERC20Burnable.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "src\\interfaces\\IGhoToken.sol"
+      ],
+      "versionRequirement": "^0.8.20",
+      "artifacts": {
+        "GhoMock": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "GhoMock.sol\\GhoMock.json"
+        }
+      }
+    },
+    "test/mocks/LpCollectionMock.sol": {
+      "lastModificationDate": 1705240535778,
+      "contentHash": "31216b1c81430549b2244802ab29e589",
+      "sourceName": "test/mocks/LpCollectionMock.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/token/ERC721/extensions/IERC721Enumerable.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IERC721Permit.sol",
+        "lib/bunni-oracle/lib/v3-periphery\\contracts/interfaces/INonfungiblePositionManager.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPeripheryImmutableState.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPeripheryPayments.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPoolInitializer.sol",
+        "lib/bunni-oracle/lib/v3-periphery\\contracts/libraries/PoolAddress.sol",
+        "lib/openzeppelin-contracts\\contracts/access/Ownable.sol",
+        "lib/openzeppelin-contracts/contracts/interfaces/draft-IERC6093.sol",
+        "lib/openzeppelin-contracts\\contracts/token/ERC721/ERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/IERC721Receiver.sol",
+        "lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Context.sol",
+        "lib/openzeppelin-contracts/contracts/utils/Strings.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/ERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/Math.sol",
+        "lib/openzeppelin-contracts/contracts/utils/math/SignedMath.sol"
+      ],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "LpCollectionMock": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "LpCollectionMock.sol\\LpCollectionMock.json"
+        }
+      }
+    },
+    "test/mocks/PriceOracleMock.sol": {
+      "lastModificationDate": 1705231133733,
+      "contentHash": "0ba460547f95b00a91f082e027b7c5e1",
+      "sourceName": "test/mocks/PriceOracleMock.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 1000000
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "viaIR": true,
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/v3-core\\contracts/interfaces/IUniswapV3Pool.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol",
+        "lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol",
+        "src\\interfaces\\ILPpriceOracle.sol"
+      ],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "PriceOracleMock": {
+          "0.8.20+commit.a1b79de6.Windows.msvc": "PriceOracleMock.sol\\PriceOracleMock.json"
         }
       }
     }
