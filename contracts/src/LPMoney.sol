@@ -35,13 +35,19 @@ contract LPMoney {
     }
 
     function liquidate(uint collateralNftId) public {
-        
+        uint currentValue = getPositionWorth(collateralNftId);
+        uint amountMinted = _ownedTokensIndex[collateralNftId].amountMinted;
+        uint liquidateThreshold = amountMinted * 11000 / 10000;
+        IGhoToken(ghoTokenAddress).burn(msg.sender, amountMinted);
+
+        require(currentValue <= liquidateThreshold, "LPMoney: healthy position cannot be liquidated");
+        nftPositionManager.transferFrom(address(this), msg.sender, collateralNftId);
     }
 
     function mint(uint collateralNftId) public {
         nftPositionManager.transferFrom(msg.sender, address(this), collateralNftId);
         
-        uint amount = getMintAmount(collateralNftId);
+        uint amount = getPositionWorth(collateralNftId) * 8000 / 10000;
         _ownedTokens[msg.sender].push(collateralNftId);
         _ownedTokensIndex[collateralNftId] = PositionInfo(uint64(_ownedTokens[msg.sender].length - 1), uint192(amount));
 
@@ -55,7 +61,7 @@ contract LPMoney {
         ));
     }
 
-    function getMintAmount(uint nftId) public view returns (uint){
+    function getPositionWorth(uint nftId) public view returns (uint){
         (uint96 nonce,
         address operator,
         address token0,
@@ -69,15 +75,13 @@ contract LPMoney {
         uint128 tokensOwed0,
         uint128 tokensOwed1) = nftPositionManager.positions(nftId);
 
-        uint valueUSD = priceOracle.quoteUSD(
+        return priceOracle.quoteUSD(
             getUniswapPool(token0, token1, fee),
             tickLower,
             tickUpper,
             liquidity,
-            40,
+            120,
             40
         );
-
-        return valueUSD * 8 / 10;
     }
 }
