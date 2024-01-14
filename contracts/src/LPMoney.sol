@@ -2,46 +2,60 @@
 pragma solidity ^0.8.13;
 
 import {IGhoToken} from './interfaces/IGhoToken.sol';
-import {ERC20} from '@openzeppelin/contracts/token/ERC20/ERC20.sol';
-import {IUniswapV3Pool} from "@uniswap/v3-core/contracts/interfaces/IUniswapV3Factory.sol";
+import {IUniswapV3Pool} from "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol";
 import {INonfungiblePositionManager} from "@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol";
 import {ILPpriceOracle} from './interfaces/ILPpriceOracle.sol';
 import {PoolAddress} from "@uniswap/v3-periphery/contracts/libraries/PoolAddress.sol";
 
 contract LPMoney {
-    uint public number;
-    address public uniswapFactory;
-    INonfungiblePositionManager public nftPositionManager;
 
-    mapping(address owner => uint[]) private _ownedTokens;
-    mapping(uint tokenId => uint) private _ownedTokensIndex;
-
-    function setNumber(uint256 newNumber) public {
-        number = newNumber;
+    struct PositionInfo{
+        uint64 index;
+        uint192 amountMinted; 
     }
 
-    function liquidate() public {
-        number++;
+    address private ghoTokenAddress;
+    address private uniswapFactory;
+    INonfungiblePositionManager private nftPositionManager;
+    ILPpriceOracle private priceOracle;
+
+    mapping(address owner => uint[]) private _ownedTokens;
+    mapping(uint tokenId => PositionInfo) private _ownedTokensIndex;
+
+    constructor(
+        address _uniswapFactory, 
+        address _ghoTokenAddress, 
+        INonfungiblePositionManager _nftPositionManager, 
+        ILPpriceOracle _lpPriceOracle
+    ) {
+        uniswapFactory = _uniswapFactory;
+        ghoTokenAddress = _ghoTokenAddress;
+        nftPositionManager = _nftPositionManager;
+        priceOracle = _lpPriceOracle;
+    }
+
+    function liquidate(uint collateralNftId) public {
+        
     }
 
     function mint(uint collateralNftId) public {
-        nftPositionManager.transferFrom(msg.sender, address(this), nftId);
-        _ownedTokens[msg.sender].push(nftId);
-        _ownedTokensIndex[nftId] = _ownedTokens[msg.sender].length - 1;
+        nftPositionManager.transferFrom(msg.sender, address(this), collateralNftId);
         
-        uint amount = getMintAmount(nftId);
+        uint amount = getMintAmount(collateralNftId);
+        _ownedTokens[msg.sender].push(collateralNftId);
+        _ownedTokensIndex[collateralNftId] = PositionInfo(uint64(_ownedTokens[msg.sender].length - 1), uint192(amount));
 
-        IGhoToken(_to).mint(msg.sender, amount);
+        IGhoToken(ghoTokenAddress).mint(msg.sender, amount);
     }
 
-    function getUniswapPool(address token0, address token1, uint24 fee) public view returns (address) {
-        return PoolAddress.computeAddress(
+    function getUniswapPool(address token0, address token1, uint24 fee) public view returns (IUniswapV3Pool) {
+        return IUniswapV3Pool(PoolAddress.computeAddress(
             uniswapFactory,
             PoolAddress.getPoolKey(token0, token1, fee)
-        );
+        ));
     }
 
-    function getMintAmount(uint nftId){
+    function getMintAmount(uint nftId) public view returns (uint){
         (uint96 nonce,
         address operator,
         address token0,
@@ -55,19 +69,13 @@ contract LPMoney {
         uint128 tokensOwed0,
         uint128 tokensOwed1) = nftPositionManager.positions(nftId);
 
-        uint256 token0Base = ERC20(token0).decimals();
-        uint256 token1Base = ERC20(token1).decimals();
-        uint256 uniV3OracleSecondsAgo = 0;
-        uint256 chainlinkPriceMaxAgeSecs = 0;
-        address uniswapPool = getUniswapPool(token0, token1, fee);
-
-        uint256 valueUSD = ILPpriceOracle.quoteUSD(
-            uniswapPool,
+        uint valueUSD = priceOracle.quoteUSD(
+            getUniswapPool(token0, token1, fee),
             tickLower,
             tickUpper,
             liquidity,
-            uniV3OracleSecondsAgo,
-            chainlinkPriceMaxAgeSecs
+            40,
+            40
         );
 
         return valueUSD * 8 / 10;

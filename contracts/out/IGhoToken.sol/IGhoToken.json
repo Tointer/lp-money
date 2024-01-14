@@ -682,7 +682,7 @@
     "transfer(address,uint256)": "a9059cbb",
     "transferFrom(address,address,uint256)": "23b872dd"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"AccessControlBadConfirmation\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"neededRole\",\"type\":\"bytes32\"}],\"name\":\"AccessControlUnauthorizedAccount\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"facilitatorAddress\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"label\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bucketCapacity\",\"type\":\"uint256\"}],\"name\":\"FacilitatorAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"facilitatorAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"oldCapacity\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newCapacity\",\"type\":\"uint256\"}],\"name\":\"FacilitatorBucketCapacityUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"facilitatorAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"oldLevel\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newLevel\",\"type\":\"uint256\"}],\"name\":\"FacilitatorBucketLevelUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"facilitatorAddress\",\"type\":\"address\"}],\"name\":\"FacilitatorRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"BUCKET_MANAGER_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"FACILITATOR_MANAGER_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"facilitatorAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"facilitatorLabel\",\"type\":\"string\"},{\"internalType\":\"uint128\",\"name\":\"bucketCapacity\",\"type\":\"uint128\"}],\"name\":\"addFacilitator\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"facilitator\",\"type\":\"address\"}],\"name\":\"getFacilitator\",\"outputs\":[{\"components\":[{\"internalType\":\"uint128\",\"name\":\"bucketCapacity\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"bucketLevel\",\"type\":\"uint128\"},{\"internalType\":\"string\",\"name\":\"label\",\"type\":\"string\"}],\"internalType\":\"struct IGhoToken.Facilitator\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"facilitator\",\"type\":\"address\"}],\"name\":\"getFacilitatorBucket\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getFacilitatorsList\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"grantRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"hasRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"facilitatorAddress\",\"type\":\"address\"}],\"name\":\"removeFacilitator\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"callerConfirmation\",\"type\":\"address\"}],\"name\":\"renounceRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"revokeRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"facilitator\",\"type\":\"address\"},{\"internalType\":\"uint128\",\"name\":\"newCapacity\",\"type\":\"uint128\"}],\"name\":\"setFacilitatorBucketCapacity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Aave\",\"errors\":{\"AccessControlBadConfirmation()\":[{\"details\":\"The caller of a function is not the expected one. NOTE: Don't confuse with {AccessControlUnauthorizedAccount}.\"}],\"AccessControlUnauthorizedAccount(address,bytes32)\":[{\"details\":\"The `account` is missing a role.\"}]},\"events\":{\"Approval(address,address,uint256)\":{\"details\":\"Emitted when the allowance of a `spender` for an `owner` is set by a call to {approve}. `value` is the new allowance.\"},\"FacilitatorAdded(address,bytes32,uint256)\":{\"details\":\"Emitted when a new facilitator is added\",\"params\":{\"bucketCapacity\":\"The initial capacity of the facilitator's bucket\",\"facilitatorAddress\":\"The address of the new facilitator\",\"label\":\"A hashed human readable identifier for the facilitator\"}},\"FacilitatorBucketCapacityUpdated(address,uint256,uint256)\":{\"details\":\"Emitted when the bucket capacity of a facilitator is updated\",\"params\":{\"facilitatorAddress\":\"The address of the facilitator whose bucket capacity is being changed\",\"newCapacity\":\"The new capacity of the bucket\",\"oldCapacity\":\"The old capacity of the bucket\"}},\"FacilitatorBucketLevelUpdated(address,uint256,uint256)\":{\"details\":\"Emitted when the bucket level changed\",\"params\":{\"facilitatorAddress\":\"The address of the facilitator whose bucket level is being changed\",\"newLevel\":\"The new level of the bucket\",\"oldLevel\":\"The old level of the bucket\"}},\"FacilitatorRemoved(address)\":{\"details\":\"Emitted when a facilitator is removed\",\"params\":{\"facilitatorAddress\":\"The address of the removed facilitator\"}},\"RoleAdminChanged(bytes32,bytes32,bytes32)\":{\"details\":\"Emitted when `newAdminRole` is set as ``role``'s admin role, replacing `previousAdminRole` `DEFAULT_ADMIN_ROLE` is the starting admin for all roles, despite {RoleAdminChanged} not being emitted signaling this.\"},\"RoleGranted(bytes32,address,address)\":{\"details\":\"Emitted when `account` is granted `role`. `sender` is the account that originated the contract call, an admin role bearer except when using {AccessControl-_setupRole}.\"},\"RoleRevoked(bytes32,address,address)\":{\"details\":\"Emitted when `account` is revoked `role`. `sender` is the account that originated the contract call:   - if using `revokeRole`, it is the admin role bearer   - if using `renounceRole`, it is the role bearer (i.e. `account`)\"},\"Transfer(address,address,uint256)\":{\"details\":\"Emitted when `value` tokens are moved from one account (`from`) to another (`to`). Note that `value` may be zero.\"}},\"kind\":\"dev\",\"methods\":{\"BUCKET_MANAGER_ROLE()\":{\"returns\":{\"_0\":\"The bytes32 id hash of the BucketManager role\"}},\"FACILITATOR_MANAGER_ROLE()\":{\"returns\":{\"_0\":\"The bytes32 id hash of the FacilitatorManager role\"}},\"addFacilitator(address,string,uint128)\":{\"details\":\"Only accounts with `FACILITATOR_MANAGER_ROLE` role can call this function\",\"params\":{\"bucketCapacity\":\"The upward limit of GHO can be minted by the facilitator\",\"facilitatorAddress\":\"The address of the facilitator to add\",\"facilitatorLabel\":\"A human readable identifier for the facilitator\"}},\"allowance(address,address)\":{\"details\":\"Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called.\"},\"approve(address,uint256)\":{\"details\":\"Sets a `value` amount of tokens as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event.\"},\"balanceOf(address)\":{\"details\":\"Returns the value of tokens owned by `account`.\"},\"burn(uint256)\":{\"details\":\"Only active facilitators (bucket level > 0) can burn.The bucket level is decreased upon burning.\",\"params\":{\"amount\":\"The amount to burn\"}},\"getFacilitator(address)\":{\"params\":{\"facilitator\":\"The address of the facilitator\"},\"returns\":{\"_0\":\"The facilitator configuration\"}},\"getFacilitatorBucket(address)\":{\"params\":{\"facilitator\":\"The address of the facilitator\"},\"returns\":{\"_0\":\"The capacity of the facilitator's bucket\",\"_1\":\"The level of the facilitator's bucket\"}},\"getFacilitatorsList()\":{\"returns\":{\"_0\":\"The list of the facilitators addresses\"}},\"getRoleAdmin(bytes32)\":{\"details\":\"Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {AccessControl-_setRoleAdmin}.\"},\"grantRole(bytes32,address)\":{\"details\":\"Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.\"},\"hasRole(bytes32,address)\":{\"details\":\"Returns `true` if `account` has been granted `role`.\"},\"mint(address,uint256)\":{\"details\":\"Only facilitators with enough bucket capacity available can mint.The bucket level is increased upon minting.\",\"params\":{\"account\":\"The address receiving the GHO tokens\",\"amount\":\"The amount to mint\"}},\"removeFacilitator(address)\":{\"details\":\"Only accounts with `FACILITATOR_MANAGER_ROLE` role can call this function\",\"params\":{\"facilitatorAddress\":\"The address of the facilitator to remove\"}},\"renounceRole(bytes32,address)\":{\"details\":\"Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `callerConfirmation`.\"},\"revokeRole(bytes32,address)\":{\"details\":\"Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.\"},\"setFacilitatorBucketCapacity(address,uint128)\":{\"details\":\"Only accounts with `BUCKET_MANAGER_ROLE` role can call this function\",\"params\":{\"facilitator\":\"The address of the facilitator\",\"newCapacity\":\"The new capacity of the bucket\"}},\"totalSupply()\":{\"details\":\"Returns the value of tokens in existence.\"},\"transfer(address,uint256)\":{\"details\":\"Moves a `value` amount of tokens from the caller's account to `to`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"Moves a `value` amount of tokens from `from` to `to` using the allowance mechanism. `value` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event.\"}},\"title\":\"IGhoToken\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"BUCKET_MANAGER_ROLE()\":{\"notice\":\"Returns the identifier of the Bucket Manager Role\"},\"FACILITATOR_MANAGER_ROLE()\":{\"notice\":\"Returns the identifier of the Facilitator Manager Role\"},\"addFacilitator(address,string,uint128)\":{\"notice\":\"Add the facilitator passed with the parameters to the facilitators list.\"},\"burn(uint256)\":{\"notice\":\"Burns the requested amount of tokens from the account address.\"},\"getFacilitator(address)\":{\"notice\":\"Returns the facilitator data\"},\"getFacilitatorBucket(address)\":{\"notice\":\"Returns the bucket configuration of the facilitator\"},\"getFacilitatorsList()\":{\"notice\":\"Returns the list of the addresses of the active facilitator\"},\"mint(address,uint256)\":{\"notice\":\"Mints the requested amount of tokens to the account address.\"},\"removeFacilitator(address)\":{\"notice\":\"Remove the facilitator from the facilitators list.\"},\"setFacilitatorBucketCapacity(address,uint128)\":{\"notice\":\"Set the bucket capacity of the facilitator.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/IGhoToken.sol\":\"IGhoToken\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/access/IAccessControl.sol\":{\"keccak256\":\"0x14b9ea8699b0b5dec9520ced4da0807d053375c35f2530625a2745c23b7654af\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://97fc37af81eff2dc7f6b30cd3b51df0b9720a46bb961748434ee2c3643488569\",\"dweb:/ipfs/QmcMyGPigsnsjJGaLa3pDWyBeK118HuoVHY3JkiERCr5Ce\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x1c15854d415493331ff06ef9b0899f81dc6960189fa86cfd1b29c4374cc336a3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5cb41bc9b9e1f5617d8e826c07fb21ecf986f70b4b5b395d6ecf9c5eb9f1a204\",\"dweb:/ipfs/QmNvJhvpJE8b3nyz7RaMCSPhfbmzj1TLuL3a7NkS9AHkGJ\"]},\"src/interfaces/IGhoToken.sol\":{\"keccak256\":\"0x8216150c2d26981b7ea99af589592495bdd815d43e4059293222579df8feadb6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d30c8ff709dc8b2121757d72c5f6f52d85259b2cb2a2929f87a40af7d67c24fa\",\"dweb:/ipfs/QmUk8zcJKeUbrLfG99y6nyiX6Y3DNuTpp9f7ccciMqeKEM\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.21+commit.d9974bed\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"inputs\":[],\"name\":\"AccessControlBadConfirmation\",\"type\":\"error\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"bytes32\",\"name\":\"neededRole\",\"type\":\"bytes32\"}],\"name\":\"AccessControlUnauthorizedAccount\",\"type\":\"error\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Approval\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"facilitatorAddress\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"label\",\"type\":\"bytes32\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"bucketCapacity\",\"type\":\"uint256\"}],\"name\":\"FacilitatorAdded\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"facilitatorAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"oldCapacity\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newCapacity\",\"type\":\"uint256\"}],\"name\":\"FacilitatorBucketCapacityUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"facilitatorAddress\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"oldLevel\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"newLevel\",\"type\":\"uint256\"}],\"name\":\"FacilitatorBucketLevelUpdated\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"facilitatorAddress\",\"type\":\"address\"}],\"name\":\"FacilitatorRemoved\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"previousAdminRole\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"newAdminRole\",\"type\":\"bytes32\"}],\"name\":\"RoleAdminChanged\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleGranted\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"sender\",\"type\":\"address\"}],\"name\":\"RoleRevoked\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":true,\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"indexed\":true,\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"Transfer\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"BUCKET_MANAGER_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"FACILITATOR_MANAGER_ROLE\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"pure\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"facilitatorAddress\",\"type\":\"address\"},{\"internalType\":\"string\",\"name\":\"facilitatorLabel\",\"type\":\"string\"},{\"internalType\":\"uint128\",\"name\":\"bucketCapacity\",\"type\":\"uint128\"}],\"name\":\"addFacilitator\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"owner\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"}],\"name\":\"allowance\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"spender\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"approve\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"balanceOf\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"burn\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"facilitator\",\"type\":\"address\"}],\"name\":\"getFacilitator\",\"outputs\":[{\"components\":[{\"internalType\":\"uint128\",\"name\":\"bucketCapacity\",\"type\":\"uint128\"},{\"internalType\":\"uint128\",\"name\":\"bucketLevel\",\"type\":\"uint128\"},{\"internalType\":\"string\",\"name\":\"label\",\"type\":\"string\"}],\"internalType\":\"struct IGhoToken.Facilitator\",\"name\":\"\",\"type\":\"tuple\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"facilitator\",\"type\":\"address\"}],\"name\":\"getFacilitatorBucket\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"},{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"getFacilitatorsList\",\"outputs\":[{\"internalType\":\"address[]\",\"name\":\"\",\"type\":\"address[]\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"}],\"name\":\"getRoleAdmin\",\"outputs\":[{\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"grantRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"hasRole\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"amount\",\"type\":\"uint256\"}],\"name\":\"mint\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"facilitatorAddress\",\"type\":\"address\"}],\"name\":\"removeFacilitator\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"callerConfirmation\",\"type\":\"address\"}],\"name\":\"renounceRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"bytes32\",\"name\":\"role\",\"type\":\"bytes32\"},{\"internalType\":\"address\",\"name\":\"account\",\"type\":\"address\"}],\"name\":\"revokeRole\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"facilitator\",\"type\":\"address\"},{\"internalType\":\"uint128\",\"name\":\"newCapacity\",\"type\":\"uint128\"}],\"name\":\"setFacilitatorBucketCapacity\",\"outputs\":[],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"totalSupply\",\"outputs\":[{\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transfer\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"inputs\":[{\"internalType\":\"address\",\"name\":\"from\",\"type\":\"address\"},{\"internalType\":\"address\",\"name\":\"to\",\"type\":\"address\"},{\"internalType\":\"uint256\",\"name\":\"value\",\"type\":\"uint256\"}],\"name\":\"transferFrom\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"author\":\"Aave\",\"errors\":{\"AccessControlBadConfirmation()\":[{\"details\":\"The caller of a function is not the expected one. NOTE: Don't confuse with {AccessControlUnauthorizedAccount}.\"}],\"AccessControlUnauthorizedAccount(address,bytes32)\":[{\"details\":\"The `account` is missing a role.\"}]},\"events\":{\"Approval(address,address,uint256)\":{\"details\":\"Emitted when the allowance of a `spender` for an `owner` is set by a call to {approve}. `value` is the new allowance.\"},\"FacilitatorAdded(address,bytes32,uint256)\":{\"details\":\"Emitted when a new facilitator is added\",\"params\":{\"bucketCapacity\":\"The initial capacity of the facilitator's bucket\",\"facilitatorAddress\":\"The address of the new facilitator\",\"label\":\"A hashed human readable identifier for the facilitator\"}},\"FacilitatorBucketCapacityUpdated(address,uint256,uint256)\":{\"details\":\"Emitted when the bucket capacity of a facilitator is updated\",\"params\":{\"facilitatorAddress\":\"The address of the facilitator whose bucket capacity is being changed\",\"newCapacity\":\"The new capacity of the bucket\",\"oldCapacity\":\"The old capacity of the bucket\"}},\"FacilitatorBucketLevelUpdated(address,uint256,uint256)\":{\"details\":\"Emitted when the bucket level changed\",\"params\":{\"facilitatorAddress\":\"The address of the facilitator whose bucket level is being changed\",\"newLevel\":\"The new level of the bucket\",\"oldLevel\":\"The old level of the bucket\"}},\"FacilitatorRemoved(address)\":{\"details\":\"Emitted when a facilitator is removed\",\"params\":{\"facilitatorAddress\":\"The address of the removed facilitator\"}},\"RoleAdminChanged(bytes32,bytes32,bytes32)\":{\"details\":\"Emitted when `newAdminRole` is set as ``role``'s admin role, replacing `previousAdminRole` `DEFAULT_ADMIN_ROLE` is the starting admin for all roles, despite {RoleAdminChanged} not being emitted signaling this.\"},\"RoleGranted(bytes32,address,address)\":{\"details\":\"Emitted when `account` is granted `role`. `sender` is the account that originated the contract call, an admin role bearer except when using {AccessControl-_setupRole}.\"},\"RoleRevoked(bytes32,address,address)\":{\"details\":\"Emitted when `account` is revoked `role`. `sender` is the account that originated the contract call:   - if using `revokeRole`, it is the admin role bearer   - if using `renounceRole`, it is the role bearer (i.e. `account`)\"},\"Transfer(address,address,uint256)\":{\"details\":\"Emitted when `value` tokens are moved from one account (`from`) to another (`to`). Note that `value` may be zero.\"}},\"kind\":\"dev\",\"methods\":{\"BUCKET_MANAGER_ROLE()\":{\"returns\":{\"_0\":\"The bytes32 id hash of the BucketManager role\"}},\"FACILITATOR_MANAGER_ROLE()\":{\"returns\":{\"_0\":\"The bytes32 id hash of the FacilitatorManager role\"}},\"addFacilitator(address,string,uint128)\":{\"details\":\"Only accounts with `FACILITATOR_MANAGER_ROLE` role can call this function\",\"params\":{\"bucketCapacity\":\"The upward limit of GHO can be minted by the facilitator\",\"facilitatorAddress\":\"The address of the facilitator to add\",\"facilitatorLabel\":\"A human readable identifier for the facilitator\"}},\"allowance(address,address)\":{\"details\":\"Returns the remaining number of tokens that `spender` will be allowed to spend on behalf of `owner` through {transferFrom}. This is zero by default. This value changes when {approve} or {transferFrom} are called.\"},\"approve(address,uint256)\":{\"details\":\"Sets a `value` amount of tokens as the allowance of `spender` over the caller's tokens. Returns a boolean value indicating whether the operation succeeded. IMPORTANT: Beware that changing an allowance with this method brings the risk that someone may use both the old and the new allowance by unfortunate transaction ordering. One possible solution to mitigate this race condition is to first reduce the spender's allowance to 0 and set the desired value afterwards: https://github.com/ethereum/EIPs/issues/20#issuecomment-263524729 Emits an {Approval} event.\"},\"balanceOf(address)\":{\"details\":\"Returns the value of tokens owned by `account`.\"},\"burn(uint256)\":{\"details\":\"Only active facilitators (bucket level > 0) can burn.The bucket level is decreased upon burning.\",\"params\":{\"amount\":\"The amount to burn\"}},\"getFacilitator(address)\":{\"params\":{\"facilitator\":\"The address of the facilitator\"},\"returns\":{\"_0\":\"The facilitator configuration\"}},\"getFacilitatorBucket(address)\":{\"params\":{\"facilitator\":\"The address of the facilitator\"},\"returns\":{\"_0\":\"The capacity of the facilitator's bucket\",\"_1\":\"The level of the facilitator's bucket\"}},\"getFacilitatorsList()\":{\"returns\":{\"_0\":\"The list of the facilitators addresses\"}},\"getRoleAdmin(bytes32)\":{\"details\":\"Returns the admin role that controls `role`. See {grantRole} and {revokeRole}. To change a role's admin, use {AccessControl-_setRoleAdmin}.\"},\"grantRole(bytes32,address)\":{\"details\":\"Grants `role` to `account`. If `account` had not been already granted `role`, emits a {RoleGranted} event. Requirements: - the caller must have ``role``'s admin role.\"},\"hasRole(bytes32,address)\":{\"details\":\"Returns `true` if `account` has been granted `role`.\"},\"mint(address,uint256)\":{\"details\":\"Only facilitators with enough bucket capacity available can mint.The bucket level is increased upon minting.\",\"params\":{\"account\":\"The address receiving the GHO tokens\",\"amount\":\"The amount to mint\"}},\"removeFacilitator(address)\":{\"details\":\"Only accounts with `FACILITATOR_MANAGER_ROLE` role can call this function\",\"params\":{\"facilitatorAddress\":\"The address of the facilitator to remove\"}},\"renounceRole(bytes32,address)\":{\"details\":\"Revokes `role` from the calling account. Roles are often managed via {grantRole} and {revokeRole}: this function's purpose is to provide a mechanism for accounts to lose their privileges if they are compromised (such as when a trusted device is misplaced). If the calling account had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must be `callerConfirmation`.\"},\"revokeRole(bytes32,address)\":{\"details\":\"Revokes `role` from `account`. If `account` had been granted `role`, emits a {RoleRevoked} event. Requirements: - the caller must have ``role``'s admin role.\"},\"setFacilitatorBucketCapacity(address,uint128)\":{\"details\":\"Only accounts with `BUCKET_MANAGER_ROLE` role can call this function\",\"params\":{\"facilitator\":\"The address of the facilitator\",\"newCapacity\":\"The new capacity of the bucket\"}},\"totalSupply()\":{\"details\":\"Returns the value of tokens in existence.\"},\"transfer(address,uint256)\":{\"details\":\"Moves a `value` amount of tokens from the caller's account to `to`. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event.\"},\"transferFrom(address,address,uint256)\":{\"details\":\"Moves a `value` amount of tokens from `from` to `to` using the allowance mechanism. `value` is then deducted from the caller's allowance. Returns a boolean value indicating whether the operation succeeded. Emits a {Transfer} event.\"}},\"title\":\"IGhoToken\",\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{\"BUCKET_MANAGER_ROLE()\":{\"notice\":\"Returns the identifier of the Bucket Manager Role\"},\"FACILITATOR_MANAGER_ROLE()\":{\"notice\":\"Returns the identifier of the Facilitator Manager Role\"},\"addFacilitator(address,string,uint128)\":{\"notice\":\"Add the facilitator passed with the parameters to the facilitators list.\"},\"burn(uint256)\":{\"notice\":\"Burns the requested amount of tokens from the account address.\"},\"getFacilitator(address)\":{\"notice\":\"Returns the facilitator data\"},\"getFacilitatorBucket(address)\":{\"notice\":\"Returns the bucket configuration of the facilitator\"},\"getFacilitatorsList()\":{\"notice\":\"Returns the list of the addresses of the active facilitator\"},\"mint(address,uint256)\":{\"notice\":\"Mints the requested amount of tokens to the account address.\"},\"removeFacilitator(address)\":{\"notice\":\"Remove the facilitator from the facilitators list.\"},\"setFacilitatorBucketCapacity(address,uint128)\":{\"notice\":\"Set the bucket capacity of the facilitator.\"}},\"version\":1}},\"settings\":{\"compilationTarget\":{\"src/interfaces/IGhoToken.sol\":\"IGhoToken\"},\"evmVersion\":\"paris\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":@openzeppelin/=lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/\",\":@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/\",\":@uniswap/v2-core/=lib/bunni-oracle/lib/bunni/lib/v2-core/\",\":@uniswap/v2-periphery/=lib/bunni-oracle/lib/bunni/lib/v2-periphery/\",\":@uniswap/v3-core/=lib/bunni-oracle/lib/v3-core/\",\":@uniswap/v3-periphery/=lib/bunni-oracle/lib/v3-periphery/\",\":bunni-oracle/=lib/bunni-oracle/\",\":bunni/=lib/bunni-oracle/lib/bunni/\",\":create3-factory/=lib/bunni-oracle/lib/create3-factory/\",\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/\",\":forge-std/=lib/forge-std/src/\",\":openzeppelin-contracts/=lib/openzeppelin-contracts/\",\":solmate/=lib/bunni-oracle/lib/solmate/src/\",\":v2-core/=lib/bunni-oracle/lib/bunni/lib/v2-core/contracts/\",\":v2-periphery/=lib/bunni-oracle/lib/bunni/lib/v2-periphery/contracts/\",\":v3-core/=lib/v3-core/\",\":v3-periphery/=lib/v3-periphery/contracts/\"]},\"sources\":{\"lib/openzeppelin-contracts/contracts/access/IAccessControl.sol\":{\"keccak256\":\"0x14b9ea8699b0b5dec9520ced4da0807d053375c35f2530625a2745c23b7654af\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://97fc37af81eff2dc7f6b30cd3b51df0b9720a46bb961748434ee2c3643488569\",\"dweb:/ipfs/QmcMyGPigsnsjJGaLa3pDWyBeK118HuoVHY3JkiERCr5Ce\"]},\"lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol\":{\"keccak256\":\"0x1c15854d415493331ff06ef9b0899f81dc6960189fa86cfd1b29c4374cc336a3\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://5cb41bc9b9e1f5617d8e826c07fb21ecf986f70b4b5b395d6ecf9c5eb9f1a204\",\"dweb:/ipfs/QmNvJhvpJE8b3nyz7RaMCSPhfbmzj1TLuL3a7NkS9AHkGJ\"]},\"src/interfaces/IGhoToken.sol\":{\"keccak256\":\"0x8216150c2d26981b7ea99af589592495bdd815d43e4059293222579df8feadb6\",\"license\":\"MIT\",\"urls\":[\"bzz-raw://d30c8ff709dc8b2121757d72c5f6f52d85259b2cb2a2929f87a40af7d67c24fa\",\"dweb:/ipfs/QmUk8zcJKeUbrLfG99y6nyiX6Y3DNuTpp9f7ccciMqeKEM\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
       "version": "0.8.21+commit.d9974bed"
@@ -1475,11 +1475,24 @@
     },
     "settings": {
       "remappings": [
+        "@openzeppelin/=lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/",
         "@openzeppelin/contracts/=lib/openzeppelin-contracts/contracts/",
+        "@uniswap/v2-core/=lib/bunni-oracle/lib/bunni/lib/v2-core/",
+        "@uniswap/v2-periphery/=lib/bunni-oracle/lib/bunni/lib/v2-periphery/",
+        "@uniswap/v3-core/=lib/bunni-oracle/lib/v3-core/",
+        "@uniswap/v3-periphery/=lib/bunni-oracle/lib/v3-periphery/",
+        "bunni-oracle/=lib/bunni-oracle/",
+        "bunni/=lib/bunni-oracle/lib/bunni/",
+        "create3-factory/=lib/bunni-oracle/lib/create3-factory/",
         "ds-test/=lib/forge-std/lib/ds-test/src/",
         "erc4626-tests/=lib/openzeppelin-contracts/lib/erc4626-tests/",
         "forge-std/=lib/forge-std/src/",
-        "openzeppelin-contracts/=lib/openzeppelin-contracts/"
+        "openzeppelin-contracts/=lib/openzeppelin-contracts/",
+        "solmate/=lib/bunni-oracle/lib/solmate/src/",
+        "v2-core/=lib/bunni-oracle/lib/bunni/lib/v2-core/contracts/",
+        "v2-periphery/=lib/bunni-oracle/lib/bunni/lib/v2-periphery/contracts/",
+        "v3-core/=lib/v3-core/",
+        "v3-periphery/=lib/v3-periphery/contracts/"
       ],
       "optimizer": {
         "enabled": true,
@@ -1523,25 +1536,25 @@
   },
   "ast": {
     "absolutePath": "src/interfaces/IGhoToken.sol",
-    "id": 45256,
+    "id": 1558,
     "exportedSymbols": {
       "IAccessControl": [
-        44971
+        1840
       ],
       "IERC20": [
-        45049
+        1918
       ],
       "IGhoToken": [
-        45255
+        1557
       ]
     },
     "nodeType": "SourceUnit",
-    "src": "33:4985:26",
+    "src": "33:4985:27",
     "nodes": [
       {
-        "id": 45130,
+        "id": 1432,
         "nodeType": "PragmaDirective",
-        "src": "33:23:26",
+        "src": "33:23:27",
         "nodes": [],
         "literals": [
           "solidity",
@@ -1551,24 +1564,24 @@
         ]
       },
       {
-        "id": 45132,
+        "id": 1434,
         "nodeType": "ImportDirective",
-        "src": "60:70:26",
+        "src": "60:70:27",
         "nodes": [],
         "absolutePath": "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
         "file": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 45256,
-        "sourceUnit": 45050,
+        "scope": 1558,
+        "sourceUnit": 1919,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 45131,
+              "id": 1433,
               "name": "IERC20",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 45049,
-              "src": "68:6:26",
+              "referencedDeclaration": 1918,
+              "src": "68:6:27",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -1577,24 +1590,24 @@
         "unitAlias": ""
       },
       {
-        "id": 45134,
+        "id": 1436,
         "nodeType": "ImportDirective",
-        "src": "132:81:26",
+        "src": "132:81:27",
         "nodes": [],
         "absolutePath": "lib/openzeppelin-contracts/contracts/access/IAccessControl.sol",
         "file": "@openzeppelin/contracts/access/IAccessControl.sol",
         "nameLocation": "-1:-1:-1",
-        "scope": 45256,
-        "sourceUnit": 44972,
+        "scope": 1558,
+        "sourceUnit": 1841,
         "symbolAliases": [
           {
             "foreign": {
-              "id": 45133,
+              "id": 1435,
               "name": "IAccessControl",
               "nodeType": "Identifier",
               "overloadedDeclarations": [],
-              "referencedDeclaration": 44971,
-              "src": "140:14:26",
+              "referencedDeclaration": 1840,
+              "src": "140:14:27",
               "typeDescriptions": {}
             },
             "nameLocation": "-1:-1:-1"
@@ -1603,26 +1616,26 @@
         "unitAlias": ""
       },
       {
-        "id": 45255,
+        "id": 1557,
         "nodeType": "ContractDefinition",
-        "src": "265:4753:26",
+        "src": "265:4753:27",
         "nodes": [
           {
-            "id": 45146,
+            "id": 1448,
             "nodeType": "StructDefinition",
-            "src": "316:99:26",
+            "src": "316:99:27",
             "nodes": [],
             "canonicalName": "IGhoToken.Facilitator",
             "members": [
               {
                 "constant": false,
-                "id": 45141,
+                "id": 1443,
                 "mutability": "mutable",
                 "name": "bucketCapacity",
-                "nameLocation": "350:14:26",
+                "nameLocation": "350:14:27",
                 "nodeType": "VariableDeclaration",
-                "scope": 45146,
-                "src": "342:22:26",
+                "scope": 1448,
+                "src": "342:22:27",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1630,10 +1643,10 @@
                   "typeString": "uint128"
                 },
                 "typeName": {
-                  "id": 45140,
+                  "id": 1442,
                   "name": "uint128",
                   "nodeType": "ElementaryTypeName",
-                  "src": "342:7:26",
+                  "src": "342:7:27",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint128",
                     "typeString": "uint128"
@@ -1643,13 +1656,13 @@
               },
               {
                 "constant": false,
-                "id": 45143,
+                "id": 1445,
                 "mutability": "mutable",
                 "name": "bucketLevel",
-                "nameLocation": "379:11:26",
+                "nameLocation": "379:11:27",
                 "nodeType": "VariableDeclaration",
-                "scope": 45146,
-                "src": "371:19:26",
+                "scope": 1448,
+                "src": "371:19:27",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1657,10 +1670,10 @@
                   "typeString": "uint128"
                 },
                 "typeName": {
-                  "id": 45142,
+                  "id": 1444,
                   "name": "uint128",
                   "nodeType": "ElementaryTypeName",
-                  "src": "371:7:26",
+                  "src": "371:7:27",
                   "typeDescriptions": {
                     "typeIdentifier": "t_uint128",
                     "typeString": "uint128"
@@ -1670,13 +1683,13 @@
               },
               {
                 "constant": false,
-                "id": 45145,
+                "id": 1447,
                 "mutability": "mutable",
                 "name": "label",
-                "nameLocation": "404:5:26",
+                "nameLocation": "404:5:27",
                 "nodeType": "VariableDeclaration",
-                "scope": 45146,
-                "src": "397:12:26",
+                "scope": 1448,
+                "src": "397:12:27",
                 "stateVariable": false,
                 "storageLocation": "default",
                 "typeDescriptions": {
@@ -1684,10 +1697,10 @@
                   "typeString": "string"
                 },
                 "typeName": {
-                  "id": 45144,
+                  "id": 1446,
                   "name": "string",
                   "nodeType": "ElementaryTypeName",
-                  "src": "397:6:26",
+                  "src": "397:6:27",
                   "typeDescriptions": {
                     "typeIdentifier": "t_string_storage_ptr",
                     "typeString": "string"
@@ -1697,39 +1710,39 @@
               }
             ],
             "name": "Facilitator",
-            "nameLocation": "323:11:26",
-            "scope": 45255,
+            "nameLocation": "323:11:27",
+            "scope": 1557,
             "visibility": "public"
           },
           {
-            "id": 45155,
+            "id": 1457,
             "nodeType": "EventDefinition",
-            "src": "704:126:26",
+            "src": "704:126:27",
             "nodes": [],
             "anonymous": false,
             "documentation": {
-              "id": 45147,
+              "id": 1449,
               "nodeType": "StructuredDocumentation",
-              "src": "421:279:26",
+              "src": "421:279:27",
               "text": " @dev Emitted when a new facilitator is added\n @param facilitatorAddress The address of the new facilitator\n @param label A hashed human readable identifier for the facilitator\n @param bucketCapacity The initial capacity of the facilitator's bucket"
             },
             "eventSelector": "dabd62626ada7b13e299389e94d768b294e5e24285ed2ffa1e5cd447c99c54ad",
             "name": "FacilitatorAdded",
-            "nameLocation": "710:16:26",
+            "nameLocation": "710:16:27",
             "parameters": {
-              "id": 45154,
+              "id": 1456,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45149,
+                  "id": 1451,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "facilitatorAddress",
-                  "nameLocation": "749:18:26",
+                  "nameLocation": "749:18:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45155,
-                  "src": "733:34:26",
+                  "scope": 1457,
+                  "src": "733:34:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1737,10 +1750,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 45148,
+                    "id": 1450,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "733:7:26",
+                    "src": "733:7:27",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1751,14 +1764,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 45151,
+                  "id": 1453,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "label",
-                  "nameLocation": "790:5:26",
+                  "nameLocation": "790:5:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45155,
-                  "src": "774:21:26",
+                  "scope": 1457,
+                  "src": "774:21:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1766,10 +1779,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 45150,
+                    "id": 1452,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "774:7:26",
+                    "src": "774:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -1779,14 +1792,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 45153,
+                  "id": 1455,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "bucketCapacity",
-                  "nameLocation": "810:14:26",
+                  "nameLocation": "810:14:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45155,
-                  "src": "802:22:26",
+                  "scope": 1457,
+                  "src": "802:22:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1794,10 +1807,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 45152,
+                    "id": 1454,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "802:7:26",
+                    "src": "802:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1806,38 +1819,38 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "726:103:26"
+              "src": "726:103:27"
             }
           },
           {
-            "id": 45160,
+            "id": 1462,
             "nodeType": "EventDefinition",
-            "src": "970:61:26",
+            "src": "970:61:27",
             "nodes": [],
             "anonymous": false,
             "documentation": {
-              "id": 45156,
+              "id": 1458,
               "nodeType": "StructuredDocumentation",
-              "src": "836:130:26",
+              "src": "836:130:27",
               "text": " @dev Emitted when a facilitator is removed\n @param facilitatorAddress The address of the removed facilitator"
             },
             "eventSelector": "a8fe5b89f35f2ebd6f3f95a7ef215f4bd89179e10c101073ae76cffad14734cf",
             "name": "FacilitatorRemoved",
-            "nameLocation": "976:18:26",
+            "nameLocation": "976:18:27",
             "parameters": {
-              "id": 45159,
+              "id": 1461,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45158,
+                  "id": 1460,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "facilitatorAddress",
-                  "nameLocation": "1011:18:26",
+                  "nameLocation": "1011:18:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45160,
-                  "src": "995:34:26",
+                  "scope": 1462,
+                  "src": "995:34:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1845,10 +1858,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 45157,
+                    "id": 1459,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "995:7:26",
+                    "src": "995:7:27",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1858,38 +1871,38 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "994:36:26"
+              "src": "994:36:27"
             }
           },
           {
-            "id": 45169,
+            "id": 1471,
             "nodeType": "EventDefinition",
-            "src": "1337:137:26",
+            "src": "1337:137:27",
             "nodes": [],
             "anonymous": false,
             "documentation": {
-              "id": 45161,
+              "id": 1463,
               "nodeType": "StructuredDocumentation",
-              "src": "1037:296:26",
+              "src": "1037:296:27",
               "text": " @dev Emitted when the bucket capacity of a facilitator is updated\n @param facilitatorAddress The address of the facilitator whose bucket capacity is being changed\n @param oldCapacity The old capacity of the bucket\n @param newCapacity The new capacity of the bucket"
             },
             "eventSelector": "c795c0a4927c3b6645e4e49a5a519af936b3c1c0e4c323a3f7251063f3f4bb0e",
             "name": "FacilitatorBucketCapacityUpdated",
-            "nameLocation": "1343:32:26",
+            "nameLocation": "1343:32:27",
             "parameters": {
-              "id": 45168,
+              "id": 1470,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45163,
+                  "id": 1465,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "facilitatorAddress",
-                  "nameLocation": "1398:18:26",
+                  "nameLocation": "1398:18:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45169,
-                  "src": "1382:34:26",
+                  "scope": 1471,
+                  "src": "1382:34:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1897,10 +1910,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 45162,
+                    "id": 1464,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1382:7:26",
+                    "src": "1382:7:27",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -1911,14 +1924,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 45165,
+                  "id": 1467,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "oldCapacity",
-                  "nameLocation": "1431:11:26",
+                  "nameLocation": "1431:11:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45169,
-                  "src": "1423:19:26",
+                  "scope": 1471,
+                  "src": "1423:19:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1926,10 +1939,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 45164,
+                    "id": 1466,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1423:7:26",
+                    "src": "1423:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1939,14 +1952,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 45167,
+                  "id": 1469,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "newCapacity",
-                  "nameLocation": "1457:11:26",
+                  "nameLocation": "1457:11:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45169,
-                  "src": "1449:19:26",
+                  "scope": 1471,
+                  "src": "1449:19:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -1954,10 +1967,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 45166,
+                    "id": 1468,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1449:7:26",
+                    "src": "1449:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -1966,38 +1979,38 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1375:98:26"
+              "src": "1375:98:27"
             }
           },
           {
-            "id": 45178,
+            "id": 1480,
             "nodeType": "EventDefinition",
-            "src": "1742:128:26",
+            "src": "1742:128:27",
             "nodes": [],
             "anonymous": false,
             "documentation": {
-              "id": 45170,
+              "id": 1472,
               "nodeType": "StructuredDocumentation",
-              "src": "1480:258:26",
+              "src": "1480:258:27",
               "text": " @dev Emitted when the bucket level changed\n @param facilitatorAddress The address of the facilitator whose bucket level is being changed\n @param oldLevel The old level of the bucket\n @param newLevel The new level of the bucket"
             },
             "eventSelector": "acb6de9209e4f34974cb165eef5738f0cf0b4ea9819ef30d30f0f7d81272ab82",
             "name": "FacilitatorBucketLevelUpdated",
-            "nameLocation": "1748:29:26",
+            "nameLocation": "1748:29:27",
             "parameters": {
-              "id": 45177,
+              "id": 1479,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45172,
+                  "id": 1474,
                   "indexed": true,
                   "mutability": "mutable",
                   "name": "facilitatorAddress",
-                  "nameLocation": "1800:18:26",
+                  "nameLocation": "1800:18:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45178,
-                  "src": "1784:34:26",
+                  "scope": 1480,
+                  "src": "1784:34:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2005,10 +2018,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 45171,
+                    "id": 1473,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1784:7:26",
+                    "src": "1784:7:27",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2019,14 +2032,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 45174,
+                  "id": 1476,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "oldLevel",
-                  "nameLocation": "1833:8:26",
+                  "nameLocation": "1833:8:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45178,
-                  "src": "1825:16:26",
+                  "scope": 1480,
+                  "src": "1825:16:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2034,10 +2047,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 45173,
+                    "id": 1475,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1825:7:26",
+                    "src": "1825:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2047,14 +2060,14 @@
                 },
                 {
                   "constant": false,
-                  "id": 45176,
+                  "id": 1478,
                   "indexed": false,
                   "mutability": "mutable",
                   "name": "newLevel",
-                  "nameLocation": "1856:8:26",
+                  "nameLocation": "1856:8:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45178,
-                  "src": "1848:16:26",
+                  "scope": 1480,
+                  "src": "1848:16:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2062,10 +2075,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 45175,
+                    "id": 1477,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1848:7:26",
+                    "src": "1848:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2074,18 +2087,18 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1777:92:26"
+              "src": "1777:92:27"
             }
           },
           {
-            "id": 45184,
+            "id": 1486,
             "nodeType": "FunctionDefinition",
-            "src": "2024:68:26",
+            "src": "2024:68:27",
             "nodes": [],
             "documentation": {
-              "id": 45179,
+              "id": 1481,
               "nodeType": "StructuredDocumentation",
-              "src": "1876:144:26",
+              "src": "1876:144:27",
               "text": " @notice Returns the identifier of the Facilitator Manager Role\n @return The bytes32 id hash of the FacilitatorManager role"
             },
             "functionSelector": "433bef44",
@@ -2093,26 +2106,26 @@
             "kind": "function",
             "modifiers": [],
             "name": "FACILITATOR_MANAGER_ROLE",
-            "nameLocation": "2033:24:26",
+            "nameLocation": "2033:24:27",
             "parameters": {
-              "id": 45180,
+              "id": 1482,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2057:2:26"
+              "src": "2057:2:27"
             },
             "returnParameters": {
-              "id": 45183,
+              "id": 1485,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45182,
+                  "id": 1484,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45184,
-                  "src": "2083:7:26",
+                  "scope": 1486,
+                  "src": "2083:7:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2120,10 +2133,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 45181,
+                    "id": 1483,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2083:7:26",
+                    "src": "2083:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2132,22 +2145,22 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2082:9:26"
+              "src": "2082:9:27"
             },
-            "scope": 45255,
+            "scope": 1557,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 45190,
+            "id": 1492,
             "nodeType": "FunctionDefinition",
-            "src": "2236:63:26",
+            "src": "2236:63:27",
             "nodes": [],
             "documentation": {
-              "id": 45185,
+              "id": 1487,
               "nodeType": "StructuredDocumentation",
-              "src": "2098:134:26",
+              "src": "2098:134:27",
               "text": " @notice Returns the identifier of the Bucket Manager Role\n @return The bytes32 id hash of the BucketManager role"
             },
             "functionSelector": "550d9964",
@@ -2155,26 +2168,26 @@
             "kind": "function",
             "modifiers": [],
             "name": "BUCKET_MANAGER_ROLE",
-            "nameLocation": "2245:19:26",
+            "nameLocation": "2245:19:27",
             "parameters": {
-              "id": 45186,
+              "id": 1488,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2264:2:26"
+              "src": "2264:2:27"
             },
             "returnParameters": {
-              "id": 45189,
+              "id": 1491,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45188,
+                  "id": 1490,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45190,
-                  "src": "2290:7:26",
+                  "scope": 1492,
+                  "src": "2290:7:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2182,10 +2195,10 @@
                     "typeString": "bytes32"
                   },
                   "typeName": {
-                    "id": 45187,
+                    "id": 1489,
                     "name": "bytes32",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2290:7:26",
+                    "src": "2290:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bytes32",
                       "typeString": "bytes32"
@@ -2194,22 +2207,22 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2289:9:26"
+              "src": "2289:9:27"
             },
-            "scope": 45255,
+            "scope": 1557,
             "stateMutability": "pure",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 45198,
+            "id": 1500,
             "nodeType": "FunctionDefinition",
-            "src": "2623:56:26",
+            "src": "2623:56:27",
             "nodes": [],
             "documentation": {
-              "id": 45191,
+              "id": 1493,
               "nodeType": "StructuredDocumentation",
-              "src": "2305:314:26",
+              "src": "2305:314:27",
               "text": " @notice Mints the requested amount of tokens to the account address.\n @dev Only facilitators with enough bucket capacity available can mint.\n @dev The bucket level is increased upon minting.\n @param account The address receiving the GHO tokens\n @param amount The amount to mint"
             },
             "functionSelector": "40c10f19",
@@ -2217,20 +2230,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "mint",
-            "nameLocation": "2632:4:26",
+            "nameLocation": "2632:4:27",
             "parameters": {
-              "id": 45196,
+              "id": 1498,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45193,
+                  "id": 1495,
                   "mutability": "mutable",
                   "name": "account",
-                  "nameLocation": "2645:7:26",
+                  "nameLocation": "2645:7:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45198,
-                  "src": "2637:15:26",
+                  "scope": 1500,
+                  "src": "2637:15:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2238,10 +2251,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 45192,
+                    "id": 1494,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2637:7:26",
+                    "src": "2637:7:27",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2252,13 +2265,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 45195,
+                  "id": 1497,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "2662:6:26",
+                  "nameLocation": "2662:6:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45198,
-                  "src": "2654:14:26",
+                  "scope": 1500,
+                  "src": "2654:14:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2266,10 +2279,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 45194,
+                    "id": 1496,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2654:7:26",
+                    "src": "2654:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2278,28 +2291,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2636:33:26"
+              "src": "2636:33:27"
             },
             "returnParameters": {
-              "id": 45197,
+              "id": 1499,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2678:0:26"
+              "src": "2678:0:27"
             },
-            "scope": 45255,
+            "scope": 1557,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 45204,
+            "id": 1506,
             "nodeType": "FunctionDefinition",
-            "src": "2935:39:26",
+            "src": "2935:39:27",
             "nodes": [],
             "documentation": {
-              "id": 45199,
+              "id": 1501,
               "nodeType": "StructuredDocumentation",
-              "src": "2685:246:26",
+              "src": "2685:246:27",
               "text": " @notice Burns the requested amount of tokens from the account address.\n @dev Only active facilitators (bucket level > 0) can burn.\n @dev The bucket level is decreased upon burning.\n @param amount The amount to burn"
             },
             "functionSelector": "42966c68",
@@ -2307,20 +2320,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "burn",
-            "nameLocation": "2944:4:26",
+            "nameLocation": "2944:4:27",
             "parameters": {
-              "id": 45202,
+              "id": 1504,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45201,
+                  "id": 1503,
                   "mutability": "mutable",
                   "name": "amount",
-                  "nameLocation": "2957:6:26",
+                  "nameLocation": "2957:6:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45204,
-                  "src": "2949:14:26",
+                  "scope": 1506,
+                  "src": "2949:14:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2328,10 +2341,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 45200,
+                    "id": 1502,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "2949:7:26",
+                    "src": "2949:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2340,28 +2353,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "2948:16:26"
+              "src": "2948:16:27"
             },
             "returnParameters": {
-              "id": 45203,
+              "id": 1505,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "2973:0:26"
+              "src": "2973:0:27"
             },
-            "scope": 45255,
+            "scope": 1557,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 45214,
+            "id": 1516,
             "nodeType": "FunctionDefinition",
-            "src": "3399:139:26",
+            "src": "3399:139:27",
             "nodes": [],
             "documentation": {
-              "id": 45205,
+              "id": 1507,
               "nodeType": "StructuredDocumentation",
-              "src": "2980:415:26",
+              "src": "2980:415:27",
               "text": " @notice Add the facilitator passed with the parameters to the facilitators list.\n @dev Only accounts with `FACILITATOR_MANAGER_ROLE` role can call this function\n @param facilitatorAddress The address of the facilitator to add\n @param facilitatorLabel A human readable identifier for the facilitator\n @param bucketCapacity The upward limit of GHO can be minted by the facilitator"
             },
             "functionSelector": "7fc24def",
@@ -2369,20 +2382,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "addFacilitator",
-            "nameLocation": "3408:14:26",
+            "nameLocation": "3408:14:27",
             "parameters": {
-              "id": 45212,
+              "id": 1514,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45207,
+                  "id": 1509,
                   "mutability": "mutable",
                   "name": "facilitatorAddress",
-                  "nameLocation": "3437:18:26",
+                  "nameLocation": "3437:18:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45214,
-                  "src": "3429:26:26",
+                  "scope": 1516,
+                  "src": "3429:26:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2390,10 +2403,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 45206,
+                    "id": 1508,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3429:7:26",
+                    "src": "3429:7:27",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2404,13 +2417,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 45209,
+                  "id": 1511,
                   "mutability": "mutable",
                   "name": "facilitatorLabel",
-                  "nameLocation": "3478:16:26",
+                  "nameLocation": "3478:16:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45214,
-                  "src": "3462:32:26",
+                  "scope": 1516,
+                  "src": "3462:32:27",
                   "stateVariable": false,
                   "storageLocation": "calldata",
                   "typeDescriptions": {
@@ -2418,10 +2431,10 @@
                     "typeString": "string"
                   },
                   "typeName": {
-                    "id": 45208,
+                    "id": 1510,
                     "name": "string",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3462:6:26",
+                    "src": "3462:6:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_string_storage_ptr",
                       "typeString": "string"
@@ -2431,13 +2444,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 45211,
+                  "id": 1513,
                   "mutability": "mutable",
                   "name": "bucketCapacity",
-                  "nameLocation": "3509:14:26",
+                  "nameLocation": "3509:14:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45214,
-                  "src": "3501:22:26",
+                  "scope": 1516,
+                  "src": "3501:22:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2445,10 +2458,10 @@
                     "typeString": "uint128"
                   },
                   "typeName": {
-                    "id": 45210,
+                    "id": 1512,
                     "name": "uint128",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3501:7:26",
+                    "src": "3501:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
@@ -2457,28 +2470,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3422:106:26"
+              "src": "3422:106:27"
             },
             "returnParameters": {
-              "id": 45213,
+              "id": 1515,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3537:0:26"
+              "src": "3537:0:27"
             },
-            "scope": 45255,
+            "scope": 1557,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 45220,
+            "id": 1522,
             "nodeType": "FunctionDefinition",
-            "src": "3781:64:26",
+            "src": "3781:64:27",
             "nodes": [],
             "documentation": {
-              "id": 45215,
+              "id": 1517,
               "nodeType": "StructuredDocumentation",
-              "src": "3544:233:26",
+              "src": "3544:233:27",
               "text": " @notice Remove the facilitator from the facilitators list.\n @dev Only accounts with `FACILITATOR_MANAGER_ROLE` role can call this function\n @param facilitatorAddress The address of the facilitator to remove"
             },
             "functionSelector": "a11812ba",
@@ -2486,20 +2499,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "removeFacilitator",
-            "nameLocation": "3790:17:26",
+            "nameLocation": "3790:17:27",
             "parameters": {
-              "id": 45218,
+              "id": 1520,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45217,
+                  "id": 1519,
                   "mutability": "mutable",
                   "name": "facilitatorAddress",
-                  "nameLocation": "3816:18:26",
+                  "nameLocation": "3816:18:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45220,
-                  "src": "3808:26:26",
+                  "scope": 1522,
+                  "src": "3808:26:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2507,10 +2520,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 45216,
+                    "id": 1518,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "3808:7:26",
+                    "src": "3808:7:27",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2520,28 +2533,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "3807:28:26"
+              "src": "3807:28:27"
             },
             "returnParameters": {
-              "id": 45219,
+              "id": 1521,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "3844:0:26"
+              "src": "3844:0:27"
             },
-            "scope": 45255,
+            "scope": 1557,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 45228,
+            "id": 1530,
             "nodeType": "FunctionDefinition",
-            "src": "4115:89:26",
+            "src": "4115:89:27",
             "nodes": [],
             "documentation": {
-              "id": 45221,
+              "id": 1523,
               "nodeType": "StructuredDocumentation",
-              "src": "3851:260:26",
+              "src": "3851:260:27",
               "text": " @notice Set the bucket capacity of the facilitator.\n @dev Only accounts with `BUCKET_MANAGER_ROLE` role can call this function\n @param facilitator The address of the facilitator\n @param newCapacity The new capacity of the bucket"
             },
             "functionSelector": "af93df57",
@@ -2549,20 +2562,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "setFacilitatorBucketCapacity",
-            "nameLocation": "4124:28:26",
+            "nameLocation": "4124:28:27",
             "parameters": {
-              "id": 45226,
+              "id": 1528,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45223,
+                  "id": 1525,
                   "mutability": "mutable",
                   "name": "facilitator",
-                  "nameLocation": "4161:11:26",
+                  "nameLocation": "4161:11:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45228,
-                  "src": "4153:19:26",
+                  "scope": 1530,
+                  "src": "4153:19:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2570,10 +2583,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 45222,
+                    "id": 1524,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4153:7:26",
+                    "src": "4153:7:27",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2584,13 +2597,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 45225,
+                  "id": 1527,
                   "mutability": "mutable",
                   "name": "newCapacity",
-                  "nameLocation": "4182:11:26",
+                  "nameLocation": "4182:11:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45228,
-                  "src": "4174:19:26",
+                  "scope": 1530,
+                  "src": "4174:19:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2598,10 +2611,10 @@
                     "typeString": "uint128"
                   },
                   "typeName": {
-                    "id": 45224,
+                    "id": 1526,
                     "name": "uint128",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4174:7:26",
+                    "src": "4174:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint128",
                       "typeString": "uint128"
@@ -2610,28 +2623,28 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4152:42:26"
+              "src": "4152:42:27"
             },
             "returnParameters": {
-              "id": 45227,
+              "id": 1529,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4203:0:26"
+              "src": "4203:0:27"
             },
-            "scope": 45255,
+            "scope": 1557,
             "stateMutability": "nonpayable",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 45237,
+            "id": 1539,
             "nodeType": "FunctionDefinition",
-            "src": "4367:88:26",
+            "src": "4367:88:27",
             "nodes": [],
             "documentation": {
-              "id": 45229,
+              "id": 1531,
               "nodeType": "StructuredDocumentation",
-              "src": "4210:153:26",
+              "src": "4210:153:27",
               "text": " @notice Returns the facilitator data\n @param facilitator The address of the facilitator\n @return The facilitator configuration"
             },
             "functionSelector": "d46ec0ed",
@@ -2639,20 +2652,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "getFacilitator",
-            "nameLocation": "4376:14:26",
+            "nameLocation": "4376:14:27",
             "parameters": {
-              "id": 45232,
+              "id": 1534,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45231,
+                  "id": 1533,
                   "mutability": "mutable",
                   "name": "facilitator",
-                  "nameLocation": "4399:11:26",
+                  "nameLocation": "4399:11:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45237,
-                  "src": "4391:19:26",
+                  "scope": 1539,
+                  "src": "4391:19:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2660,10 +2673,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 45230,
+                    "id": 1532,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4391:7:26",
+                    "src": "4391:7:27",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2673,66 +2686,66 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4390:21:26"
+              "src": "4390:21:27"
             },
             "returnParameters": {
-              "id": 45236,
+              "id": 1538,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45235,
+                  "id": 1537,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45237,
-                  "src": "4435:18:26",
+                  "scope": 1539,
+                  "src": "4435:18:27",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
-                    "typeIdentifier": "t_struct$_Facilitator_$45146_memory_ptr",
+                    "typeIdentifier": "t_struct$_Facilitator_$1448_memory_ptr",
                     "typeString": "struct IGhoToken.Facilitator"
                   },
                   "typeName": {
-                    "id": 45234,
+                    "id": 1536,
                     "nodeType": "UserDefinedTypeName",
                     "pathNode": {
-                      "id": 45233,
+                      "id": 1535,
                       "name": "Facilitator",
                       "nameLocations": [
-                        "4435:11:26"
+                        "4435:11:27"
                       ],
                       "nodeType": "IdentifierPath",
-                      "referencedDeclaration": 45146,
-                      "src": "4435:11:26"
+                      "referencedDeclaration": 1448,
+                      "src": "4435:11:27"
                     },
-                    "referencedDeclaration": 45146,
-                    "src": "4435:11:26",
+                    "referencedDeclaration": 1448,
+                    "src": "4435:11:27",
                     "typeDescriptions": {
-                      "typeIdentifier": "t_struct$_Facilitator_$45146_storage_ptr",
+                      "typeIdentifier": "t_struct$_Facilitator_$1448_storage_ptr",
                       "typeString": "struct IGhoToken.Facilitator"
                     }
                   },
                   "visibility": "internal"
                 }
               ],
-              "src": "4434:20:26"
+              "src": "4434:20:27"
             },
-            "scope": 45255,
+            "scope": 1557,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 45247,
+            "id": 1549,
             "nodeType": "FunctionDefinition",
-            "src": "4704:92:26",
+            "src": "4704:92:27",
             "nodes": [],
             "documentation": {
-              "id": 45238,
+              "id": 1540,
               "nodeType": "StructuredDocumentation",
-              "src": "4461:239:26",
+              "src": "4461:239:27",
               "text": " @notice Returns the bucket configuration of the facilitator\n @param facilitator The address of the facilitator\n @return The capacity of the facilitator's bucket\n @return The level of the facilitator's bucket"
             },
             "functionSelector": "aa02f94a",
@@ -2740,20 +2753,20 @@
             "kind": "function",
             "modifiers": [],
             "name": "getFacilitatorBucket",
-            "nameLocation": "4713:20:26",
+            "nameLocation": "4713:20:27",
             "parameters": {
-              "id": 45241,
+              "id": 1543,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45240,
+                  "id": 1542,
                   "mutability": "mutable",
                   "name": "facilitator",
-                  "nameLocation": "4742:11:26",
+                  "nameLocation": "4742:11:27",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45247,
-                  "src": "4734:19:26",
+                  "scope": 1549,
+                  "src": "4734:19:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2761,10 +2774,10 @@
                     "typeString": "address"
                   },
                   "typeName": {
-                    "id": 45239,
+                    "id": 1541,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4734:7:26",
+                    "src": "4734:7:27",
                     "stateMutability": "nonpayable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address",
@@ -2774,21 +2787,21 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4733:21:26"
+              "src": "4733:21:27"
             },
             "returnParameters": {
-              "id": 45246,
+              "id": 1548,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45243,
+                  "id": 1545,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45247,
-                  "src": "4778:7:26",
+                  "scope": 1549,
+                  "src": "4778:7:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2796,10 +2809,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 45242,
+                    "id": 1544,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4778:7:26",
+                    "src": "4778:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2809,13 +2822,13 @@
                 },
                 {
                   "constant": false,
-                  "id": 45245,
+                  "id": 1547,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45247,
-                  "src": "4787:7:26",
+                  "scope": 1549,
+                  "src": "4787:7:27",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2823,10 +2836,10 @@
                     "typeString": "uint256"
                   },
                   "typeName": {
-                    "id": 45244,
+                    "id": 1546,
                     "name": "uint256",
                     "nodeType": "ElementaryTypeName",
-                    "src": "4787:7:26",
+                    "src": "4787:7:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_uint256",
                       "typeString": "uint256"
@@ -2835,22 +2848,22 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4777:18:26"
+              "src": "4777:18:27"
             },
-            "scope": 45255,
+            "scope": 1557,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
           },
           {
-            "id": 45254,
+            "id": 1556,
             "nodeType": "FunctionDefinition",
-            "src": "4943:72:26",
+            "src": "4943:72:27",
             "nodes": [],
             "documentation": {
-              "id": 45248,
+              "id": 1550,
               "nodeType": "StructuredDocumentation",
-              "src": "4802:137:26",
+              "src": "4802:137:27",
               "text": " @notice Returns the list of the addresses of the active facilitator\n @return The list of the facilitators addresses"
             },
             "functionSelector": "1ec90f2e",
@@ -2858,26 +2871,26 @@
             "kind": "function",
             "modifiers": [],
             "name": "getFacilitatorsList",
-            "nameLocation": "4952:19:26",
+            "nameLocation": "4952:19:27",
             "parameters": {
-              "id": 45249,
+              "id": 1551,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "4971:2:26"
+              "src": "4971:2:27"
             },
             "returnParameters": {
-              "id": 45253,
+              "id": 1555,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 45252,
+                  "id": 1554,
                   "mutability": "mutable",
                   "name": "",
                   "nameLocation": "-1:-1:-1",
                   "nodeType": "VariableDeclaration",
-                  "scope": 45254,
-                  "src": "4997:16:26",
+                  "scope": 1556,
+                  "src": "4997:16:27",
                   "stateVariable": false,
                   "storageLocation": "memory",
                   "typeDescriptions": {
@@ -2886,19 +2899,19 @@
                   },
                   "typeName": {
                     "baseType": {
-                      "id": 45250,
+                      "id": 1552,
                       "name": "address",
                       "nodeType": "ElementaryTypeName",
-                      "src": "4997:7:26",
+                      "src": "4997:7:27",
                       "stateMutability": "nonpayable",
                       "typeDescriptions": {
                         "typeIdentifier": "t_address",
                         "typeString": "address"
                       }
                     },
-                    "id": 45251,
+                    "id": 1553,
                     "nodeType": "ArrayTypeName",
-                    "src": "4997:9:26",
+                    "src": "4997:9:27",
                     "typeDescriptions": {
                       "typeIdentifier": "t_array$_t_address_$dyn_storage_ptr",
                       "typeString": "address[]"
@@ -2907,9 +2920,9 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "4996:18:26"
+              "src": "4996:18:27"
             },
-            "scope": 45255,
+            "scope": 1557,
             "stateMutability": "view",
             "virtual": false,
             "visibility": "external"
@@ -2919,71 +2932,71 @@
         "baseContracts": [
           {
             "baseName": {
-              "id": 45136,
+              "id": 1438,
               "name": "IERC20",
               "nameLocations": [
-                "288:6:26"
+                "288:6:27"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 45049,
-              "src": "288:6:26"
+              "referencedDeclaration": 1918,
+              "src": "288:6:27"
             },
-            "id": 45137,
+            "id": 1439,
             "nodeType": "InheritanceSpecifier",
-            "src": "288:6:26"
+            "src": "288:6:27"
           },
           {
             "baseName": {
-              "id": 45138,
+              "id": 1440,
               "name": "IAccessControl",
               "nameLocations": [
-                "296:14:26"
+                "296:14:27"
               ],
               "nodeType": "IdentifierPath",
-              "referencedDeclaration": 44971,
-              "src": "296:14:26"
+              "referencedDeclaration": 1840,
+              "src": "296:14:27"
             },
-            "id": 45139,
+            "id": 1441,
             "nodeType": "InheritanceSpecifier",
-            "src": "296:14:26"
+            "src": "296:14:27"
           }
         ],
         "canonicalName": "IGhoToken",
         "contractDependencies": [],
         "contractKind": "interface",
         "documentation": {
-          "id": 45135,
+          "id": 1437,
           "nodeType": "StructuredDocumentation",
-          "src": "217:46:26",
+          "src": "217:46:27",
           "text": " @title IGhoToken\n @author Aave"
         },
         "fullyImplemented": false,
         "linearizedBaseContracts": [
-          45255,
-          44971,
-          45049
+          1557,
+          1840,
+          1918
         ],
         "name": "IGhoToken",
-        "nameLocation": "275:9:26",
-        "scope": 45256,
+        "nameLocation": "275:9:27",
+        "scope": 1558,
         "usedErrors": [
-          44898,
-          44901
+          1767,
+          1770
         ],
         "usedEvents": [
-          44910,
-          44919,
-          44928,
-          44983,
-          44992,
-          45155,
-          45160,
-          45169,
-          45178
+          1457,
+          1462,
+          1471,
+          1480,
+          1779,
+          1788,
+          1797,
+          1852,
+          1861
         ]
       }
     ],
     "license": "MIT"
   },
-  "id": 26
+  "id": 27
 }

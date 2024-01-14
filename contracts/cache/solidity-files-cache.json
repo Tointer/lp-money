@@ -11,6 +11,855 @@
     ]
   },
   "files": {
+    "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/access/IAccessControl.sol": {
+      "lastModificationDate": 1705164423084,
+      "contentHash": "b2c039b7ec738e0241865b8e3cc42297",
+      "sourceName": "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/access/IAccessControl.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IAccessControl": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "IAccessControl.sol\\IAccessControl.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1705164423142,
+      "contentHash": "da337b36f786d26e7e0826fa874f8d27",
+      "sourceName": "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC20": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "IERC20.sol\\IERC20.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol": {
+      "lastModificationDate": 1705164423148,
+      "contentHash": "27b5d73b0b8b0b7b8fb3cd44b6e0ddeb",
+      "sourceName": "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC721": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "ERC721\\IERC721.sol\\IERC721.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Enumerable.sol": {
+      "lastModificationDate": 1705164423150,
+      "contentHash": "bb4942e397d9688d164ba177fdb2ef4b",
+      "sourceName": "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Enumerable.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC721Enumerable": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "extensions\\IERC721Enumerable.sol\\IERC721Enumerable.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol": {
+      "lastModificationDate": 1705164423150,
+      "contentHash": "00a5e045d4844f66434a25a5c7c425e6",
+      "sourceName": "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC721/extensions/IERC721Metadata.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC721Metadata": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "extensions\\IERC721Metadata.sol\\IERC721Metadata.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1705164423160,
+      "contentHash": "48674212f545f00ae3efc963b05ffa18",
+      "sourceName": "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": "^0.8.0",
+      "artifacts": {
+        "IERC165": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "introspection\\IERC165.sol\\IERC165.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/IUniswapV3Pool.sol": {
+      "lastModificationDate": 1705164437758,
+      "contentHash": "29f0f469d01c11767fdd67a270ec4226",
+      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/IUniswapV3Pool.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolErrors.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol"
+      ],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3Pool": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3Pool.sol\\IUniswapV3Pool.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol": {
+      "lastModificationDate": 1705164437759,
+      "contentHash": "dede1acb09c9ac66ac08e513ca1432d0",
+      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3PoolActions": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3PoolActions.sol\\IUniswapV3PoolActions.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol": {
+      "lastModificationDate": 1705164437761,
+      "contentHash": "b69b49c1b2c28866166e09baae3db4ed",
+      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3PoolDerivedState": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3PoolDerivedState.sol\\IUniswapV3PoolDerivedState.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolErrors.sol": {
+      "lastModificationDate": 1705164437761,
+      "contentHash": "a092436338ef1ea1a64a172be37701fb",
+      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolErrors.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3PoolErrors": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3PoolErrors.sol\\IUniswapV3PoolErrors.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol": {
+      "lastModificationDate": 1705164437762,
+      "contentHash": "7964b4a0c7ba595248460f74f8683252",
+      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3PoolEvents": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3PoolEvents.sol\\IUniswapV3PoolEvents.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol": {
+      "lastModificationDate": 1705164437762,
+      "contentHash": "6a1b3673618d33cd9897b2fab44b5421",
+      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3PoolImmutables": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3PoolImmutables.sol\\IUniswapV3PoolImmutables.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol": {
+      "lastModificationDate": 1705164437762,
+      "contentHash": "34da6322914eb22e1e5ed5d49f69e636",
+      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3PoolOwnerActions": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3PoolOwnerActions.sol\\IUniswapV3PoolOwnerActions.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol": {
+      "lastModificationDate": 1705164437762,
+      "contentHash": "52b9fa526adcb432c49b585642d25b8e",
+      "sourceName": "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IUniswapV3PoolState": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "IUniswapV3PoolState.sol\\IUniswapV3PoolState.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IERC721Permit.sol": {
+      "lastModificationDate": 1705164437908,
+      "contentHash": "cae84be8214d4e4efc0a372c720d6d96",
+      "sourceName": "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IERC721Permit.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol"
+      ],
+      "versionRequirement": ">=0.7.5",
+      "artifacts": {
+        "IERC721Permit": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "IERC721Permit.sol\\IERC721Permit.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol": {
+      "lastModificationDate": 1705164437908,
+      "contentHash": "72a5cd7469d77ff5c51792853e5e2dc3",
+      "sourceName": "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/token/ERC721/extensions/IERC721Enumerable.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IERC721Permit.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPeripheryImmutableState.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPeripheryPayments.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPoolInitializer.sol",
+        "lib/bunni-oracle/lib/v3-periphery\\contracts/libraries/PoolAddress.sol"
+      ],
+      "versionRequirement": ">=0.7.5",
+      "artifacts": {
+        "INonfungiblePositionManager": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "INonfungiblePositionManager.sol\\INonfungiblePositionManager.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPeripheryImmutableState.sol": {
+      "lastModificationDate": 1705164437909,
+      "contentHash": "eb9d779608162190a150b799631a65da",
+      "sourceName": "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPeripheryImmutableState.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "IPeripheryImmutableState": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "IPeripheryImmutableState.sol\\IPeripheryImmutableState.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPeripheryPayments.sol": {
+      "lastModificationDate": 1705164437909,
+      "contentHash": "c4f29c3bea08970cc12c474ec46bf99b",
+      "sourceName": "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPeripheryPayments.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.7.5",
+      "artifacts": {
+        "IPeripheryPayments": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "IPeripheryPayments.sol\\IPeripheryPayments.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPoolInitializer.sol": {
+      "lastModificationDate": 1705164437910,
+      "contentHash": "ff171454f239cc44f0906ceeca46b34d",
+      "sourceName": "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPoolInitializer.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.7.5",
+      "artifacts": {
+        "IPoolInitializer": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "IPoolInitializer.sol\\IPoolInitializer.json"
+        }
+      }
+    },
+    "lib/bunni-oracle/lib/v3-periphery/contracts/libraries/PoolAddress.sol": {
+      "lastModificationDate": 1705164437917,
+      "contentHash": "480c5e7d7519a51018099854055cc9f6",
+      "sourceName": "lib/bunni-oracle/lib/v3-periphery/contracts/libraries/PoolAddress.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [],
+      "versionRequirement": ">=0.5.0",
+      "artifacts": {
+        "PoolAddress": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "PoolAddress.sol\\PoolAddress.json"
+        }
+      }
+    },
     "lib/forge-std/lib/ds-test/src/test.sol": {
       "lastModificationDate": 1705154357760,
       "contentHash": "2df678a5b2611e0d7bc9ef6745d19157",
@@ -949,88 +1798,6 @@
         }
       }
     },
-    "lib/openzeppelin-contracts/contracts/access/IAccessControl.sol": {
-      "lastModificationDate": 1705155384373,
-      "contentHash": "e081c05380efc602d54c6f9bd1a8b6fc",
-      "sourceName": "lib/openzeppelin-contracts/contracts/access/IAccessControl.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "useLiteralContent": false,
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": "^0.8.20",
-      "artifacts": {
-        "IAccessControl": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IAccessControl.sol\\IAccessControl.json"
-        }
-      }
-    },
-    "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol": {
-      "lastModificationDate": 1705155384398,
-      "contentHash": "a9abad21a16aa28b1b14280743bce75c",
-      "sourceName": "lib/openzeppelin-contracts/contracts/token/ERC20/IERC20.sol",
-      "solcConfig": {
-        "settings": {
-          "optimizer": {
-            "enabled": true,
-            "runs": 200
-          },
-          "metadata": {
-            "useLiteralContent": false,
-            "bytecodeHash": "ipfs",
-            "appendCBOR": true
-          },
-          "outputSelection": {
-            "*": {
-              "": [
-                "ast"
-              ],
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata"
-              ]
-            }
-          },
-          "evmVersion": "paris",
-          "libraries": {}
-        }
-      },
-      "imports": [],
-      "versionRequirement": "^0.8.20",
-      "artifacts": {
-        "IERC20": {
-          "0.8.21+commit.d9974bed.Windows.msvc": "IERC20.sol\\IERC20.json"
-        }
-      }
-    },
     "script/Counter.s.sol": {
       "lastModificationDate": 1705154354611,
       "contentHash": "7539680fbd3ad49c6632713cc2bb6bf6",
@@ -1130,6 +1897,70 @@
         }
       }
     },
+    "src/LPMoney.sol": {
+      "lastModificationDate": 1705221802269,
+      "contentHash": "725ed602c063f57a5a51c47bd2471dcb",
+      "sourceName": "src/LPMoney.sol",
+      "solcConfig": {
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200
+          },
+          "metadata": {
+            "useLiteralContent": false,
+            "bytecodeHash": "ipfs",
+            "appendCBOR": true
+          },
+          "outputSelection": {
+            "*": {
+              "": [
+                "ast"
+              ],
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ]
+            }
+          },
+          "evmVersion": "paris",
+          "libraries": {}
+        }
+      },
+      "imports": [
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/access/IAccessControl.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/token/ERC20/IERC20.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/token/ERC721/IERC721.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/token/ERC721/extensions/IERC721Enumerable.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/token/ERC721/extensions/IERC721Metadata.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts/contracts/utils/introspection/IERC165.sol",
+        "lib/bunni-oracle/lib/v3-core\\contracts/interfaces/IUniswapV3Pool.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolErrors.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IERC721Permit.sol",
+        "lib/bunni-oracle/lib/v3-periphery\\contracts/interfaces/INonfungiblePositionManager.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPeripheryImmutableState.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPeripheryPayments.sol",
+        "lib/bunni-oracle/lib/v3-periphery/contracts/interfaces/IPoolInitializer.sol",
+        "lib/bunni-oracle/lib/v3-periphery\\contracts/libraries/PoolAddress.sol",
+        "src\\interfaces\\IGhoToken.sol",
+        "src\\interfaces\\ILPpriceOracle.sol"
+      ],
+      "versionRequirement": "^0.8.13",
+      "artifacts": {
+        "LPMoney": {
+          "0.8.21+commit.d9974bed.Windows.msvc": "LPMoney.sol\\LPMoney.json"
+        }
+      }
+    },
     "src/interfaces/IGhoFacilitator.sol": {
       "lastModificationDate": 1705153996611,
       "contentHash": "3d478ba774a5b67d354ef3db3d2ba3ae",
@@ -1205,8 +2036,8 @@
         }
       },
       "imports": [
-        "lib/openzeppelin-contracts/contracts\\access/IAccessControl.sol",
-        "lib/openzeppelin-contracts/contracts\\token/ERC20/IERC20.sol"
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/access/IAccessControl.sol",
+        "lib/bunni-oracle/lib/bunni/lib/openzeppelin-contracts\\contracts/token/ERC20/IERC20.sol"
       ],
       "versionRequirement": "^0.8.0",
       "artifacts": {
@@ -1216,8 +2047,8 @@
       }
     },
     "src/interfaces/ILPpriceOracle.sol": {
-      "lastModificationDate": 1705153997006,
-      "contentHash": "e95bcf0753e125a8d87b4903e7cd1d49",
+      "lastModificationDate": 1705220229918,
+      "contentHash": "70b0e9407677c57acfa063faddb5a354",
       "sourceName": "src/interfaces/ILPpriceOracle.sol",
       "solcConfig": {
         "settings": {
@@ -1248,7 +2079,16 @@
           "libraries": {}
         }
       },
-      "imports": [],
+      "imports": [
+        "lib/bunni-oracle/lib/v3-core\\contracts/interfaces/IUniswapV3Pool.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolActions.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolDerivedState.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolErrors.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolEvents.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolImmutables.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolOwnerActions.sol",
+        "lib/bunni-oracle/lib/v3-core/contracts/interfaces/pool/IUniswapV3PoolState.sol"
+      ],
       "versionRequirement": "^0.8.13",
       "artifacts": {
         "ILPpriceOracle": {
