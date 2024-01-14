@@ -6,8 +6,9 @@ import {IUniswapV3Pool} from "@uniswap/v3-core/contracts/interfaces/IUniswapV3Po
 import {INonfungiblePositionManager} from "@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol";
 import {ILPpriceOracle} from './interfaces/ILPpriceOracle.sol';
 import {PoolAddress} from "@uniswap/v3-periphery/contracts/libraries/PoolAddress.sol";
+import {ERC721Holder} from "@openzeppelin-latest/contracts/token/ERC721/utils/ERC721Holder.sol";
 
-contract LPMoney {
+contract LPMoney is ERC721Holder{
 
     struct PositionInfo{
         uint64 index;
