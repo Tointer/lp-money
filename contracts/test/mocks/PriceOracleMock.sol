@@ -3,7 +3,7 @@ pragma solidity ^0.8.13;
 import {ILPpriceOracle} from '../../src/interfaces/ILPpriceOracle.sol';
 import {IUniswapV3Pool} from "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol";
 
-contract LpOracleMock is ILPpriceOracle{
+contract PriceOracleMock is ILPpriceOracle{
     uint256 public currentMockPrice;
 
     function quoteUSD(
