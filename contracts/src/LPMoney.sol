@@ -11,8 +11,9 @@ import {ERC721Holder} from "@openzeppelin-latest/contracts/token/ERC721/utils/ER
 contract LPMoney is ERC721Holder{
 
     struct PositionInfo{
+        address owner;
         uint64 index;
-        uint192 amountMinted; 
+        uint amountMinted; 
     }
 
     address private ghoTokenAddress;
@@ -36,26 +37,42 @@ contract LPMoney is ERC721Holder{
     }
 
     function close(uint collateralNftId) public {
-        address owner = nftPositionManager.ownerOf(collateralNftId);
-
+        PositionInfo memory positionInfo = _ownedTokensIndex[collateralNftId];
+        address owner = positionInfo.owner;
+        uint index = positionInfo.index;
+        uint amountMinted = positionInfo.amountMinted;
+        bool inRange = index < _ownedTokens[msg.sender].length;
         require(owner == msg.sender, "LPMoney: caller is not the owner of the NFT");
-        uint amountMinted = _ownedTokensIndex[collateralNftId].amountMinted;
 
         IGhoToken(ghoTokenAddress).transferFrom(msg.sender, address(this), amountMinted);
         IGhoToken(ghoTokenAddress).burn(amountMinted);
+
+        _ownedTokens[msg.sender][index] = _ownedTokens[msg.sender][_ownedTokens[msg.sender].length - 1];
+        _ownedTokens[msg.sender].pop();
+        delete _ownedTokensIndex[collateralNftId];
 
         nftPositionManager.transferFrom(address(this), msg.sender, collateralNftId);
     }
 
     function liquidate(uint collateralNftId) public {
         uint currentValue = getPositionWorth(collateralNftId);
-        uint amountMinted = _ownedTokensIndex[collateralNftId].amountMinted;
+
+        PositionInfo memory positionInfo = _ownedTokensIndex[collateralNftId];
+        address owner = positionInfo.owner;
+        uint index = positionInfo.index;
+        uint amountMinted = positionInfo.amountMinted;
+
         uint liquidateThreshold = amountMinted * 11000 / 10000;
 
         IGhoToken(ghoTokenAddress).transferFrom(msg.sender, address(this), amountMinted);
         IGhoToken(ghoTokenAddress).burn(amountMinted);
 
         require(currentValue <= liquidateThreshold, "LPMoney: healthy position cannot be liquidated");
+
+        _ownedTokens[msg.sender][index] = _ownedTokens[msg.sender][_ownedTokens[msg.sender].length - 1];
+        _ownedTokens[msg.sender].pop();
+        delete _ownedTokensIndex[collateralNftId];
+
         nftPositionManager.transferFrom(address(this), msg.sender, collateralNftId);
     }
 
@@ -64,7 +81,7 @@ contract LPMoney is ERC721Holder{
         
         uint amount = getPositionWorth(collateralNftId) * 8000 / 10000;
         _ownedTokens[msg.sender].push(collateralNftId);
-        _ownedTokensIndex[collateralNftId] = PositionInfo(uint64(_ownedTokens[msg.sender].length - 1), uint192(amount));
+        _ownedTokensIndex[collateralNftId] = PositionInfo(msg.sender, uint64(_ownedTokens[msg.sender].length - 1), amount);
 
         IGhoToken(ghoTokenAddress).mint(msg.sender, amount);
     }
