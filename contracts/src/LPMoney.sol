@@ -34,6 +34,16 @@ contract LPMoney {
         priceOracle = _lpPriceOracle;
     }
 
+    function close(uint collateralNftId) public {
+        address owner = nftPositionManager.ownerOf(collateralNftId);
+
+        require(owner == msg.sender, "LPMoney: caller is not the owner of the NFT");
+        uint amountMinted = _ownedTokensIndex[collateralNftId].amountMinted;
+        IGhoToken(ghoTokenAddress).burn(msg.sender, amountMinted);
+
+        nftPositionManager.transferFrom(address(this), msg.sender, collateralNftId);
+    }
+
     function liquidate(uint collateralNftId) public {
         uint currentValue = getPositionWorth(collateralNftId);
         uint amountMinted = _ownedTokensIndex[collateralNftId].amountMinted;
