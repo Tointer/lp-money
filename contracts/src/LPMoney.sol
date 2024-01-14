@@ -39,7 +39,9 @@ contract LPMoney {
 
         require(owner == msg.sender, "LPMoney: caller is not the owner of the NFT");
         uint amountMinted = _ownedTokensIndex[collateralNftId].amountMinted;
-        IGhoToken(ghoTokenAddress).burn(msg.sender, amountMinted);
+
+        IGhoToken(ghoTokenAddress).transferFrom(msg.sender, address(this), amountMinted);
+        IGhoToken(ghoTokenAddress).burn(amountMinted);
 
         nftPositionManager.transferFrom(address(this), msg.sender, collateralNftId);
     }
@@ -48,7 +50,9 @@ contract LPMoney {
         uint currentValue = getPositionWorth(collateralNftId);
         uint amountMinted = _ownedTokensIndex[collateralNftId].amountMinted;
         uint liquidateThreshold = amountMinted * 11000 / 10000;
-        IGhoToken(ghoTokenAddress).burn(msg.sender, amountMinted);
+
+        IGhoToken(ghoTokenAddress).transferFrom(msg.sender, address(this), amountMinted);
+        IGhoToken(ghoTokenAddress).burn(amountMinted);
 
         require(currentValue <= liquidateThreshold, "LPMoney: healthy position cannot be liquidated");
         nftPositionManager.transferFrom(address(this), msg.sender, collateralNftId);
