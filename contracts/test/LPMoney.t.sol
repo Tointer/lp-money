@@ -32,6 +32,21 @@ contract LPMoneyTest is Test {
         lpMoney.mint(0);
 
         assertEq(ghoToken.balanceOf(address(0x1)), 800);
+        assertEq(lpCollection.ownerOf(0), address(lpMoney));
+    }
+
+    function test_close() public {
+        vm.startPrank(address(0x1));
+        lpCollection.safeMint(address(0x1));
+        lpCollection.setApprovalForAll(address(lpMoney), true);
+        priceOracle.setMockedPrice(1000);
+        lpMoney.mint(0);
+
+        ghoToken.approve(address(lpMoney), 800);
+        lpMoney.close(0);
+
+        assertEq(ghoToken.balanceOf(address(0x1)), 0);
+        assertEq(lpCollection.ownerOf(0), address(0x1));
     }
 
     // function testFuzz_SetNumber(uint256 x) public {
