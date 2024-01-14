@@ -69,8 +69,8 @@ contract LPMoney is ERC721Holder{
 
         require(currentValue <= liquidateThreshold, "LPMoney: healthy position cannot be liquidated");
 
-        _ownedTokens[msg.sender][index] = _ownedTokens[msg.sender][_ownedTokens[msg.sender].length - 1];
-        _ownedTokens[msg.sender].pop();
+        _ownedTokens[owner][index] = _ownedTokens[owner][_ownedTokens[owner].length - 1];
+        _ownedTokens[owner].pop();
         delete _ownedTokensIndex[collateralNftId];
 
         nftPositionManager.transferFrom(address(this), msg.sender, collateralNftId);
