@@ -1,8 +1,8 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
-import "@openzeppelin/contracts/access/Ownable.sol";
+import "@openzeppelin-latest/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin-latest/contracts/access/Ownable.sol";
 import {INonfungiblePositionManager} from "@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol";
 
 contract LpCollectionMock is ERC721, INonfungiblePositionManager {
@@ -37,7 +37,7 @@ contract LpCollectionMock is ERC721, INonfungiblePositionManager {
         )
     {
         return (
-            0, address(0), address(0), address(0), 0, 0, 0, 0, 0, 0, 0, 0
+            0, address(0), address(0), address(1), 0, 0, 0, 0, 0, 0, 0, 0
         );
     }
 

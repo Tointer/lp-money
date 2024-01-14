@@ -23,13 +23,19 @@ contract LPMoneyTest is Test {
         lpMoney = new LPMoney(address(0), address(ghoToken), INonfungiblePositionManager(lpCollection), priceOracle);
     }
 
-    function test_Increment() public {
-        // counter.increment();
-        // assertEq(counter.number(), 1);
+    function test_mint() public {
+        vm.startPrank(address(0x1));
+        lpCollection.safeMint(address(0x1));
+        lpCollection.setApprovalForAll(address(lpMoney), true);
+
+        priceOracle.setMockedPrice(1000);
+        lpMoney.mint(0);
+
+        assertEq(ghoToken.balanceOf(address(0x1)), 800);
     }
 
-    function testFuzz_SetNumber(uint256 x) public {
-        // counter.setNumber(x);
-        // assertEq(counter.number(), x);
-    }
+    // function testFuzz_SetNumber(uint256 x) public {
+    //     // counter.setNumber(x);
+    //     // assertEq(counter.number(), x);
+    // }
 }
