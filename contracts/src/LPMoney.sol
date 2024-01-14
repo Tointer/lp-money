@@ -13,9 +13,8 @@ contract LPMoney {
     address public uniswapFactory;
     INonfungiblePositionManager public nftPositionManager;
 
-    mapping(address owner => mapping(uint index => uint)) private _collateral;
-    mapping(uint tokenId => uint) private _positionsCount;
-    
+    mapping(address owner => uint[]) private _ownedTokens;
+    mapping(uint tokenId => uint) private _ownedTokensIndex;
 
     function setNumber(uint256 newNumber) public {
         number = newNumber;
@@ -27,7 +26,12 @@ contract LPMoney {
 
     function mint(uint collateralNftId) public {
         nftPositionManager.transferFrom(msg.sender, address(this), nftId);
-        IGhoToken(_to).mint(msg.sender, _amount);
+        _ownedTokens[msg.sender].push(nftId);
+        _ownedTokensIndex[nftId] = _ownedTokens[msg.sender].length - 1;
+        
+        uint amount = getMintAmount(nftId);
+
+        IGhoToken(_to).mint(msg.sender, amount);
     }
 
     function getUniswapPool(address token0, address token1, uint24 fee) public view returns (address) {
