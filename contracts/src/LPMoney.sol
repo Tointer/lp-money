@@ -56,19 +56,19 @@ contract LPMoney is ERC721Holder, RiskFacilitator{
     }
 
     function liquidate(uint collateralNftId) public {
-        uint currentValue = getPositionWorth(collateralNftId);
+        (uint amount, uint32 maxLTV, uint32 liqudationThreshold) = getPositionWorth(collateralNftId);
 
         PositionInfo memory positionInfo = _ownedTokensIndex[collateralNftId];
         address owner = positionInfo.owner;
         uint index = positionInfo.index;
         uint amountMinted = positionInfo.amountMinted;
 
-        uint liquidateThreshold = amountMinted * 11000 / 10000;
+        uint liquidateThreshold = amountMinted + amountMinted * liqudationThreshold / 10000;
 
         GHO_TOKEN.transferFrom(msg.sender, address(this), amountMinted);
         GHO_TOKEN.burn(amountMinted);
 
-        require(currentValue <= liquidateThreshold, "LPMoney: healthy position cannot be liquidated");
+        require(amount <= liquidateThreshold, "LPMoney: healthy position cannot be liquidated");
 
         _ownedTokens[owner][index] = _ownedTokens[owner][_ownedTokens[owner].length - 1];
         _ownedTokens[owner].pop();
@@ -79,12 +79,14 @@ contract LPMoney is ERC721Holder, RiskFacilitator{
 
     function mint(uint collateralNftId) public {
         nftPositionManager.transferFrom(msg.sender, address(this), collateralNftId);
-        
-        uint amount = getPositionWorth(collateralNftId) * 8000 / 10000;
-        _ownedTokens[msg.sender].push(collateralNftId);
-        _ownedTokensIndex[collateralNftId] = PositionInfo(msg.sender, uint64(_ownedTokens[msg.sender].length - 1), amount);
+        (uint amount, uint32 maxLTV, uint32 liqudationThreshold) = getPositionWorth(collateralNftId);
 
-        GHO_TOKEN.mint(msg.sender, amount);
+        uint mintAmount = amount * maxLTV / 10000;
+
+        _ownedTokens[msg.sender].push(collateralNftId);
+        _ownedTokensIndex[collateralNftId] = PositionInfo(msg.sender, uint64(_ownedTokens[msg.sender].length - 1), mintAmount);
+
+        GHO_TOKEN.mint(msg.sender, mintAmount);
     }
 
     function getUniswapPool(address token0, address token1, uint24 fee) public view returns (IUniswapV3Pool) {
@@ -94,7 +96,7 @@ contract LPMoney is ERC721Holder, RiskFacilitator{
         ));
     }
 
-    function getPositionWorth(uint nftId) internal view returns (uint){
+    function getPositionWorth(uint nftId) internal view returns (uint amount, uint32 maxLTV, uint32 liqudationThreshold){
         (uint96 nonce,
         address operator,
         address token0,
@@ -108,7 +110,7 @@ contract LPMoney is ERC721Holder, RiskFacilitator{
         uint128 tokensOwed0,
         uint128 tokensOwed1) = nftPositionManager.positions(nftId);
 
-        return priceOracle.quoteUSD(
+        amount =  priceOracle.quoteUSD(
             getUniswapPool(token0, token1, fee),
             tickLower,
             tickUpper,
@@ -116,5 +118,7 @@ contract LPMoney is ERC721Holder, RiskFacilitator{
             120,
             40
         );
+
+        (maxLTV, liqudationThreshold) = getWorstRisk(token0, token1);
     }   
 }

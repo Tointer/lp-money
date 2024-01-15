@@ -19,7 +19,7 @@ contract RiskFacilitator is IGhoFacilitator{
     // The GHO treasury, the recipient of fee distributions
     address private _ghoTreasury;
 
-    mapping (address => RiskFactor) public riskFactors;
+    mapping (address => RiskFactor) private riskFactors;
 
     /**
     * @dev Only pool admin can call functions marked by this modifier.
@@ -57,17 +57,21 @@ contract RiskFacilitator is IGhoFacilitator{
     function setRiskFactor(address token, uint32 maxLTV, uint32 liqThreshold) external onlyPoolAdmin {
         require(maxLTV > 0, "RiskFacilitator: maxLTV must be greater than 0");
         require(liqThreshold > 0, "RiskFacilitator: liqThreshold must be greater than 0");
-        require(maxLTV < liqThreshold, "RiskFacilitator: maxLTV must be less than liqThreshold");
         riskFactors[token] = RiskFactor(maxLTV, liqThreshold);
     }
 
-    function getWorstRisk(address token0, address token1) internal view returns (RiskFactor memory) {
+    function getRisk(address token) public view returns (uint32 maxLTV, uint32 liqThreshold) {
+        RiskFactor memory risk = riskFactors[token];
+        return (risk.maxLTV, risk.liqThreshold);      
+    }
+
+    function getWorstRisk(address token0, address token1) internal view returns (uint32 maxLTV, uint32 liqThreshold) {
         RiskFactor memory risk0 = riskFactors[token0];
         RiskFactor memory risk1 = riskFactors[token1];
         if (risk0.maxLTV > risk1.maxLTV) {
-            return risk1;
+            return (risk1.maxLTV, risk1.liqThreshold);
         } else {
-            return risk0;
+            return (risk0.maxLTV, risk0.liqThreshold);
         }
     }
 
