@@ -19,6 +19,8 @@ contract LPMoneyTest is Test {
     ACLManagerMock public aclManager;
     PoolAddressProviderMock public poolAddressProvider;
     LPMoney public lpMoney;
+
+    address poolAdmin = address(0xa);
     
 
     function setUp() public {
@@ -29,6 +31,7 @@ contract LPMoneyTest is Test {
         poolAddressProvider = new PoolAddressProviderMock();
 
         poolAddressProvider.setACLManger(address(aclManager));
+        aclManager.setPoolAdmin(poolAdmin);
 
         lpMoney = new LPMoney(
             address(0), 
@@ -37,6 +40,11 @@ contract LPMoneyTest is Test {
             priceOracle, 
             address(poolAddressProvider)
         );
+
+        vm.startPrank(poolAdmin);
+        lpMoney.setRiskFactor(lpCollection.mockToken0(), 8000, 1000);
+        lpMoney.setRiskFactor(lpCollection.mockToken1(), 8000, 1000);
+        vm.stopPrank();
     }
 
     function test_mint() public {

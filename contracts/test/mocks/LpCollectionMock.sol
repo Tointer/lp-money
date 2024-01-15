@@ -8,6 +8,9 @@ import {INonfungiblePositionManager} from "@uniswap/v3-periphery/contracts/inter
 contract LpCollectionMock is ERC721, INonfungiblePositionManager {
     uint256 private _nextTokenId;
 
+    address public mockToken0 = address(0x0);
+    address public mockToken1 = address(0x1);
+
     constructor()
         ERC721("MyToken", "MTK")
     {}
@@ -37,7 +40,7 @@ contract LpCollectionMock is ERC721, INonfungiblePositionManager {
         )
     {
         return (
-            0, address(0), address(0), address(1), 0, 0, 0, 0, 0, 0, 0, 0
+            0, address(0), mockToken0, mockToken1, 0, 0, 0, 0, 0, 0, 0, 0
         );
     }
 
