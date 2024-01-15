@@ -1,19 +1,17 @@
 // SPDX-License-Identifier: UNLICENSED
 pragma solidity ^0.8.13;
 
-import {IGhoToken} from './interfaces/IGhoToken.sol';
 import {ILPpriceOracle} from './interfaces/ILPpriceOracle.sol';
-import {IGhoFacilitator} from './interfaces/IGhoFacilitator.sol';
+import {IGhoToken} from './interfaces/IGhoToken.sol';
+import {RiskFacilitator} from './RiskFacilitator.sol';
 
 import {IUniswapV3Pool} from "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol";
 import {INonfungiblePositionManager} from "@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol";
 import {PoolAddress} from "@uniswap/v3-periphery/contracts/libraries/PoolAddress.sol";
 
 import {ERC721Holder} from "@openzeppelin-latest/contracts/token/ERC721/utils/ERC721Holder.sol";
-import {IPoolAddressesProvider} from '@aave/core-v3/contracts/interfaces/IPoolAddressesProvider.sol';
-import {IACLManager} from '@aave/core-v3/contracts/interfaces/IACLManager.sol';
 
-contract LPMoney is ERC721Holder, IGhoFacilitator{
+contract LPMoney is ERC721Holder, RiskFacilitator{
 
     struct PositionInfo{
         address owner;
@@ -21,28 +19,12 @@ contract LPMoney is ERC721Holder, IGhoFacilitator{
         uint amountMinted; 
     }
 
-    IGhoToken public immutable GHO_TOKEN;
-    
-    // The Access Control List manager contract
-    IACLManager private immutable ACL_MANAGER;
-
     address private uniswapFactory;
     INonfungiblePositionManager private nftPositionManager;
     ILPpriceOracle private priceOracle;
 
-    // The GHO treasury, the recipient of fee distributions
-    address private _ghoTreasury;
-
     mapping(address owner => uint[]) private _ownedTokens;
     mapping(uint tokenId => PositionInfo) private _ownedTokensIndex;
-
-    /**
-   * @dev Only pool admin can call functions marked by this modifier.
-   */
-    modifier onlyPoolAdmin() {
-        require(ACL_MANAGER.isPoolAdmin(msg.sender), 'CALLER_NOT_POOL_ADMIN');
-        _;
-    }
 
     constructor(
         address _uniswapFactory, 
@@ -50,12 +32,10 @@ contract LPMoney is ERC721Holder, IGhoFacilitator{
         INonfungiblePositionManager _nftPositionManager, 
         ILPpriceOracle _lpPriceOracle,
         address addressesProvider
-    ) {
+    ) RiskFacilitator(_ghoTokenAddress, addressesProvider){
         uniswapFactory = _uniswapFactory;
-        GHO_TOKEN = _ghoTokenAddress;
         nftPositionManager = _nftPositionManager;
         priceOracle = _lpPriceOracle;
-        ACL_MANAGER = IACLManager(IPoolAddressesProvider(addressesProvider).getACLManager());
     }
 
     function close(uint collateralNftId) public {
@@ -63,7 +43,6 @@ contract LPMoney is ERC721Holder, IGhoFacilitator{
         address owner = positionInfo.owner;
         uint index = positionInfo.index;
         uint amountMinted = positionInfo.amountMinted;
-        bool inRange = index < _ownedTokens[msg.sender].length;
         require(owner == msg.sender, "LPMoney: caller is not the owner of the NFT");
 
         GHO_TOKEN.transferFrom(msg.sender, address(this), amountMinted);
@@ -115,23 +94,6 @@ contract LPMoney is ERC721Holder, IGhoFacilitator{
         ));
     }
 
-    /// @inheritdoc IGhoFacilitator
-    function distributeFeesToTreasury() external override {
-        uint256 balance = GHO_TOKEN.balanceOf(address(this));
-        GHO_TOKEN.transfer(_ghoTreasury, balance);
-        emit FeesDistributedToTreasury(_ghoTreasury, address(GHO_TOKEN), balance);
-    }
-
-    /// @inheritdoc IGhoFacilitator
-    function updateGhoTreasury(address newGhoTreasury) external override onlyPoolAdmin {
-        _updateGhoTreasury(newGhoTreasury);
-    }
-
-    /// @inheritdoc IGhoFacilitator
-    function getGhoTreasury() external view override returns (address) {
-        return _ghoTreasury;
-    }
-
     function getPositionWorth(uint nftId) internal view returns (uint){
         (uint96 nonce,
         address operator,
@@ -154,11 +116,5 @@ contract LPMoney is ERC721Holder, IGhoFacilitator{
             120,
             40
         );
-    }
-
-    function _updateGhoTreasury(address newGhoTreasury) internal {
-        address oldGhoTreasury = _ghoTreasury;
-        _ghoTreasury = newGhoTreasury;
-        emit GhoTreasuryUpdated(oldGhoTreasury, newGhoTreasury);
-    }         
+    }   
 }
