@@ -9,6 +9,7 @@ remappings = [
   "@uniswap/v2-core/=lib/v2-core/",
   "@uniswap/v2-periphery/=lib/v2-periphery/",
   "@openzeppelin-latest/=lib/openzeppelin-contracts/",
+  "@aave/core-v3/=lib/aave-v3-core/",
   "solmate/=lib/solmate/src/",
 ]
 solc_version = "0.8.20"
