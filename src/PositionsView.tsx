@@ -53,7 +53,7 @@ function PositionsView(props: {onPositionSelected: (id: number, name: string) =>
     const selectedStyle = "outline outline-4 outline-neutral-800";
 
     return (
-        <div className="flex gap-6 justify-center w-full flex-wrap">
+        <div className="flex gap-4 justify-center w-full flex-wrap">
             {positions.map((position) => {
                 return (
                     //hover:animate-[wiggle_1s_ease-in-out]
