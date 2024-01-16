@@ -5,9 +5,13 @@ import { getPublicClient } from '@wagmi/core'
 import { config } from './config'
 import { uniswapAbi } from './abi'
 import { size } from 'viem';
+import { string } from 'prop-types';
 
 function PositionsView() {
-    const [positions, setPositions] = useState<{id: number, uri: string}[]>([]);
+    const [positions, setPositions] = useState<{id: number, name: string, uri: string}[]>([]);
+    const [selectedPositionId, setSelectedPositionId] = useState<number>(0);
+
+
     useEffect(() => {
         const client = config.publicClient;
 
@@ -19,7 +23,7 @@ function PositionsView() {
                 args: ['0x0AA354A392745Bc5f63ff8866261e8B6647002DF'] //test address
             });
             
-            const accum: {id: number, uri: string}[] = [];
+            const accum: {id: number, name: string, uri: string}[] = [];
             for (let i = 0; i < balance; i++) {
                 const position = await client.readContract({
                     address: '0xC36442b4a4522E871399CD717aBDD847Ab11FE88', //uniswap nft positions
@@ -34,9 +38,9 @@ function PositionsView() {
                     args: [position] 
                 });
 
-                const svgEncoded = base64ToJson(uri).image;
+                const decoded = base64ToJson(uri);
                 
-                accum.push({id: Number(position), uri: svgEncoded});
+                accum.push({id: Number(position), name: decoded.name, uri: decoded.image});
             }
             setPositions(accum);
         }
@@ -45,16 +49,21 @@ function PositionsView() {
     }, []);
 
 
+    const regularStyle = "hover:outline hover:outline-2 hover:outline-neutral-800 hover:outline-dashed";
+    const selectedStyle = "outline outline-4 outline-neutral-800";
+
     return (
         <div className="flex gap-6 justify-center w-full flex-wrap">
             {positions.map((position) => {
                 return (
                     //hover:animate-[wiggle_1s_ease-in-out]
-                    <div className="hover:outline  hover:outline-[6px] outline-neutral-800" style={{
+                    <div className={selectedPositionId === position.id ? selectedStyle : regularStyle}
+                    onClick={() => setSelectedPositionId(position.id)}
+                    style={{
                         background: 'url(' + position.uri + ') no-repeat' ,
                         width:290,
                         height:500,
-                        borderRadius: 44
+                        borderRadius: 45
                     }}
                     key={position.id} />
                 )
