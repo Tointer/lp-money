@@ -7,7 +7,7 @@ import { uniswapAbi } from './abi'
 import { size } from 'viem';
 import { string } from 'prop-types';
 
-function PositionsView() {
+function PositionsView(props: {onPositionSelected: (id: number, name: string) => void}) {
     const [positions, setPositions] = useState<{id: number, name: string, uri: string}[]>([]);
     const [selectedPositionId, setSelectedPositionId] = useState<number>(0);
 
@@ -58,7 +58,10 @@ function PositionsView() {
                 return (
                     //hover:animate-[wiggle_1s_ease-in-out]
                     <div className={selectedPositionId === position.id ? selectedStyle : regularStyle}
-                    onClick={() => setSelectedPositionId(position.id)}
+                    onClick={() => {
+                        setSelectedPositionId(position.id)
+                        props.onPositionSelected(position.id, position.name)
+                    }}
                     style={{
                         background: 'url(' + position.uri + ') no-repeat' ,
                         width:290,
