@@ -1,4 +1,5 @@
 import { ConnectKitButton } from 'connectkit';
+import PositionsView from './PositionsView';
 import React from 'react';
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
       }}
     >
       <ConnectKitButton />
+      <PositionsView />
     </div>
   );
 }
