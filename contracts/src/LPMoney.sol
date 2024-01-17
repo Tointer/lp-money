@@ -28,14 +28,14 @@ contract LPMoney is ERC721Holder, RiskFacilitator{
 
     constructor(
         address _uniswapFactory, 
-        IGhoToken _ghoTokenAddress, 
-        INonfungiblePositionManager _nftPositionManager, 
-        ILPpriceOracle _lpPriceOracle,
+        address _ghoTokenAddress, 
+        address _nftPositionManager, 
+        address _lpPriceOracle,
         address addressesProvider
     ) RiskFacilitator(_ghoTokenAddress, addressesProvider){
         uniswapFactory = _uniswapFactory;
-        nftPositionManager = _nftPositionManager;
-        priceOracle = _lpPriceOracle;
+        nftPositionManager = INonfungiblePositionManager(_nftPositionManager);
+        priceOracle = ILPpriceOracle(_lpPriceOracle);
     }
 
     function close(uint collateralNftId) public {

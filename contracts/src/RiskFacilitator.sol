@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.20;
+pragma solidity ^0.8.19;
 
 import {IGhoToken} from './interfaces/IGhoToken.sol';
 import {IGhoFacilitator} from './interfaces/IGhoFacilitator.sol';
@@ -30,10 +30,10 @@ contract RiskFacilitator is IGhoFacilitator{
     }
 
     constructor(
-        IGhoToken _ghoTokenAddress, 
+        address _ghoTokenAddress, 
         address addressesProvider
     ) {
-        GHO_TOKEN = _ghoTokenAddress;
+        GHO_TOKEN = IGhoToken(_ghoTokenAddress);
         ACL_MANAGER = IACLManager(IPoolAddressesProvider(addressesProvider).getACLManager());
     }
 
