@@ -35,9 +35,9 @@ contract LPMoneyTest is Test {
 
         lpMoney = new LPMoney(
             address(0), 
-            ghoToken, 
-            INonfungiblePositionManager(lpCollection), 
-            priceOracle, 
+            address(ghoToken), 
+            address(lpCollection), 
+            address(priceOracle), 
             address(poolAddressProvider)
         );
 
