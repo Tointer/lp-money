@@ -117,6 +117,24 @@ contract LPMoney is ERC721Holder, RiskFacilitator{
         tokenId = _ownedTokens[owner][index];
     }
 
+    // offchain helper function, not 100% reliable but more convenient and will work for most cases
+    function getAllPositionsOf(address owner) external view returns (uint64[] memory tokenIds) {
+        uint balance = _ownedTokens[owner].length;
+        tokenIds = new uint64[](balance);
+        for(uint i = 0; i < balance; i++){
+            tokenIds[i] = uint64(_ownedTokens[owner][i]);
+        }
+    }
+
+    // offchain helper function, not 100% reliable but more convenient and will work for most cases
+    function getAllUniswapPositionsOf(address owner) external view returns(uint64[] memory tokenIds){
+        uint balance = nftPositionManager.balanceOf(owner);
+        tokenIds = new uint64[](balance);
+        for(uint i = 0; i < balance; i++){
+            tokenIds[i] = uint64(nftPositionManager.tokenOfOwnerByIndex(owner, i));
+        }
+    }
+
     function getUniswapPool(address token0, address token1, uint24 fee) public view returns (IUniswapV3Pool) {
         return IUniswapV3Pool(PoolAddress.computeAddress(
             uniswapFactory,
