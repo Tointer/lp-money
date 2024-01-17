@@ -48,8 +48,15 @@ contract LPMoney is ERC721Holder, RiskFacilitator{
         GHO_TOKEN.transferFrom(msg.sender, address(this), amountMinted);
         GHO_TOKEN.burn(amountMinted);
 
-        _ownedTokens[msg.sender][index] = _ownedTokens[msg.sender][_ownedTokens[msg.sender].length - 1];
-        _ownedTokens[msg.sender].pop();
+        uint length = _ownedTokens[owner].length;
+        if(length == index + 1){
+            _ownedTokens[owner].pop();
+        }else{
+            _ownedTokens[owner][index] = _ownedTokens[owner][_ownedTokens[owner].length - 1];
+            _ownedTokens[owner].pop();
+            _ownedTokensIndex[_ownedTokens[owner][index]].index = uint64(index);
+        }
+
         delete _ownedTokensIndex[collateralNftId];
 
         nftPositionManager.transferFrom(address(this), msg.sender, collateralNftId);
@@ -70,8 +77,15 @@ contract LPMoney is ERC721Holder, RiskFacilitator{
 
         require(amount <= liquidateThreshold, "LPMoney: healthy position cannot be liquidated");
 
-        _ownedTokens[owner][index] = _ownedTokens[owner][_ownedTokens[owner].length - 1];
-        _ownedTokens[owner].pop();
+        uint length = _ownedTokens[owner].length;
+        if(length == index + 1){
+            _ownedTokens[owner].pop();
+        }else{
+            _ownedTokens[owner][index] = _ownedTokens[owner][_ownedTokens[owner].length - 1];
+            _ownedTokens[owner].pop();
+            _ownedTokensIndex[_ownedTokens[owner][index]].index = uint64(index);
+        }
+
         delete _ownedTokensIndex[collateralNftId];
 
         nftPositionManager.transferFrom(address(this), msg.sender, collateralNftId);
@@ -87,6 +101,20 @@ contract LPMoney is ERC721Holder, RiskFacilitator{
         _ownedTokensIndex[collateralNftId] = PositionInfo(msg.sender, uint64(_ownedTokens[msg.sender].length - 1), mintAmount);
 
         GHO_TOKEN.mint(msg.sender, mintAmount);
+    }
+
+    function previewMint(uint collateralNftId) public view returns (uint mintAmount) {
+        (uint amount, uint32 maxLTV, uint32 liqudationThreshold) = getPositionWorth(collateralNftId);
+
+        mintAmount = amount * maxLTV / 10000;
+    }
+
+    function getPositionsBalance(address owner) public view returns (uint balance) {
+        balance = _ownedTokens[owner].length;
+    }
+
+    function getPositionOfOwnerByIndex(address owner, uint index) public view returns (uint tokenId) {
+        tokenId = _ownedTokens[owner][index];
     }
 
     function getUniswapPool(address token0, address token1, uint24 fee) public view returns (IUniswapV3Pool) {
