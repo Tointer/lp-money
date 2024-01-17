@@ -22,9 +22,7 @@ fuzz_runs = 100_000
 verbosity = 4
 
 [rpc_endpoints]
-arbitrum = "${RPC_URL_ARBITRUM}"
-goerli = "${RPC_URL_GOERLI}"
-mainnet = "${RPC_URL_MAINNET}"
+arbitrum_mainnet = "${ARBITRUM_MAINNET_RPC}"
 
 [etherscan]
 arbitrum = {key = "${ARBISCAN_KEY}", url = "https://api.arbiscan.io/api"}
