@@ -60,6 +60,29 @@ contract LPMoneyTest is Test {
 
         assertEq(ghoToken.balanceOf(address(0x1)), 800);
         assertEq(lpCollection.ownerOf(0), address(lpMoney));
+        assertEq(lpMoney.getPositionOfOwnerByIndex(address(0x1), 0), 0);
+        assertEq(lpMoney.getPositionsBalance(address(0x1)), 1);
+    }
+
+    function test_mint_two() public {
+        address user = address(0x1);
+        vm.startPrank(user);
+        lpCollection.safeMint(user);
+        lpCollection.safeMint(user);
+        lpCollection.safeMint(user);
+        lpCollection.setApprovalForAll(address(lpMoney), true);
+
+        priceOracle.setMockedPrice(1000);
+        lpMoney.mint(0);
+        lpMoney.mint(2);
+
+        assertEq(ghoToken.balanceOf(user), 1600);
+        assertEq(lpCollection.ownerOf(0), address(lpMoney));
+        assertEq(lpCollection.ownerOf(1), address(user));
+        assertEq(lpCollection.ownerOf(2), address(lpMoney));
+        assertEq(lpMoney.getPositionOfOwnerByIndex(user, 0), 0);
+        assertEq(lpMoney.getPositionOfOwnerByIndex(user, 1), 2);
+        assertEq(lpMoney.getPositionsBalance(user), 2);
     }
 
     function test_close() public {
@@ -74,6 +97,7 @@ contract LPMoneyTest is Test {
 
         assertEq(ghoToken.balanceOf(address(0x1)), 0);
         assertEq(lpCollection.ownerOf(0), address(0x1));
+        assertEq(lpMoney.getPositionsBalance(address(0x1)), 0);
     }
 
     function testFail_closeByNotOwner() public {
@@ -107,6 +131,20 @@ contract LPMoneyTest is Test {
 
         assertEq(ghoToken.balanceOf(address(0x2)), 0);
         assertEq(lpCollection.ownerOf(0), address(0x2));
+        assertEq(lpMoney.getPositionsBalance(address(0x1)), 0);
+    }
+
+    function testFail_liquidationAboveThreshold() public {
+        vm.startPrank(address(0x1));
+        lpCollection.safeMint(address(0x1));
+        lpCollection.setApprovalForAll(address(lpMoney), true);
+        priceOracle.setMockedPrice(1000);
+        lpMoney.mint(0);
+
+        vm.startPrank(address(0x2));
+        ghoToken.mint(address(0x2), 800);
+        ghoToken.approve(address(lpMoney), 800);
+        lpMoney.liquidate(0);
     }
 
     // function testFuzz_SetNumber(uint256 x) public {
