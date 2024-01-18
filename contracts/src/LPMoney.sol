@@ -136,13 +136,6 @@ contract LPMoney is ERC721Holder, RiskFacilitator{
         }
     }
 
-    function getUniswapPool(address token0, address token1, uint24 fee) public view returns (IUniswapV3Pool) {
-        return IUniswapV3Pool(PoolAddress.computeAddress(
-            uniswapFactory,
-            PoolAddress.getPoolKey(token0, token1, fee)
-        ));
-    }
-
     function getPositionWorth(uint nftId) internal view returns (uint amount, uint32 maxLTV, uint32 liqudationThreshold){
         (uint96 nonce,
         address operator,
