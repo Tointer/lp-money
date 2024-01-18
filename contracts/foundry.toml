@@ -11,6 +11,7 @@ remappings = [
   "@openzeppelin-latest/=lib/openzeppelin-contracts/",
   "@aave/core-v3/=lib/aave-v3-core/",
   "solmate/=lib/solmate/src/",
+  "bunni-oracle/=lib/bunni-oracle/src/"
 ]
 solc_version = "0.8.20"
 verbosity = 1
@@ -26,5 +27,3 @@ arbitrum_mainnet = "${ARBITRUM_MAINNET_RPC}"
 
 [etherscan]
 arbitrum = {key = "${ARBISCAN_KEY}", url = "https://api.arbiscan.io/api"}
-goerli = {key = "${ETHERSCAN_KEY}", url = "https://api-goerli.etherscan.io/api"}
-mainnet = {key = "${ETHERSCAN_KEY}"}
