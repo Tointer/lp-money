@@ -11,6 +11,7 @@ import {LpCollectionMock} from "./mocks/LpCollectionMock.sol";
 import {PriceOracleMock} from "./mocks/PriceOracleMock.sol";
 import {ACLManagerMock} from "./mocks/ACLManagerMock.sol";
 import {PoolAddressProviderMock} from "./mocks/PoolAddressProviderMock.sol";
+import {UniswapFactoryMock} from "./mocks/UniswapFactoryMock.sol";
 
 contract LPMoneyTest is Test {
     IGhoToken public ghoToken;
@@ -18,6 +19,7 @@ contract LPMoneyTest is Test {
     PriceOracleMock public priceOracle;
     ACLManagerMock public aclManager;
     PoolAddressProviderMock public poolAddressProvider;
+    UniswapFactoryMock public uniswapFactory;
     LPMoney public lpMoney;
 
     address poolAdmin = address(0xa);
@@ -29,12 +31,13 @@ contract LPMoneyTest is Test {
         priceOracle = new PriceOracleMock();
         aclManager = new ACLManagerMock();
         poolAddressProvider = new PoolAddressProviderMock();
+        uniswapFactory = new UniswapFactoryMock();
 
         poolAddressProvider.setACLManger(address(aclManager));
         aclManager.setPoolAdmin(poolAdmin);
 
         lpMoney = new LPMoney(
-            address(0), 
+            address(uniswapFactory), 
             address(ghoToken), 
             address(lpCollection), 
             address(priceOracle), 
@@ -42,8 +45,8 @@ contract LPMoneyTest is Test {
         );
 
         vm.startPrank(poolAdmin);
-        lpMoney.setRiskFactor(lpCollection.mockToken0(), 8000, 1000);
-        lpMoney.setRiskFactor(lpCollection.mockToken1(), 8000, 1000);
+        lpMoney.setRiskFactor(lpCollection.mockToken0(), 8000, 1000, address(0x0));
+        lpMoney.setRiskFactor(lpCollection.mockToken1(), 8000, 1000, address(0x0));
         vm.stopPrank();
     }
 
