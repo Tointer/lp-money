@@ -2,14 +2,15 @@
 pragma solidity ^0.8.13;
 
 import {ILPpriceOracle} from './interfaces/ILPpriceOracle.sol';
-import {IGhoToken} from './interfaces/IGhoToken.sol';
 import {RiskFacilitator} from './RiskFacilitator.sol';
 
 import {IUniswapV3Pool} from "@uniswap/v3-core/contracts/interfaces/IUniswapV3Pool.sol";
 import {INonfungiblePositionManager} from "@uniswap/v3-periphery/contracts/interfaces/INonfungiblePositionManager.sol";
 import {PoolAddress} from "@uniswap/v3-periphery/contracts/libraries/PoolAddress.sol";
+import {IUniswapV3Factory} from "@uniswap/v3-core/contracts/interfaces/IUniswapV3Factory.sol";
 
 import {ERC721Holder} from "@openzeppelin-latest/contracts/token/ERC721/utils/ERC721Holder.sol";
+import {AggregatorV2V3Interface} from "bunni-oracle/external/AggregatorV2V3Interface.sol";
 
 contract LPMoney is ERC721Holder, RiskFacilitator{
 
@@ -156,15 +157,20 @@ contract LPMoney is ERC721Holder, RiskFacilitator{
         uint128 tokensOwed0,
         uint128 tokensOwed1) = nftPositionManager.positions(nftId);
 
-        amount =  priceOracle.quoteUSD(
-            getUniswapPool(token0, token1, fee),
+        IUniswapV3Pool pool = IUniswapV3Pool(IUniswapV3Factory(uniswapFactory).getPool(token0, token1, fee));
+        (uint32 _maxLTV, uint32 _liqudationThreshold, address token0Oracle, address token1Oracle) = getWorstRisk(token0, token1);
+
+        maxLTV = _maxLTV;
+        liqudationThreshold = _liqudationThreshold;
+        amount = priceOracle.quoteUSD(
+            pool,
             tickLower,
             tickUpper,
             liquidity,
             120,
-            40
+            100000,
+            AggregatorV2V3Interface(token0Oracle),
+            AggregatorV2V3Interface(token1Oracle)
         );
-
-        (maxLTV, liqudationThreshold) = getWorstRisk(token0, token1);
     }   
 }

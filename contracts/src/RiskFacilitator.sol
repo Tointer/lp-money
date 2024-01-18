@@ -11,6 +11,7 @@ contract RiskFacilitator is IGhoFacilitator{
     struct RiskFactor {
         uint32 maxLTV;
         uint32 liqThreshold;
+        address oracleAddress;
     }
 
     IGhoToken public immutable GHO_TOKEN;
@@ -54,24 +55,24 @@ contract RiskFacilitator is IGhoFacilitator{
         return _ghoTreasury;
     }
 
-    function setRiskFactor(address token, uint32 maxLTV, uint32 liqThreshold) external onlyPoolAdmin {
+    function setRiskFactor(address token, uint32 maxLTV, uint32 liqThreshold, address oracleAddress) external onlyPoolAdmin {
         require(maxLTV > 0, "RiskFacilitator: maxLTV must be greater than 0");
         require(liqThreshold > 0, "RiskFacilitator: liqThreshold must be greater than 0");
-        riskFactors[token] = RiskFactor(maxLTV, liqThreshold);
+        riskFactors[token] = RiskFactor(maxLTV, liqThreshold, oracleAddress);
     }
 
-    function getRisk(address token) public view returns (uint32 maxLTV, uint32 liqThreshold) {
+    function getTokenInfo(address token) public view returns (uint32 maxLTV, uint32 liqThreshold, address oracleAddress) {
         RiskFactor memory risk = riskFactors[token];
-        return (risk.maxLTV, risk.liqThreshold);      
+        return (risk.maxLTV, risk.liqThreshold, risk.oracleAddress);      
     }
 
-    function getWorstRisk(address token0, address token1) internal view returns (uint32 maxLTV, uint32 liqThreshold) {
+    function getWorstRisk(address token0, address token1) internal view returns (uint32 maxLTV, uint32 liqThreshold, address token0Oracle, address token1Oracle) {
         RiskFactor memory risk0 = riskFactors[token0];
         RiskFactor memory risk1 = riskFactors[token1];
         if (risk0.maxLTV > risk1.maxLTV) {
-            return (risk1.maxLTV, risk1.liqThreshold);
+            return (risk1.maxLTV, risk1.liqThreshold, risk0.oracleAddress, risk1.oracleAddress);
         } else {
-            return (risk0.maxLTV, risk0.liqThreshold);
+            return (risk0.maxLTV, risk0.liqThreshold, risk0.oracleAddress, risk1.oracleAddress);
         }
     }
 
