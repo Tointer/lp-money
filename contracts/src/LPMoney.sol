@@ -98,6 +98,8 @@ contract LPMoney is ERC721Holder, RiskFacilitator{
 
         uint mintAmount = amount * maxLTV / 10000;
 
+        require(mintAmount >= minPositionValue, "LPMoney: position value is too low");
+
         _ownedTokens[msg.sender].push(collateralNftId);
         _ownedTokensIndex[collateralNftId] = PositionInfo(msg.sender, uint64(_ownedTokens[msg.sender].length - 1), mintAmount);
 
