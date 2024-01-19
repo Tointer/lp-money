@@ -31,3 +31,13 @@ export const uniswapAbi = [
         type: "function",
     }
   ] as const;
+
+  export const lpMoney = [
+    {
+        inputs: [{ name: "collateralNftId", type: "uint256" }],
+        name: "previewMint",
+        outputs: [{ name: "mintAmount", type: "uint256" }],
+        stateMutability: "view",
+        type: "function",
+    }
+  ] as const;
