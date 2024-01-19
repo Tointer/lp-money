@@ -100,8 +100,10 @@ contract LPMoney is ERC721Holder, RiskFacilitator{
 
         require(mintAmount >= minPositionValue, "LPMoney: position value is too low");
 
+        uint fee = mintAmount * feeBps / 10000;
+
         _ownedTokens[msg.sender].push(collateralNftId);
-        _ownedTokensIndex[collateralNftId] = PositionInfo(msg.sender, uint64(_ownedTokens[msg.sender].length - 1), mintAmount);
+        _ownedTokensIndex[collateralNftId] = PositionInfo(msg.sender, uint64(_ownedTokens[msg.sender].length - 1), mintAmount+fee);
 
         GHO_TOKEN.mint(msg.sender, mintAmount);
     }

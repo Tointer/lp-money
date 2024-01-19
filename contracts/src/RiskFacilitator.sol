@@ -17,6 +17,7 @@ contract RiskFacilitator is IGhoFacilitator{
     IGhoToken public immutable GHO_TOKEN;
     IACLManager private immutable ACL_MANAGER;
     uint public minPositionValue;
+    uint public feeBps;
 
     // The GHO treasury, the recipient of fee distributions
     address private _ghoTreasury;
@@ -53,6 +54,10 @@ contract RiskFacilitator is IGhoFacilitator{
 
     function setMinPositionValue(uint newValue) external onlyPoolAdmin {
         minPositionValue = newValue;
+    }
+
+    function setFeeBps(uint newValue) external onlyPoolAdmin {
+        feeBps = newValue;
     }
 
     /// @inheritdoc IGhoFacilitator
