@@ -2,12 +2,14 @@ import { ConnectKitButton } from 'connectkit';
 import PositionsView from './PositionsView';
 import {useState, useEffect} from 'react';
 import img from  "./ghoaave.webp"
+import { useAccount } from 'wagmi';
 
 function App() {
   const [selectedPosition, setSelectedPosition] = useState<{id: number, name: string}>
   ({id: 0, name: 'Select position'});
-  
 
+  const account = useAccount();
+  
   return (
     <div className="flex flex-col justify-center items-center mt-2">
       <div className="flex justify-center">
@@ -27,12 +29,16 @@ function App() {
       </div>
 
       <div className='w-full m-2 '>
-        <PositionsView onPositionSelected={(id: number, name: string) => setSelectedPosition({id, name})} />
+        {account.address !== undefined && <PositionsView onPositionSelected={onPositionSelected} userAccount={account.address}/>}
       </div>
 
 
     </div>
   );
+
+  function onPositionSelected(id: number, name: string) {
+    setSelectedPosition({id, name});
+  }
 }
 
 export default App;
