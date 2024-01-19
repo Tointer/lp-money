@@ -12,8 +12,15 @@ const lpMoneyContract = '0xdaafc1f3b2c19bc1d3ca5602c4394f82387951b5';
 const mockGHO = '0x75b1f376006E9B031D7E2BE3d58e97B64bcbb2A5';
 const uniV3Collection = '0xC36442b4a4522E871399CD717aBDD847Ab11FE88';
 
-function PositionsView(props: {onPositionSelected: (id: number, name: string) => void, userAccount: `0x${string}`}) {
-    const [positions, setPositions] = useState<{id: number, name: string, uri: string, available: number}[]>([]);
+interface Position {
+    id: number;
+    name: string;
+    uri: string;
+    mintAmount: number;
+}
+
+function PositionsView(props: {onPositionSelected: (id: number, name: string, mintAmount: number) => void, userAccount: `0x${string}`}) {
+    const [positions, setPositions] = useState<Position[]>([]);
     const [selectedPositionId, setSelectedPositionId] = useState<number>(0);
 
 
@@ -28,7 +35,7 @@ function PositionsView(props: {onPositionSelected: (id: number, name: string) =>
                 args: [props.userAccount]
             });
             
-            const accum: {id: number, name: string, uri: string, available: number}[] = [];
+            const accum: Position[] = [];
             for (let i = 0; i < balance; i++) {
                 const position = await client.readContract({
                     address: uniV3Collection,
@@ -58,7 +65,7 @@ function PositionsView(props: {onPositionSelected: (id: number, name: string) =>
                     id: Number(position), 
                     name: decoded.name, 
                     uri: decoded.image, 
-                    available: mintAmountFormatted
+                    mintAmount: mintAmountFormatted
                 });
             }
             setPositions(accum);
@@ -72,14 +79,14 @@ function PositionsView(props: {onPositionSelected: (id: number, name: string) =>
     const selectedStyle = "outline outline-4 outline-neutral-800";
 
     return (
-        <div className="flex gap-4 justify-center w-full flex-wrap">
+        <div className="flex gap-4 justify-center w-full flex-wrap p-4">
             {positions.map((position) => {
                 return (
                     //hover:animate-[wiggle_1s_ease-in-out]
                     <div className={selectedPositionId === position.id ? selectedStyle : regularStyle}
                     onClick={() => {
                         setSelectedPositionId(position.id)
-                        props.onPositionSelected(position.id, position.name)
+                        props.onPositionSelected(position.id, position.name, position.mintAmount)
                     }}
                     style={{
                         background: 'url(' + position.uri + ') no-repeat' ,
