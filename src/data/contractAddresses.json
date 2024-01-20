@@ -1,0 +1,7 @@
+{
+    "arbitrumContracts":{
+        "ghoMock": "0x75b1f376006E9B031D7E2BE3d58e97B64bcbb2A5",
+        "lpMoney": "0xdAAfC1F3B2C19bc1d3ca5602C4394f82387951B5",
+        "uniswapPositions": "0xC36442b4a4522E871399CD717aBDD847Ab11FE88"
+    }
+}
