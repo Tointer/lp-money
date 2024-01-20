@@ -29,11 +29,11 @@ function PositionCard(
             <div className={
                 'w-[300px] h-[190px] shadow-inner rounded-t-[40px] flex flex-col items-center pt-4 pl-4 pr-4 '
                 + (props.positionData.state === 'Mint' ? headerGradientMint : headerGradientRepay)
-                }>
+            }>
                 <div className='w-full h-full border-neutral-300 border-opacity-25 border-2 rounded-t-3xl p-4'>
                     <div className="flex justify-center relative">
-                        <img className="absolute left-4 drop-shadow-lg" src={"https://coinicons-api.vercel.app/api/icon/" + props.positionData.token0.toLowerCase()}/>
-                        <img className="absolute right-4 drop-shadow-lg" src={"https://coinicons-api.vercel.app/api/icon/" + props.positionData.token1.toLowerCase()}/>
+                        <img className="bg-white border-white border-2 border-opacity-80 rounded-full absolute left-4 drop-shadow-lg" src={"https://coinicons-api.vercel.app/api/icon/" + props.positionData.token0.toLowerCase()}/>
+                        <img className="bg-white border-white border-2 border-opacity-80 rounded-full absolute right-4 drop-shadow-lg" src={"https://coinicons-api.vercel.app/api/icon/" + props.positionData.token1.toLowerCase()}/>
                     </div>
                 </div>
             </div>
@@ -50,7 +50,7 @@ function PositionCard(
                     <button className={
                         'pr-4 pl-4 p-2 text-3xl self-center text-wrap text-neutral-100 text-center w-fit transition ease-in-out delay-150 rounded-[16px] bg-gradient-to-r hover:-translate-y-1 hover:scale-110 duration-300 '
                         + (props.positionData.state === 'Mint' ? buttonGradientMint : buttonGradientRepay)
-                        }>
+                    }>
                         {props.positionData.state} {props.positionData.mintOrRepayAmount}
                     </button>
                 </div>

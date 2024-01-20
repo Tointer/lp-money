@@ -1,5 +1,5 @@
 import { ConnectKitButton } from 'connectkit';
-import PositionsView from './PositionsView';
+import PositionsView from './components/PositionsView';
 import {useState, useEffect} from 'react';
 import img from  "./ghoaave.webp"
 import { sepolia, useAccount } from 'wagmi';
@@ -19,7 +19,7 @@ function App() {
         </div>
       </div>
 
-      <div className='flex flex-col w-full bg-neutral-900 h-40 items-center'>
+      <div className='flex flex-col w-full bg-neutral-900 h-24 items-center'>
       </div>
 
       <div className='w-full m-2 '>
