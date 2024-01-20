@@ -7,6 +7,7 @@ import { lpMoney, uniswapAbi } from './abi'
 import { size } from 'viem';
 import { string } from 'prop-types';
 import {abi as lpMoneyAbi} from '../contracts/out/LPMoney.sol/LPMoney.json'
+import PositionCard from './PositionCard';
 
 const lpMoneyContract = '0xdaafc1f3b2c19bc1d3ca5602c4394f82387951b5';
 const mockGHO = '0x75b1f376006E9B031D7E2BE3d58e97B64bcbb2A5';
@@ -60,13 +61,14 @@ function PositionsView(props: {onPositionSelected: (id: number, name: string, mi
                 
 
                 const decoded = base64ToJson(uri);
-                
-                accum.push({
+                const positionObject = {
                     id: Number(position), 
                     name: decoded.name, 
                     uri: decoded.image, 
                     mintAmount: mintAmountFormatted
-                });
+                }
+                
+                accum.push(positionObject);
             }
             setPositions(accum);
         }
@@ -80,30 +82,40 @@ function PositionsView(props: {onPositionSelected: (id: number, name: string, mi
 
     return (
         <div className="flex gap-4 justify-center w-full flex-wrap p-4">
-            {positions.map((position) => {
+            {positions.map((position, id) => {
+                const positionInfo = parsePositionName(position.name);
                 return (
-                    //hover:animate-[wiggle_1s_ease-in-out]
-                    <div className={selectedPositionId === position.id ? selectedStyle : regularStyle}
-                    onClick={() => {
-                        setSelectedPositionId(position.id)
-                        props.onPositionSelected(position.id, position.name, position.mintAmount)
-                    }}
-                    style={{
-                        background: 'url(' + position.uri + ') no-repeat' ,
-                        width:290,
-                        height:500,
-                        borderRadius: 45
-                    }}
-                    key={position.id} />
+                    <PositionCard onButtonClick={onButtonClick} positionData={{
+                        id: position.id, 
+                        token0: positionInfo.token0,
+                        token1:  positionInfo.token1,
+                        feeBracket: positionInfo.feeBracket,
+                        priceRange: positionInfo.priceRange,
+                        state: 'Mint',
+                        mintOrRepayAmount: position.mintAmount
+                    }}/>
                 )
             })}
         </div>
     );
 }
 
+function parsePositionName(name: string): {token0: string, token1: string, feeBracket: string, priceRange: [number, number]} {
+    const split = name.split('-');
+    const feeBracket = split[1];
+    const tokens = split[2].trim().split('/');
+    const priceRangeArray = split[3].trim().split('<>').map((price) => Number(price));
+
+    return { token0: tokens[0], token1: tokens[1], feeBracket, priceRange: [priceRangeArray[0], priceRangeArray[1]] };
+}
+
 function base64ToJson(base64String: string):any {
     const json = atob(base64String.split(',')[1]);
     return JSON.parse(json);
+}
+
+function onButtonClick(id: number) {
+    console.log("button clicked", id);
 }
 
 export default PositionsView;
