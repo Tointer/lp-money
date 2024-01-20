@@ -11,5 +11,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: bisque;
   background-image: linear-gradient(180deg, bisque, #fff0db, #faf0e6, #e4d5b7);
-  height: 100vh;
+  height: 100%;
+  animation-play-state: paused;
 }
