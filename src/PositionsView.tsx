@@ -16,14 +16,11 @@ const uniV3Collection = '0xC36442b4a4522E871399CD717aBDD847Ab11FE88';
 interface Position {
     id: number;
     name: string;
-    uri: string;
     mintAmount: number;
 }
 
-function PositionsView(props: {onPositionSelected: (id: number, name: string, mintAmount: number) => void, userAccount: `0x${string}`}) {
+function PositionsView(props: {userAccount: `0x${string}`}) {
     const [positions, setPositions] = useState<Position[]>([]);
-    const [selectedPositionId, setSelectedPositionId] = useState<number>(0);
-
 
     useEffect(() => {
         const client = config.publicClient;
@@ -64,10 +61,15 @@ function PositionsView(props: {onPositionSelected: (id: number, name: string, mi
                 const positionObject = {
                     id: Number(position), 
                     name: decoded.name, 
-                    uri: decoded.image, 
                     mintAmount: mintAmountFormatted
                 }
                 
+                accum.push(positionObject);
+
+                accum.push(positionObject);
+                accum.push(positionObject);
+                accum.push(positionObject);
+                accum.push(positionObject);
                 accum.push(positionObject);
             }
             setPositions(accum);
