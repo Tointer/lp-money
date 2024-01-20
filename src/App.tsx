@@ -3,9 +3,13 @@ import PositionsView from './components/PositionsView';
 import {useState, useEffect} from 'react';
 import img from  "./ghoaave.webp"
 import { sepolia, useAccount } from 'wagmi';
+import {useErc20BalanceOf} from './generated'
+import { useContractRead } from 'wagmi'
+import { formatDecimals } from './utils/contracts';
 
 function App() {
   const account = useAccount();
+  const GHOBalance = useErc20BalanceOf({args: [account.address??"0x0"]});
   
   return (
     <div className="flex flex-col justify-center items-center">
@@ -14,7 +18,7 @@ function App() {
         <div className='bg-neutral-800 text-neutral-100 rounded-[16px] text-center flex items-center pr-2 ml-2'>
           <img src={img} className='rounded-full size-10'/>
           <b className='text-xl text-neutral-100 text-center'>
-              15.56
+            {formatDecimals(GHOBalance.data?? BigInt(0), 18)}
           </b>
         </div>
       </div>
