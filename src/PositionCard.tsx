@@ -11,7 +11,7 @@ function PositionCard(
             token1: string;
             feeBracket: string;
             priceRange: [number, number];
-            state: 'mint' | 'repay';
+            state: 'Mint' | 'Repay';
             mintOrRepayAmount: number;
         }
     }) {
@@ -30,9 +30,9 @@ function PositionCard(
                     </div>
                 </div>
             </div>
-            <div className='bg-slate-800 h-[300px] w-[300px] rounded-b-[40px] flex flex-col items-center justify-between text-neutral-100 text-xl pb-4'>
+            <div className='bg-slate-800 h-[230px] w-[300px] rounded-b-[40px] flex flex-col items-center justify-between text-neutral-100 text-xl pb-4'>
                 <div className='flex flex-col items-stretch w-full'>
-                    <div className='text-gray-500 w-full text-nowrap text-clip overflow-hidden'> USDC USDT USDC USDT USDC USDT USDC USDT USDC USDT </div>
+                    <div className='text-gray-500 w-full text-nowrap text-clip overflow-hidden'> {Array(6).fill([props.positionData.token0 + " ", props.positionData.token1 + " "]).flat()} </div>
                     <div className='pl-4 pt-4 '>
                         <div className='text-3xl'><b className='text-gray-400'>ID:</b> {props.positionData.id}</div>
                         <div><b className='text-gray-400'>Price Range:</b> {props.positionData.priceRange[0]}-{props.positionData.priceRange[1]}</div>
@@ -40,8 +40,8 @@ function PositionCard(
                     </div>
                 </div>
                 <div>
-                    <button className='text-2xl self-center text-wrap text-neutral-100 text-center p-2 w-fit rounded-[16px] bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500'>
-                        Mint {props.positionData.mintOrRepayAmount}
+                    <button className='pr-4 pl-4 text-3xl self-center text-wrap text-neutral-100 text-center p-2 w-fit rounded-[16px] bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500'>
+                        {props.positionData.state} {props.positionData.mintOrRepayAmount}
                     </button>
                 </div>
             </div>
