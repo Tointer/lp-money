@@ -85,6 +85,24 @@ contract LPMoneyTest is Test {
         assertEq(lpMoney.getPositionsBalance(user), 2);
     }
 
+    function test_getAllPositionsOf() public {
+        address user = address(0x1);
+        vm.startPrank(user);
+        lpCollection.safeMint(user);
+        lpCollection.safeMint(user);
+        lpCollection.safeMint(user);
+        lpCollection.setApprovalForAll(address(lpMoney), true);
+
+        priceOracle.setMockedPrice(1000);
+        lpMoney.mint(0);
+        lpMoney.mint(2);
+
+        uint64[] memory tokenIds = lpMoney.getAllPositionsOf(user);
+        assertEq(tokenIds.length, 2);
+        assertEq(tokenIds[0], 0);
+        assertEq(tokenIds[1], 2);
+    }
+
     function test_close() public {
         vm.startPrank(address(0x1));
         lpCollection.safeMint(address(0x1));
