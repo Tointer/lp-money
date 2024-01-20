@@ -50,6 +50,7 @@ function PositionCard(
                     <button className={
                         'pr-4 pl-4 p-2 text-3xl self-center text-wrap text-neutral-100 text-center w-fit transition ease-in-out delay-150 rounded-[16px] bg-gradient-to-r hover:-translate-y-1 hover:scale-110 duration-300 '
                         + (props.positionData.state === 'Mint' ? buttonGradientMint : buttonGradientRepay)
+                    } onClick={() => props.onButtonClick(props.positionData.id)
                     }>
                         {props.positionData.state} {props.positionData.mintOrRepayAmount}
                     </button>
