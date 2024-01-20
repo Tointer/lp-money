@@ -16,13 +16,20 @@ function PositionCard(
         }
     }) {
 
-    const regularStyle = "hover:outline hover:outline-2 hover:outline-neutral-800 hover:outline-dashed";
-    const selectedStyle = "outline outline-4 outline-neutral-800";
+
+    const buttonGradientMint = "from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500";
+    const buttonGradientRepay = "from-pink-500 to-yellow-500 hover:from-green-400 hover:to-blue-500";
+
+    const headerGradientMint = "bg-gradient-to-tr from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90%";
+    const headerGradientRepay = "bg-gradient-to-tr from-yellow-500 from-10% via-orange-500 via-30% to-pink-400 to-90%";
 
     return (
         //hover:animate-[wiggle_1s_ease-in-out]
         <div className='drop-shadow-xl'>
-            <div className='w-[300px] h-[190px] shadow-inner rounded-t-[40px] bg-gradient-to-tr from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex flex-col items-center pt-4 pl-4 pr-4'>
+            <div className={
+                'w-[300px] h-[190px] shadow-inner rounded-t-[40px] flex flex-col items-center pt-4 pl-4 pr-4 '
+                + (props.positionData.state === 'Mint' ? headerGradientMint : headerGradientRepay)
+                }>
                 <div className='w-full h-full border-neutral-300 border-opacity-25 border-2 rounded-t-3xl p-4'>
                     <div className="flex justify-center relative">
                         <img className="absolute left-4 drop-shadow-lg" src={"https://coinicons-api.vercel.app/api/icon/" + props.positionData.token0.toLowerCase()}/>
@@ -40,7 +47,10 @@ function PositionCard(
                     </div>
                 </div>
                 <div>
-                    <button className='pr-4 pl-4 p-2 text-3xl self-center text-wrap text-neutral-100 text-center w-fit transition ease-in-out delay-150 rounded-[16px] bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 hover:-translate-y-1 hover:scale-110 duration-300'>
+                    <button className={
+                        'pr-4 pl-4 p-2 text-3xl self-center text-wrap text-neutral-100 text-center w-fit transition ease-in-out delay-150 rounded-[16px] bg-gradient-to-r hover:-translate-y-1 hover:scale-110 duration-300 '
+                        + (props.positionData.state === 'Mint' ? buttonGradientMint : buttonGradientRepay)
+                        }>
                         {props.positionData.state} {props.positionData.mintOrRepayAmount}
                     </button>
                 </div>
