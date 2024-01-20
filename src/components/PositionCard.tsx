@@ -39,7 +39,7 @@ function PositionCard(
             </div>
             <div className='bg-slate-800 h-[230px] w-[300px] rounded-b-[40px] flex flex-col items-center justify-between text-neutral-100 text-xl pb-4'>
                 <div className='flex flex-col items-stretch w-full'>
-                    <div className='text-gray-500 w-full text-sm text-nowrap text-clip overflow-hidden'> {Array(6).fill([props.positionData.token0 + " ", props.positionData.token1 + " "]).flat()} </div>
+                    <div className='text-gray-500 w-full text-sm text-nowrap text-clip overflow-hidden select-none'> {Array(6).fill([props.positionData.token0 + " ", props.positionData.token1 + " "]).flat()} </div>
                     <div className='pl-4 pt-4 '>
                         <div className='text-3xl'><b className='text-gray-400'>ID:</b> {props.positionData.id}</div>
                         <div><b className='text-gray-400'>Price Range:</b> {props.positionData.priceRange[0]}-{props.positionData.priceRange[1]}</div>
