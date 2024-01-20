@@ -3,11 +3,11 @@ import {useState, useEffect} from 'react';
 import { getPublicClient } from '@wagmi/core'
 
 import { config } from '../config'
-import {uniswapAbi } from '../abi'
-import {lpMoneyAbi} from '../generated'
+import {lpMoneyABI, erc721ABI, useLpMoneyGetAllUniswapPositionsOf, useErc721Mint} from '../generated'
 import { size } from 'viem';
 import { string } from 'prop-types';
 import PositionCard from './PositionCard';
+import { useContractWrite } from 'wagmi' 
 
 const lpMoneyContract = '0xdaafc1f3b2c19bc1d3ca5602c4394f82387951b5';
 const mockGHO = '0x75b1f376006E9B031D7E2BE3d58e97B64bcbb2A5';
@@ -25,41 +25,34 @@ interface Position {
 
 function PositionsView(props: {userAccount: `0x${string}`}) {
     const [positions, setPositions] = useState<Position[]>([]);
+    const UniPositions = useLpMoneyGetAllUniswapPositionsOf({args: [props.userAccount]});
+    
 
     useEffect(() => {
         const client = config.publicClient;
+        if(UniPositions.data === undefined) return;
+        const positions = UniPositions.data;
+        
 
         const getPositions = async () => {
-            const balance = await client.readContract({
-                address: uniV3Collection,
-                abi: uniswapAbi,
-                functionName: 'balanceOf',
-                args: [props.userAccount]
-            });
-            
+
             const accum: Position[] = [];
-            for (let i = 0; i < balance; i++) {
-                const position = await client.readContract({
-                    address: uniV3Collection,
-                    abi: uniswapAbi,
-                    functionName: 'tokenOfOwnerByIndex',
-                    args: [props.userAccount, BigInt(i)] 
-                });
-                console.log("position", position);
+            for (let i = 0; i < positions.length; i++) {
+                console.log(Number(positions[i]));
                 const uri = await client.readContract({
                     address: uniV3Collection,
-                    abi: uniswapAbi,
+                    abi: erc721ABI,
                     functionName: 'tokenURI',
-                    args: [position] 
+                    args: [positions[i]] 
                 });
                 let mintAmount: bigint;
 
                 try {
                     mintAmount = await client.readContract({
                         address: lpMoneyContract,
-                        abi: lpMoneyAbi,
+                        abi: lpMoneyABI,
                         functionName: 'previewMint',
-                        args: [position] 
+                        args: [positions[i]] 
                     });
                 } catch (e) {
                     console.log("error", e);
@@ -74,7 +67,7 @@ function PositionsView(props: {userAccount: `0x${string}`}) {
                 const positionInfo = parsePositionName(decoded.name);
                 
                 const positionObject: Position = {
-                    id: Number(position), 
+                    id: Number(positions[i]), 
                     token0: positionInfo.token0,
                     token1:  positionInfo.token1,
                     feeBracket: positionInfo.feeBracket,
@@ -89,11 +82,7 @@ function PositionsView(props: {userAccount: `0x${string}`}) {
         }
 
         getPositions();
-    }, [props.userAccount]);
-
-
-    const regularStyle = "hover:outline hover:outline-2 hover:outline-neutral-800 hover:outline-dashed";
-    const selectedStyle = "outline outline-4 outline-neutral-800";
+    }, [props.userAccount, UniPositions.data]);
 
     return (
         <div className="flex gap-4 justify-center w-full flex-wrap p-4">
@@ -133,7 +122,8 @@ function base64ToJson(base64String: string):any {
 }
 
 function onButtonClick(id: number) {
-    console.log("button clicked", id);
+    console.log(id);
 }
+
 
 export default PositionsView;
