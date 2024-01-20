@@ -21,18 +21,18 @@ function PositionCard(
 
     return (
         //hover:animate-[wiggle_1s_ease-in-out]
-        <div>
-            <div className='w-[300px] h-[190px] rounded-t-[40px] bg-gradient-to-tr from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex flex-col items-center pt-4 pl-4 pr-4'>
+        <div className='drop-shadow-xl'>
+            <div className='w-[300px] h-[190px] shadow-inner rounded-t-[40px] bg-gradient-to-tr from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% flex flex-col items-center pt-4 pl-4 pr-4'>
                 <div className='w-full h-full border-neutral-300 border-opacity-25 border-2 rounded-t-3xl p-4'>
                     <div className="flex justify-center relative">
-                        <img className="absolute left-4" src={"https://coinicons-api.vercel.app/api/icon/" + props.positionData.token0.toLowerCase()}/>
-                        <img className="absolute right-4" src={"https://coinicons-api.vercel.app/api/icon/" + props.positionData.token1.toLowerCase()}/>
+                        <img className="absolute left-4 drop-shadow-lg" src={"https://coinicons-api.vercel.app/api/icon/" + props.positionData.token0.toLowerCase()}/>
+                        <img className="absolute right-4 drop-shadow-lg" src={"https://coinicons-api.vercel.app/api/icon/" + props.positionData.token1.toLowerCase()}/>
                     </div>
                 </div>
             </div>
             <div className='bg-slate-800 h-[230px] w-[300px] rounded-b-[40px] flex flex-col items-center justify-between text-neutral-100 text-xl pb-4'>
                 <div className='flex flex-col items-stretch w-full'>
-                    <div className='text-gray-500 w-full text-nowrap text-clip overflow-hidden'> {Array(6).fill([props.positionData.token0 + " ", props.positionData.token1 + " "]).flat()} </div>
+                    <div className='text-gray-500 w-full text-sm text-nowrap text-clip overflow-hidden'> {Array(6).fill([props.positionData.token0 + " ", props.positionData.token1 + " "]).flat()} </div>
                     <div className='pl-4 pt-4 '>
                         <div className='text-3xl'><b className='text-gray-400'>ID:</b> {props.positionData.id}</div>
                         <div><b className='text-gray-400'>Price Range:</b> {props.positionData.priceRange[0]}-{props.positionData.priceRange[1]}</div>
@@ -40,7 +40,7 @@ function PositionCard(
                     </div>
                 </div>
                 <div>
-                    <button className='pr-4 pl-4 text-3xl self-center text-wrap text-neutral-100 text-center p-2 w-fit rounded-[16px] bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500'>
+                    <button className='pr-4 pl-4 p-2 text-3xl self-center text-wrap text-neutral-100 text-center w-fit transition ease-in-out delay-150 rounded-[16px] bg-gradient-to-r from-green-400 to-blue-500 hover:from-pink-500 hover:to-yellow-500 hover:-translate-y-1 hover:scale-110 duration-300'>
                         {props.positionData.state} {props.positionData.mintOrRepayAmount}
                     </button>
                 </div>
