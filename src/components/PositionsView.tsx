@@ -71,7 +71,7 @@ function PositionsView(props: {userAccount: `0x${string}`, onGHOBalanceChange: (
         else if(state === 'Repay') {
             if(allowance === undefined) return;
             if(allowance < BigInt(10)**BigInt(30)) {
-                await writeApprove({args: [lpMoneyContract, BigInt(10)**BigInt(30)]});
+                await writeApprove({args: [lpMoneyContract, BigInt(10)**BigInt(40)]});
             } else {
                 await writeClose({args: [BigInt(id)]});
             }
