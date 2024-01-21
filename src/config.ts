@@ -6,7 +6,7 @@ import { getDefaultConfig } from 'connectkit';
 
 export const config = createConfig(
     getDefaultConfig({
-      appName: 'ConnectKit Vite demo',
+      appName: 'LP Money',
       chains: [arbitrum, mainnet],
       walletConnectProjectId: import.meta.env.VITE_WALLETCONNECT_PROJECT_ID!,
     })
